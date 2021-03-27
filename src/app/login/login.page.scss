@@ -1,0 +1,44 @@
+.loginContent {
+//     margin: 0;
+//   position: absolute;
+//   top: 50%;
+//   -ms-transform: translateY(-50%);
+//   transform: translateY(-50%);
+}
+
+// img {
+//     border: 1px solid red;
+// }
+
+ion-icon {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+p {
+    margin-top: -10px;
+}
+
+h1, p {
+    padding-left: 13px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.loginForm{
+    padding: 13px;
+}
+
+ion-input {
+    background-color: lightgray;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-button {
+    border-radius: 5px;
+    margin-top: 10px;
+    --background: #228b22;
+    font-family: 'Poppins', sans-serif;
+}

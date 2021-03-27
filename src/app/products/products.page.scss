@@ -1,0 +1,44 @@
+.searchDiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-searchbar {
+    //margin-top: -15px;
+}
+
+.products {
+    padding: 10px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: white;
+    margin-top: -10px;
+}
+
+ion-content {
+    --ion-background-color:#228b22;
+}
+
+.imgDiv {
+    display: flex;
+    place-content: center;
+}
+
+ion-card {
+    --ion-background-color: whitesmoke;
+}
+
+.groceryItems {
+    display: flex;
+    place-content: center;
+    flex-wrap: wrap;
+}
+
+.Roboto {
+    font-family: 'Roboto', sans-serif;
+}
