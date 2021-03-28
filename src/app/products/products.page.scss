@@ -6,6 +6,9 @@
 
 p {
     font-family: 'Poppins', sans-serif;
+    // white-space: nowrap; 
+    // overflow: hidden;
+    // text-overflow: ellipsis; 
 }
 
 ion-searchbar {
@@ -14,8 +17,8 @@ ion-searchbar {
 
 .products {
     padding: 10px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
     background-color: white;
     margin-top: -10px;
 }
@@ -31,6 +34,7 @@ ion-content {
 
 ion-card {
     --ion-background-color: whitesmoke;
+    width: 135px;
 }
 
 .groceryItems {

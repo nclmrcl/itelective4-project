@@ -1,0 +1,37 @@
+ion-input {
+    background-color: lightgray;
+    height: 50px;
+    border-radius: 5px;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+h1, p {
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+
+p {
+    margin-top: -8px;
+}
+
+.questionGraphic, .slider2, .slider3, .slider4, .slider5, .slider6, .slider7 {
+    padding: 15px;
+}
+
+ion-button {
+    float: right;
+    margin-top: 10px;
+    --background: #228b22;
+}
+
+ion-radio-group {
+    display: flex;
+    place-content: center;
+}
+
+ion-radio {
+    --color: #228b22;
+    --color-checked: #228b22;
+}
