@@ -1,0 +1,45 @@
+p {
+    font-family: 'Poppins', sans-serif;
+}
+
+.cartHeader {
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.cartItem {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cartItems {
+    padding: 10px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height:100vh;
+}
+
+.quantityDecInc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ion-card {
+    width: 90%;
+    margin: 16px auto 16px auto;
+    --ion-background-color: whitesmoke;
+}
+
+ion-fab-button {
+    --background: forestgreen;
+}
+
+ion-content {
+    --ion-background-color:#228b22;
+}

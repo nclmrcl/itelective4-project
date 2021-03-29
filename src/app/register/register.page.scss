@@ -21,8 +21,8 @@ p {
 }
 
 ion-button {
-    float: right;
     margin-top: 10px;
+    margin-bottom: 10px;
     --background: #228b22;
 }
 
@@ -34,4 +34,18 @@ ion-radio-group {
 ion-radio {
     --color: #228b22;
     --color-checked: #228b22;
+}
+
+.nextButton {
+    display: flex;
+    justify-content: center;
+}
+
+ion-slides {
+    --bullet-background: forestgreen;
+    --bullet-background-active: forestgreen;
+}
+
+ion-fab-button {
+    --background: #228b22;
 }
