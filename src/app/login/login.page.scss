@@ -1,47 +1,68 @@
-.loginContent {
-//     margin: 0;
-//   position: absolute;
-//   top: 50%;
-//   -ms-transform: translateY(-50%);
-//   transform: translateY(-50%);
+.main-container{
+    width:auto;
+    height:100%;
+
 }
 
-// img {
-//     border: 1px solid red;
-// }
+.login-content{
+    justify-content: center;
+    padding:20px;
+    
+    .login-label{
+        font-family: 'Poppins', sans-serif;
+        padding-left:20;
+        margin-left: 15px;
+        margin-top: -30px;
 
-ion-icon {
-    margin-left: 5px;
-    margin-right: 5px;
-}
+            p{
+                margin-top: -10px;
+                font-size: 16px;    
+            }
+            
+            h1{
+                font-size: 25px;      
+            }
+    }
 
-p {
-    margin-top: -10px;
+    .img-container{
+        height: auto;
+        width: auto;
+        margin-top: -20px;
+        position: relative;
+    }
 }
-
-h1, p {
-    padding-left: 13px;
-    font-family: 'Poppins', sans-serif;
-}
+    
 
 .loginForm{
-    padding: 13px;
+    padding: 15px;
+    margin-top: 20px;
+    
+    .btn-signin{
+        margin-top: 10px;
+        --background: #228b22;
+        font-family: 'Poppins', sans-serif;
+        height: 50px;
+        width:100%;
+        font-size: 20px;
+    }
+    
+    .input{
+        background-color: #EDEDED;
+        height: 50px;
+        margin: 5px 0px;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+    }  
 }
 
-ion-input {
-    background-color: lightgray;
-    height: 50px;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-family: 'Poppins', sans-serif;
+.icon{
+    margin: 0px 10px;
+    color:#228b22;
+    width: 30px;
+    height: 30px;
 }
 
-ion-button {
-    border-radius: 5px;
-    margin-top: 10px;
-    --background: #228b22;
-    font-family: 'Poppins', sans-serif;
-}
 
 a {
     color: #228b22;
