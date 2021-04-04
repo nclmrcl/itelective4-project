@@ -10,6 +10,11 @@ p {
     color: white;
 }
 
+.cartImg {
+    display: flex;
+    justify-content: center;
+}
+
 .cartItem {
     display: flex;
     justify-content: space-evenly;
@@ -42,4 +47,16 @@ ion-fab-button {
 
 ion-content {
     --ion-background-color:#228b22;
+}
+
+.checkoutButton {
+    text-align: center;
+}
+
+.checkoutBtn {
+    width: 90%;
+    height: 50px;
+    --background: forestgreen;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
 }

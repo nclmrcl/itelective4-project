@@ -3,113 +3,117 @@
 
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#228b22" fill-opacity="1" d="M0,160L40,170.7C80,181,160,203,240,181.3C320,160,400,96,480,90.7C560,85,640,139,720,138.7C800,139,880,85,960,96C1040,107,1120,181,1200,218.7C1280,256,1360,256,1400,256L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#1b6f1b;"></path></svg>
 
-    <ion-slides [options]="slideOpts" pager="true">
-      <ion-slide>
-        <div class="questionGraphic">
-          <img src="../../assets/images/form.png">
-          <h1>Sign up with Go-cery.</h1>
-          <p>To get things started, let's start with your name.</p>
-          <div class="loginForm">
-            <ion-input placeholder="Last Name"></ion-input>
-            <ion-input placeholder="First Name"></ion-input>
-            <ion-input placeholder="Middle Name"></ion-input>
+    <div class="registrationForm">
+
+      <ion-slides [options]="slideOpts" pager="true">
+        <ion-slide>
+          <div class="questionGraphic">
+            <img src="../../assets/images/form.png">
+            <h1>Sign up with Go-cery.</h1>
+            <p>To get things started, let's start with your name.</p>
+            <div class="loginForm">
+              <ion-input  placeholder="Last Name"></ion-input>
+              <ion-input  placeholder="First Name"></ion-input>
+              <ion-input  placeholder="Middle Name"></ion-input>
+    
+              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+            </div>
+          </div>
+        </ion-slide>
   
-            <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+        <ion-slide>
+          <div class="slider2">
+            <img src="../../assets/images/question.png">
+            <p>When is your birthday?</p>
+            <div class="loginForm">
+              <ion-item>
+                <ion-label>MM DD YY</ion-label>
+                <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+              </ion-item>
+              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+            </div>
           </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slider2">
-          <img src="../../assets/images/question.png">
-          <p>When is your birthday?</p>
-          <div class="loginForm">
-            <ion-item>
-              <ion-label>MM DD YY</ion-label>
-              <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
-            </ion-item>
-            <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
-          </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slider3">
-          <img src="../../assets/images/address.png" style="height: 75%; width: 75%;">
-          <p>Where do you live?</p>
-          <div class="loginForm">
-            <ion-input placeholder="House Number"></ion-input>
-            <ion-input placeholder="Street"></ion-input>
-            <ion-input placeholder="Barangay"></ion-input>
-            <ion-input placeholder="City"></ion-input>
-            <ion-input placeholder="Province"></ion-input>
+        </ion-slide>
   
-            <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+        <ion-slide>
+          <div class="slider3">
+            <img src="../../assets/images/address.png" style="height: 75%; width: 75%;">
+            <p>Where do you live?</p>
+            <div class="loginForm">
+              <ion-input  placeholder="House Number"></ion-input>
+              <ion-input  placeholder="Street"></ion-input>
+              <ion-input  placeholder="Barangay"></ion-input>
+              <ion-input  placeholder="City"></ion-input>
+              <ion-input  placeholder="Province"></ion-input>
+    
+              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+            </div>
           </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slider4">
-          <img src="../../assets/images/gender.png">
-          <p>What is your Gender?</p>
-          <div class="loginForm">
-            <ion-list lines="none">
-              <ion-radio-group value="male">
-
-                <ion-item>
-                  <ion-label>Male</ion-label>
-                  <ion-radio slot="start" value="male"></ion-radio>
-                </ion-item>
-            
-                <ion-item>
-                  <ion-label>Female</ion-label>
-                  <ion-radio slot="start" value="female"></ion-radio>
-                </ion-item>
-
-              </ion-radio-group>
-            </ion-list>
+        </ion-slide>
   
-            <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
-          </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slider5">
-          <img src="../../assets/images/emailaddress.png">
-          <p>To send updates to you via email, we also need your email address.</p>
-          <div class="loginForm">
-            <ion-input placeholder="Email Address"></ion-input>
+        <ion-slide>
+          <div class="slider4">
+            <img src="../../assets/images/gender.png">
+            <p>What is your Gender?</p>
+            <div class="loginForm">
+              <ion-list lines="none">
+                <ion-radio-group value="male">
   
-            <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
-          </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slider6">
-          <img src="../../assets/images/unamepword.png">
-          <p>Set your desired username and password that you can later use to sign in to Go-cery.</p>
-          <div class="loginForm">
-            <ion-input placeholder="Username"></ion-input>
-            <ion-input placeholder="Password"></ion-input>
+                  <ion-item>
+                    <ion-label>Male</ion-label>
+                    <ion-radio slot="start" value="male"></ion-radio>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-label>Female</ion-label>
+                    <ion-radio slot="start" value="female"></ion-radio>
+                  </ion-item>
   
+                </ion-radio-group>
+              </ion-list>
+    
+              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+            </div>
+          </div>
+        </ion-slide>
+  
+        <ion-slide>
+          <div class="slider5">
+            <img src="../../assets/images/emailaddress.png">
+            <p>To send updates to you via email, we also need your email address.</p>
+            <div class="loginForm">
+              <ion-input  placeholder="Email Address"></ion-input>
+    
+              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+            </div>
+          </div>
+        </ion-slide>
+  
+        <ion-slide>
+          <div class="slider6">
+            <img src="../../assets/images/unamepword.png">
+            <p>Set your desired username and password that you can later use to sign in to Go-cery.</p>
+            <div class="loginForm">
+              <ion-input  placeholder="Username"></ion-input>
+              <ion-input  placeholder="Password"></ion-input>
+    
+              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+            </div>
+          </div>
+        </ion-slide>
+  
+        <ion-slide>
+          <div class="slider7">
+            <img src="../../assets/images/confirm.png">
+            <h1>You're all set.</h1>
+            <p>Thank you for registering with Go-cery.</p>
             <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
           </div>
-        </div>
-      </ion-slide>
-
-      <ion-slide>
-        <div class="slider7">
-          <img src="../../assets/images/confirm.png">
-          <h1>You're all set.</h1>
-          <p>Thank you for registering with Go-cery.</p>
-          <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
-        </div>
-      </ion-slide>
-
-    </ion-slides>
+        </ion-slide>
+  
+      </ion-slides>
+      
+    </div>
 
     <div class="nextButton">
       <ion-fab-button><ion-icon name="chevron-forward-sharp"></ion-icon></ion-fab-button>
