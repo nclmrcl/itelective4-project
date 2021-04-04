@@ -1,52 +1,101 @@
 ion-input {
-    background-color: lightgray;
-    height: 50px;
-    border-radius: 5px;
-    margin-top: 10px;
-    font-family: 'Poppins', sans-serif;
+	background-color: #EDEDED;
+	height: 50px;
+	margin: 5px 0px;
+	border-radius: 25px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
 }
 
-
-h1, p {
-    font-family: 'Poppins', sans-serif;
-    text-align: left;
-}
-
+h1,
 p {
-    margin-top: -8px;
+	font-family: 'Poppins', sans-serif;
+	text-align: left;
 }
 
-.questionGraphic, .slider2, .slider3, .slider4, .slider5, .slider6, .slider7 {
-    padding: 15px;
+.questionGraphic,
+.slider2,
+.slider3,
+.slider4,
+.slider5,
+.slider6,
+.slider7 {
+	padding: 15px;
 }
 
 ion-button {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    --background: #228b22;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	--background: #228b22;
 }
 
 ion-radio-group {
-    display: flex;
-    place-content: center;
+	display: flex;
+	place-content: center;
 }
 
 ion-radio {
-    --color: #228b22;
-    --color-checked: #228b22;
+	--color: #228b22;
+	--color-checked: #228b22;
 }
 
 .nextButton {
-    display: flex;
-    justify-content: center;
+	display: flex;
+	justify-content: center;
+	top: 0px;
 }
 
 ion-slides {
-    --bullet-background: forestgreen;
-    --bullet-background-active: forestgreen;
-    padding: 15px;
+	--bullet-background: forestgreen;
+	--bullet-background-active: forestgreen;
+	// padding: 20px;
 }
 
 ion-fab-button {
-    --background: #228b22;
+	--background: #228b22;
+}
+
+.main-container {
+	padding-bottom: 20px;
+}
+
+.questionGraphic {
+	width: auto;
+	height: 100%;
+	justify-content: center;
+}
+
+.graphic-image {
+	width: 100%;
+	height: 100%;
+	margin-top: -20px;
+	position: relative;
+}
+
+.label {
+	font-family: 'Poppins', sans-serif;
+	padding-left: 20;
+	margin-left: 15px;
+	margin-top: -20px;
+	p {
+		margin-top: -10px;
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 22px;
+	}
+}
+
+.loginForm {
+	padding: 15px;
+	margin-top: 20px;
+}
+
+.questions {
+	h1,
+	p {
+		font-family: 'Poppins', sans-serif;
+		padding-left: 20;
+		text-align: left;
+	}
 }
