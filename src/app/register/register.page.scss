@@ -74,8 +74,7 @@ ion-fab-button {
 
 .label {
 	font-family: 'Poppins', sans-serif;
-	padding-left: 20;
-	margin-left: 15px;
+	padding:0px 30px;
 	margin-top: -20px;
 	p {
 		margin-top: -10px;
@@ -83,6 +82,7 @@ ion-fab-button {
 	}
 	h1 {
 		font-size: 22px;
+		
 	}
 }
 
@@ -92,11 +92,10 @@ ion-fab-button {
 }
 
 .questions {
-	h1,
 	p {
 		font-family: 'Poppins', sans-serif;
-		padding-left: 20;
-		text-align: left;
+		padding:0px 30px;
+		text-align: justify;
 	}
 }
 
@@ -112,3 +111,9 @@ ion-fab-button {
 		margin-left: 10px;
 	}
 }
+
+.swiper-slide:not(.swiper-slide-active) > div {
+    display:none;
+}
+
+
