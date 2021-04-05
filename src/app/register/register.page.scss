@@ -99,3 +99,16 @@ ion-fab-button {
 		text-align: left;
 	}
 }
+
+.termsCheckbox {
+	display: flex;
+	margin-top: 25px;
+
+	ion-checkbox {
+		height: max-content;
+	}
+
+	p {
+		margin-left: 10px;
+	}
+}

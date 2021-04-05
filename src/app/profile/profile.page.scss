@@ -1,0 +1,60 @@
+.userAvatar {
+    width: 60%;
+    height: 60%;
+}
+
+.avatarContainer {
+    text-align: center;
+}
+
+ion-content {
+    --ion-background-color:#228b22;
+}
+
+ion-card {
+    --ion-background-color: white;
+}
+
+.profileContent {
+    padding: 10px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height:100vh;
+}
+
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+}
+
+.outlineborder {
+    border: 1.5px solid lightgray;
+    border-radius: 15px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    width: 95%;
+    margin: 15px auto;
+}
+
+.header {
+    font-size: 18px;
+}
+
+.icon {
+    color: forestgreen;
+    font-size: 20px;
+    vertical-align: -3px;
+}
+
+.editDetailsBtn {
+    text-align: center;
+}
+
+.editBtn {
+    width: 95%;
+    height: 50px;
+    --background: forestgreen;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
