@@ -39,11 +39,15 @@ ion-radio {
 	--color-checked: #228b22;
 }
 
-.nextButton {
+.reg-button {
 	display: flex;
 	justify-content: center;
 	top: 0px;
+	.backButton{
+		margin-right: 10px;
+	}
 }
+
 
 ion-slides {
 	--bullet-background: forestgreen;
