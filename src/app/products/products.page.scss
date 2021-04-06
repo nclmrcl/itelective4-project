@@ -55,8 +55,18 @@ ion-card {
 
 ion-fab-button {
 	--background: white;
+    border-radius: 50%;
+
+    
 }
 
 ion-icon {
+    color: forestgreen;
+    font-size: 30px;
+}
+
+.category-label{
+    text-align: center; 
+    margin-top: 5px;
     color: forestgreen;
 }
