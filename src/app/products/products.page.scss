@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 10px 20px;
 }
 
 p {
@@ -12,6 +12,12 @@ p {
     // text-overflow: ellipsis; 
 }
 
+.title-label{
+      font-family: 'Poppins', sans-serif;
+        padding-left:20;
+        margin-left: 15px;
+        font-size: 25px;  
+}
 
 .products {
     padding: 15px;
@@ -32,7 +38,9 @@ ion-content {
 
 ion-card {
     --ion-background-color: whitesmoke;
-    width: 135px;
+    width: 40%;
+    justify-content: center;
+    text-align: center;
 }
 
 .groceryItems {
