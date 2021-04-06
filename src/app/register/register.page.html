@@ -38,7 +38,7 @@
 
       <ion-slide>
         <div class="questionGraphic">
-          <img class="graphic-image" src="../../assets/images/address.png" style="height: 75%; width: 75%;">
+          <img class="graphic-image" src="../../assets/images/address.png">
           <div class="questions">
           <p>Where do you live?</p>
         </div>
@@ -78,7 +78,7 @@
           </div>
         </ion-slide>
   
-      <ion-slide>
+      <ion-slide >
         <div class="questionGraphic">
           <img class="graphic-image"  src="../../assets/images/emailaddress.png">
           <div class="questions">
@@ -92,8 +92,10 @@
   
         <ion-slide>
           <div class="questionGraphic">
-            <img src="../../assets/images/unamepword.png">
+            <img  class="graphic-image"  src="../../assets/images/unamepword.png">
+            <div class="questions">
             <p>Set your desired username and password that you can later use to sign in to Go-cery.</p>
+            </div>
             <div class="loginForm">
               <ion-input  placeholder="Username"></ion-input>
               <ion-input  placeholder="Password"></ion-input>
@@ -103,7 +105,7 @@
           </div>
       </ion-slide>
 
-      <ion-slide>
+      <ion-slide >
         <div class="questionGraphic">
           <img class="graphic-image" src="../../assets/images/acceptprivacypolicy.png">
           <div class="label">
@@ -117,7 +119,7 @@
         </div>
       </ion-slide>
 
-      <ion-slide>
+      <ion-slide >
         <div class="questionGraphic">
           <img class="graphic-image" src="../../assets/images/confirm.png">
           <div class="label">
@@ -130,8 +132,11 @@
 
     </ion-slides>
 
-    <div class="nextButton">
-      <ion-fab-button><ion-icon name="chevron-forward-sharp"></ion-icon></ion-fab-button>
+    <div class="reg-button">
+        <ion-fab-button class="backButton">
+          <ion-icon name="chevron-back-sharp"></ion-icon>
+        </ion-fab-button>
+      <ion-fab-button class="nextButton"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-fab-button>
       <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
     </div>
 
