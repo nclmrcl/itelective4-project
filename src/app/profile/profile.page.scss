@@ -23,7 +23,6 @@ ion-card {
     min-height:100vh;
 }
 
-
 h1 {
     font-family: 'Poppins', sans-serif;
 }
@@ -53,11 +52,16 @@ h1 {
     padding-bottom: 15px;
 }
 
-.editBtn {
+.actionBtn {
     margin-top: 10px;
    --background: #228b22;
     font-family: 'Poppins', sans-serif;
     height: 50px;
     width: 95%;
     font-size: 20px;
+}
+
+.profile-card{
+    margin-top:20px;
+    border-radius: 35px;
 }
