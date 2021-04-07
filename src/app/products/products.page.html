@@ -1,93 +1,104 @@
 
 <ion-content>
-  
+
   <div class="productsContent">
+
+    <div class="sidenavBtn">
+      <ion-buttons slot="start">  
+        <ion-menu-button color="light"></ion-menu-button>
+        <p style="font-size: 20px; color: white;">Categories</p> 
+      </ion-buttons> 
+     </div> 
+    
+  </div>
+
+  <div class="products">
+
     <div class="searchDiv">
-      <p style="color: white;">Hello, Pieck Finger <br> Find your favorite groceries here.</p>
-      <ion-fab-button [routerLink]="['/cart']"><ion-icon name="cart-sharp"></ion-icon></ion-fab-button>
+      <p style="color: dimgray;">Hello, Pieck Finger <br>What would you like to buy today?</p>
+      <div class="cartFAB">
+        <ion-fab-button [routerLink]="['/cart']"><ion-icon name="cart-sharp"></ion-icon></ion-fab-button>
+      </div>
       <!-- <ion-button shape="round" slot="icon-only"><ion-icon name="cart-sharp"></ion-icon></ion-button> -->
       <!-- <img src="../../assets/images/cosplayer.png" style="width: 64px; height: 64px;"> -->
     </div>
-  
-    <div class="products">
-      <p style="font-size: 1.5rem;">Categories</p>
-      <!-- <div class="imgDiv">
-        <img src="../../assets/images/groceries.png" style="height: 170px;">
-      </div> -->
-      <ion-searchbar mode="ios"></ion-searchbar>
 
-      <div class="groceryItems">
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/meat.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Meat</p>
-          </ion-card-content>
-        </ion-card>
+    <!-- <p style="font-size: 1.5rem;">Categories</p> -->
+    <!-- <div class="imgDiv">
+      <img src="../../assets/images/groceries.png" style="height: 170px;">
+    </div> -->
+    <ion-searchbar mode="ios"></ion-searchbar>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/cabbage.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Vegetables</p>
-          </ion-card-content>
-        </ion-card>
+    <div class="groceryItems">
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/meat.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Meat</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/shrimp.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Seafood</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/cabbage.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Vegetables</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/soap.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Personal Care</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/shrimp.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Seafood</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/drinks.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Beverages</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/soap.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Personal Care</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/canned-food.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Canned Goods</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/drinks.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Beverages</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/dairy.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Dairy</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/canned-food.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Canned Goods</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/detergent.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Cleaners</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/dairy.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Dairy</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/bananas.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Fruits</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/detergent.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Cleaners</p>
+        </ion-card-content>
+      </ion-card>
 
-        <ion-card>
-          <ion-card-content>
-            <img src="../../assets/images/bread.png" style="width: 100px; height: 100px;">
-            <p style="text-align: center; margin-top: 5px;">Bread</p>
-          </ion-card-content>
-        </ion-card>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/bananas.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Fruits</p>
+        </ion-card-content>
+      </ion-card>
 
-      </div>
+      <ion-card>
+        <ion-card-content>
+          <img src="../../assets/images/bread.png" style="width: 100px; height: 100px;">
+          <p style="text-align: center; margin-top: 5px;">Bread</p>
+        </ion-card-content>
+      </ion-card>
 
     </div>
 

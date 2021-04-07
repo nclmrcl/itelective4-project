@@ -1,3 +1,32 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+
+  <ion-menu side="start" menuId="first" contentId="content">
+    
+    <div class="logoplaceholder">
+      <img src="../assets/images/templogo.png">
+    </div>
+    
+    <ion-content color="light">  
+      
+      <ion-menu-toggle auto-hide="true">
+        <ion-list lines="none">
+          <ion-item [routerLink]="['/products']">
+            <ion-icon name="fast-food" slot="start"></ion-icon>
+            <ion-label class="poppins">Categories</ion-label>
+          </ion-item>
+          <ion-item [routerLink]="['/profile']">
+            <ion-icon name="person-circle" slot="start"></ion-icon>
+            <ion-label class="poppins">Profile</ion-label>
+          </ion-item>
+          <ion-item [routerLink]="['/cart']">
+            <ion-icon name="settings" slot="start"></ion-icon>
+            <ion-label class="poppins">Settings</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-menu-toggle>
+
+    </ion-content>   
+  </ion-menu>  
+
+  <ion-router-outlet Id="content"></ion-router-outlet>
 </ion-app>

@@ -1,8 +1,13 @@
+.productsContent {
+    padding: 10px;
+}
+
 .searchDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+    padding: 15px;
+    margin-top: -20px;
 }
 
 p {
@@ -32,12 +37,13 @@ ion-content {
 
 ion-card {
     --ion-background-color: whitesmoke;
-    width: 135px;
+    width: 140px;
 }
 
 .groceryItems {
     display: flex;
     place-content: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
@@ -46,9 +52,9 @@ ion-card {
 }
 
 ion-fab-button {
-	--background: white;
+	--background: forestgreen;
 }
 
 ion-icon {
-    color: forestgreen;
+    color: white;
 }

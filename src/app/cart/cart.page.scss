@@ -2,6 +2,10 @@ p {
     font-family: 'Poppins', sans-serif;
 }
 
+.sidenavBtn {
+    padding: 10px;
+}
+
 .cartHeader {
     display: flex;
     padding: 10px;
@@ -27,6 +31,7 @@ p {
     border-top-right-radius: 35px;
     background-color: white;
     min-height:100vh;
+    margin-top: -10px;
 }
 
 .quantityDecInc {
@@ -62,5 +67,5 @@ ion-content {
 }
 
 .deleteCartItem {
-    --background: red;
+    --background: #DD2C00;
 }
