@@ -1,6 +1,6 @@
 .userAvatar {
-    width: 60%;
-    height: 60%;
+    width: 50%;
+    height: 50%;
 }
 
 .avatarContainer {
@@ -23,14 +23,13 @@ ion-card {
     min-height:100vh;
 }
 
-
 h1 {
     font-family: 'Poppins', sans-serif;
 }
 
 .outlineborder {
-    border: 1.5px solid lightgray;
-    border-radius: 15px;
+    border: 1.5px solid #228b22;
+    border-radius: 20px;
     padding: 15px;
     font-family: 'Poppins', sans-serif;
     width: 95%;
@@ -43,18 +42,31 @@ h1 {
 
 .icon {
     color: forestgreen;
-    font-size: 20px;
-    vertical-align: -3px;
+    font-size: 22px;
+    margin-right:5px;
+    vertical-align: -4px;
 }
 
 .editDetailsBtn {
     text-align: center;
+    padding-bottom: 15px;
 }
 
-.editBtn {
-    width: 95%;
-    height: 50px;
-    --background: forestgreen;
+.actionBtn {
+
+   --background: #228b22;
     font-family: 'Poppins', sans-serif;
+    height: 50px;
+    width: 95%;
     font-size: 20px;
+}
+
+.profile-card{
+    margin-top: -10px;
+    border-radius: 35px;
+}
+
+.sidenavBtn {
+    padding: 10px;
+    font-family: 'Poppins', sans-serif;
 }
