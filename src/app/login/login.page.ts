@@ -9,7 +9,14 @@ export class LoginPage implements OnInit {
 
   constructor() { }
 
+  passwordType: string = 'password';
+  passwordIcon: string = 'eye';
+
   ngOnInit() {
   }
-
+  
+  hideShowPassword() {
+    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
+    this.passwordIcon = this.passwordIcon === 'eye' ? 'eye-off' : 'eye';
+  }
 }

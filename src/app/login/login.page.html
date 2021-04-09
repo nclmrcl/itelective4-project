@@ -18,13 +18,17 @@
       </div>
       
       <div class="loginForm">
+        <ion-icon class="icon" name="person-circle"></ion-icon>
         <ion-input   class="input" placeholder="Username">
-          <ion-icon class="icon" name="person-circle"></ion-icon>
+     
         </ion-input>
+        <ion-icon class="icon" name="lock-closed"></ion-icon>
+        <ion-input [type]="passwordType" placeholder="Password" class="input" placeholder="Password">
+    
+          
+        </ion-input>
+      <ion-icon class="eye" item-end [name]="passwordIcon" (click)='hideShowPassword()'></ion-icon>
         
-        <ion-input class="input" placeholder="Password">
-          <ion-icon class="icon" name="lock-closed"></ion-icon>
-        </ion-input>
         
         <ion-button class="btn-signin" expand="block" shape="round">Sign in</ion-button>
       </div>
