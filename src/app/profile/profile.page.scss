@@ -7,12 +7,21 @@
     text-align: center;
 }
 
+img {
+    margin-left: 50px;
+}
+
 ion-content {
     --ion-background-color:#228b22;
 }
 
 ion-card {
     --ion-background-color: white;
+}
+
+ion-fab-button {
+    float: right;
+    --background: forestgreen;
 }
 
 .profileContent {

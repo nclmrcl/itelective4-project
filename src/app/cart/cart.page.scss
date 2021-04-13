@@ -44,7 +44,7 @@ p {
 ion-card {
     width: 90%;
     margin: 16px auto 16px auto;
-    --ion-background-color: whitesmoke;
+    --ion-background-color: whitesmoke; 
 }
 
 ion-fab-button {
@@ -73,4 +73,12 @@ ion-content {
 
 .itemName {
     font-size: 16px;
+}
+
+ion-back-button {
+    --color: white;
+}
+
+.cartItemDesc {
+    margin-left: 10px;
 }

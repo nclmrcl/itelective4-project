@@ -23,15 +23,9 @@
           <div class="cartFAB">
             <ion-fab-button [routerLink]="['/cart']"><ion-icon name="cart-sharp"></ion-icon></ion-fab-button>
           </div>
-          <!-- <ion-button shape="round" slot="icon-only"><ion-icon name="cart-sharp"></ion-icon></ion-button> -->
-          <!-- <img src="../../assets/images/cosplayer.png" style="width: 64px; height: 64px;"> -->
         </div>
         </div>
         
-      <!-- <p class="title-label">Categories</p> -->
-      <!-- <div class="imgDiv">
-        <img src="../../assets/images/groceries.png" style="height: 170px;">
-      </div> -->
       <ion-searchbar style="margin-top:-20px;" mode="ios"></ion-searchbar>
 
       <div class="groceryItems">
@@ -98,7 +92,7 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card [routerLink]="['/catproducts']">
           <ion-card-content>
             <img src="../../assets/images/bread.png" style="width: 100px; height: 100px;">
             <p class="category-label">Bread</p>

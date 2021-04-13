@@ -4,11 +4,11 @@
   <div class="cartContent">
 
     <div class="sidenavBtn">
-      <ion-buttons slot="start">  
-        <ion-menu-button color="light"></ion-menu-button>
-        <p style="font-size: 20px; color: white;">My Cart</p>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/products"></ion-back-button>
+        <p style="font-size: 20px; color: white;">My Cart</p> 
       </ion-buttons>
-     </div> 
+    </div>
 
     <div class="cartItems">
 
@@ -16,52 +16,16 @@
         <img src="../../assets/images/shoppingcartalt.png" style="width: 75%; height: 75%;">
       </div>
 
-      <ion-card>
+      <ion-card *ngFor = "let cartItem of cardContent">
         <ion-card-content>
           <div class="cartItem">
-            <img src="../../assets/images/hotdog.png" style="width: 64px; height: 64px;">
+            <img src="https://via.placeholder.com/100">
             <div class="cartItemDesc">
-              <p class="itemName">Purefoods Hotdog 1kg</p>
-              <p>₱ 124.00</p>
+              <p class="itemName">{{ cartItem.itemName}}</p>
+              <p>₱ {{ cartItem.itemPrice}}</p>
               <div class="quantityDecInc">
                 <ion-fab-button size="small"><ion-icon name="remove-sharp"></ion-icon></ion-fab-button>
                 <p>1</p>
-                <ion-fab-button size="small"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
-                <ion-fab-button size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card>
-        <ion-card-content>
-          <div class="cartItem">
-            <img src="../../assets/images/safeguard.png" style="width: 64px; height: 64px;">
-            <div class="cartItemDesc">
-              <p class="itemName">Safeguard White 80g</p>
-              <p>₱ 59.00</p>
-              <div class="quantityDecInc">
-                <ion-fab-button size="small"><ion-icon name="remove-sharp"></ion-icon></ion-fab-button>
-                <p>1</p>
-                <ion-fab-button size="small"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
-                <ion-fab-button size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
-              </div>
-            </div>
-          </div>
-        </ion-card-content>
-      </ion-card>
-
-      <ion-card>
-        <ion-card-content>
-          <div class="cartItem">
-            <img src="../../assets/images/megasardines.png" style="width: 64px; height: 64px;">
-            <div class="cartItemDesc">
-              <p class="itemName">Mega Sardines 155g</p>
-              <p>₱ 17.6</p>
-              <div class="quantityDecInc">
-                <ion-fab-button size="small"><ion-icon name="remove-sharp"></ion-icon></ion-fab-button>
-                <p>13</p>
                 <ion-fab-button size="small"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
                 <ion-fab-button size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
               </div>

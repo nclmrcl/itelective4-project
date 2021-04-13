@@ -1,0 +1,62 @@
+ion-content {
+    --ion-background-color:#228b22;
+}
+
+.categoryProducts {
+    padding: 15px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height:100vh;
+}
+
+.categoryItem {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid forestgreen;
+    border-radius: 20px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 15px;
+}
+
+.categoryItemImage {
+    display: flex;
+    align-items: center;
+}
+
+.categoryItemDesc {
+    text-align: right;
+}
+
+.categoryItems {
+    padding: 10px;
+}
+
+.catItemFirstHalf {
+    display: flex;
+}
+
+.catItemSecondHalf {
+    margin-top: 10px;
+}
+
+.header {
+    font-size: 16px;
+    margin-left: 8px;
+}
+
+ion-back-button {
+    --color: white;
+}
+
+.sidenavBtn {
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.viewDetailsBtn {
+    font-family: 'Poppins', sans-serif;
+    --border-color: forestgreen;
+    color: forestgreen;
+}

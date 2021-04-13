@@ -1,0 +1,45 @@
+<ion-content>
+
+  <div class="sidenavBtn">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/products"></ion-back-button>
+      <p style="font-size: 20px; color: white;">Breads</p> 
+    </ion-buttons>
+  </div>
+
+  <div class="categoryProducts">
+
+    <div class="categoryItems">
+      
+      <div class="categoryItem" *ngFor = "let item of cardContent">
+
+        <div class="catItemFirstHalf">
+
+          <div class="categoryItemImage">
+            <img src="https://via.placeholder.com/150">
+          </div>
+  
+          <div class="categoryItemDesc">
+            <p class="header">{{ item.itemName }}</p>
+            <p>₱ {{ item.itemPrice }}</p>
+          </div>
+
+        </div>
+
+        <div class="catItemSecondHalf">
+
+          <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline">
+            <ion-icon name="eye" style="color: forestgreen; margin-right: 10px;"></ion-icon>
+            View Details
+          </ion-button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</ion-content>
