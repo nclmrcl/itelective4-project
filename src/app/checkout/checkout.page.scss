@@ -1,0 +1,96 @@
+.sidenavBtn {
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-content {
+    --ion-background-color:#228b22;
+}
+
+ion-back-button {
+    --color: white;
+}
+
+.checkoutContainer {
+    padding: 15px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height: 100vh;
+}
+
+.checkoutImg {
+    display: flex;
+    justify-content: center;
+} 
+
+.coloredCard {
+    // background-color: rgb(34, 139, 34, 0.6);
+    border: 1.5px solid #228b22;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 95%;
+    margin: 15px auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.pmentMethod {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+ion-radio {
+    --color-checked: forestgreen;
+    --color: forestgreen;
+}
+
+ion-label {
+    color: dimgray;
+}
+
+.header {
+    font-size: 22px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subheader {
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.icon {
+    font-size: 22px;
+    color: forestgreen;
+    vertical-align: -4px;
+}
+
+.totalPriceDiv {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.placeOrderBtn {
+    --background: #228b22;
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+    font-size: 20px;
+}
+
+.information {
+    border: 1.5px solid rgb(0,191,255);
+    background-color: rgb(0,191,255, 0.1);
+    border-radius: 20px;
+    color: dimgray;
+    text-align: justify;
+    padding: 15px;
+    width: 95%;
+    margin: 0 auto;
+}

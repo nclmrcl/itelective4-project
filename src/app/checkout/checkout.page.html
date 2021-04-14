@@ -1,0 +1,52 @@
+<ion-content>
+
+  <div class="sidenavBtn">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/cart"></ion-back-button>
+      <p style="font-size: 20px; color: white;">Checkout</p>
+    </ion-buttons>
+  </div>
+
+  <div class="checkoutContainer">
+
+    <div class="checkoutImg">
+      <img src="../../assets/images/payment.png">
+    </div>
+
+    <div class="coloredCard">
+      <p class="header">Delivery Information</p>
+      <p class="body"><ion-icon name="person-circle" class="icon"></ion-icon> Juan Dela Cruz</p>
+      <p class="body"><ion-icon name="location" class="icon"></ion-icon> 1234 Yonip Street Sta. Rita Olongapo City</p>
+      <p class="body"><ion-icon name="call" class="icon"></ion-icon> 09123456789</p>
+    </div>
+
+    <div class="coloredCard">
+      <p class="header">Mode of payment</p>
+      <div class="pmentMethod">
+        <ion-label class="body">Cash on Delivery</ion-label>
+        <ion-radio-group value="Cash on Delivery">
+          <ion-radio slot="end" value="Cash on Delivery" disabled></ion-radio>
+        </ion-radio-group>
+      </div>
+    </div>
+
+    <div class="infoMsgContainer">
+      <div class="information">
+        <p class="subheader" style="color: black;">Important Information</p>
+        <p class="body">As of now, Go-cery only has cash on delivery as its mode of payment, other modes are expected to be implemented in the future. Stay tuned!</p>
+      </div>
+    </div>
+
+    <div class="totalPriceDiv">
+      <p class="subheader">Total Price</p>
+      <p class="subheader"><b>₱ 609.00</b></p>
+    </div>
+
+    <div class="placeOrderButton">
+      <ion-button class="placeOrderBtn" shape="round" expand="full"><ion-icon name="bag-check" style="color: white; margin-right: 8px;"></ion-icon> Place Order</ion-button>
+    </div>
+    
+  </div>
+
+  
+</ion-content>
