@@ -6,7 +6,7 @@
       <img src="../assets/images/templogo.png">
     </div>
     
-    <ion-content  color="white">  
+    <ion-content  color="white" mode="md">  
       
       <ion-menu-toggle  auto-hide="true">
         <ion-list lines="none">
@@ -17,6 +17,10 @@
           <ion-item [routerLink]="['/profile']">
             <ion-icon name="person-circle" slot="start"></ion-icon>
             <ion-label class="poppins">Profile</ion-label>
+          </ion-item>
+          <ion-item [routerLink]="['/myorders']">
+            <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+            <ion-label class="poppins">My Orders</ion-label>
           </ion-item>
           <ion-item>
             <ion-icon name="settings" slot="start"></ion-icon>

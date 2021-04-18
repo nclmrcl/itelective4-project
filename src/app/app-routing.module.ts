@@ -43,6 +43,10 @@ const routes: Routes = [
     path: 'checkout',
     loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
   },
+  {
+    path: 'myorders',
+    loadChildren: () => import('./myorders/myorders.module').then( m => m.MyordersPageModule)
+  },
 ];
 
 @NgModule({

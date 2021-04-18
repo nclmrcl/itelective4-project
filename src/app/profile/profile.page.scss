@@ -17,6 +17,8 @@ ion-content {
 
 ion-card {
     --ion-background-color: white;
+    border-radius: 30px;
+    margin-top: -25px;
 }
 
 ion-fab-button {
@@ -71,8 +73,7 @@ h1 {
 }
 
 .profile-card{
-    margin-top: -10px;
-    border-radius: 35px;
+    padding: 15px;
 }
 
 .sidenavBtn {

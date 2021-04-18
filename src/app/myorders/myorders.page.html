@@ -1,0 +1,110 @@
+
+<ion-content mode="md">
+
+  <div class="sidenavBtn">
+    <ion-buttons slot="start">  
+      <ion-menu-button color="light"></ion-menu-button>
+      <p style="font-size: 20px; color: white;">My Orders</p> 
+    </ion-buttons> 
+  </div>
+
+    <div class="myOrders">
+
+      <div class="myOrdersContent">
+
+        <div class="myOrdersSegment">
+          <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)">
+            <ion-segment-button value="completedOrders" checked>
+              <ion-label>Completed</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="pendingOrders">
+              <ion-label>Pending</ion-label>
+            </ion-segment-button>
+          </ion-segment>
+        </div>
+  
+        <div class="segmentContent" [ngSwitch]="type">
+          <div class="completedSegment" *ngSwitchCase="'completedOrders'">
+            <div class="deliveredImg">
+              <img src="../../assets/images/delivered.png">
+            </div>
+  
+            <div class="outline-border">
+              <div class="flexData">
+                <p class="dataHeader">Order ID</p>
+                <p class="orderData">1</p>
+              </div>
+  
+              <div class="flexData">
+                <p class="dataHeader">Order Date</p>
+                <p class="orderData">05-12-2019</p>
+              </div>
+  
+              <div class="flexData">
+                <p class="dataHeader">Total Price</p>
+                <p class="orderData">₱ 554.00</p>
+              </div>
+  
+              <div class="flexData">
+                <p class="dataHeader">Payment Method</p>
+                <p class="orderData">COD</p>
+              </div>
+  
+              <div class="flexData">
+                <p class="dataHeader">Status</p>
+                <p class="orderData" style="color: forestgreen;">Delivered</p>
+              </div>
+  
+              <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline">
+                <ion-icon name="eye"></ion-icon>
+                View Details
+              </ion-button>
+            </div>
+  
+          </div>
+  
+          <div class="pendingSegment" *ngSwitchCase="'pendingOrders'">
+            <div class="pendingImg">
+              <img src="../../assets/images/pending.png">
+              <div class="outline-border">
+                
+                <div class="flexData">
+                  <p class="dataHeader">Order ID</p>
+                  <p class="orderData">1</p>
+                </div>
+    
+                <div class="flexData">
+                  <p class="dataHeader">Order Date</p>
+                  <p class="orderData">05-12-2019</p>
+                </div>
+    
+                <div class="flexData">
+                  <p class="dataHeader">Total Price</p>
+                  <p class="orderData">₱ 554.00</p>
+                </div>
+    
+                <div class="flexData">
+                  <p class="dataHeader">Payment Method</p>
+                  <p class="orderData">COD</p>
+                </div>
+  
+                <div class="flexData">
+                  <p class="dataHeader">Status</p>
+                  <p class="orderData" style="color: orangered;">To Receive</p>
+                </div>
+
+                <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline">
+                  <ion-icon name="checkmark-circle"></ion-icon>
+                  Order Delivered
+                </ion-button>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+
+      </div>
+
+    </div>
+
+</ion-content>
