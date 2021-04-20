@@ -32,10 +32,8 @@ ion-label {
     margin-top: -10px;
 }
 
-.deliveredImg {
-    width: 75%;
-    height: 75%;
-    margin: 0 auto;
+.img-container {
+    margin-top:25px;
 }
 
 .outline-border {
@@ -43,6 +41,12 @@ ion-label {
     border-radius: 20px;
     font-family: 'Poppins', sans-serif;
     padding: 10px;
+}
+
+.viewDetailsBtn{
+    color:white;
+    background-color: forestgreen;
+    border-radius: 25px;
 }
 
 .flexData {
