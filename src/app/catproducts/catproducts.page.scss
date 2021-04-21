@@ -58,6 +58,8 @@ ion-back-button {
 .viewDetailsBtn {
     font-family: 'Poppins', sans-serif;
     --border-color: forestgreen;
-    color: forestgreen;
+    color: white;
+    background-color: forestgreen;
     font-size: 16px;
+    border-radius: 25px;
 }

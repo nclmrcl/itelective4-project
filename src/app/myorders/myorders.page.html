@@ -14,18 +14,19 @@
 
         <div class="myOrdersSegment">
           <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)">
-            <ion-segment-button value="completedOrders" checked>
-              <ion-label>Completed</ion-label>
-            </ion-segment-button>
+         
             <ion-segment-button value="pendingOrders">
               <ion-label>Pending</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="completedOrders" checked>
+              <ion-label>Completed</ion-label>
             </ion-segment-button>
           </ion-segment>
         </div>
   
         <div class="segmentContent" [ngSwitch]="type">
           <div class="completedSegment" *ngSwitchCase="'completedOrders'">
-            <div class="deliveredImg">
+            <div class="img-container">
               <img src="../../assets/images/delivered.png">
             </div>
   
@@ -55,8 +56,8 @@
                 <p class="orderData" style="color: forestgreen;">Delivered</p>
               </div>
   
-              <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline">
-                <ion-icon name="eye"></ion-icon>
+              <ion-button class="viewDetailsBtn" shape="round" expand="full" >
+                <ion-icon style="color:white" name="eye"></ion-icon>
                 View Details
               </ion-button>
             </div>
@@ -64,7 +65,7 @@
           </div>
   
           <div class="pendingSegment" *ngSwitchCase="'pendingOrders'">
-            <div class="pendingImg">
+            <div class="img-container">
               <img src="../../assets/images/pending.png">
               <div class="outline-border">
                 
@@ -94,7 +95,7 @@
                 </div>
 
                 <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline">
-                  <ion-icon name="checkmark-circle"></ion-icon>
+                  <ion-icon style="color:white" name="checkmark-circle"></ion-icon>
                   Order Delivered
                 </ion-button>
               </div>
