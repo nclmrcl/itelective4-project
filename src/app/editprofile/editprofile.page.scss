@@ -1,0 +1,21 @@
+ion-content {
+    --ion-background-color:#228b22;
+}
+
+ion-back-button {
+    --color: white;
+}
+
+.sidenavBtn{
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.editProfDiv {
+    padding: 15px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height:100vh;
+    margin-top: -10px;
+}
