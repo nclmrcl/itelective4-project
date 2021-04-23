@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
   {
@@ -7,17 +8,13 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: '',
-    redirectTo: 'products',
-    pathMatch: 'full'
-  },
-  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'products',
-    loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule)
+    loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'register',
