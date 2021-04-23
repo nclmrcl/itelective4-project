@@ -19,8 +19,12 @@ ion-segment {
     --color: forestgreen;
 }
 
-ion-label {
+ion-label, h2, h3, p {
     font-family: 'Poppins', sans-serif;
+}
+
+ion-list {
+    --ion-background-color:white;
 }
 
 .myOrders {
