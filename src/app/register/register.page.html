@@ -1,25 +1,25 @@
 
 <ion-content class="main-container" mode="md">
 
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#228b22" fill-opacity="1" d="M0,160L40,170.7C80,181,160,203,240,181.3C320,160,400,96,480,90.7C560,85,640,139,720,138.7C800,139,880,85,960,96C1040,107,1120,181,1200,218.7C1280,256,1360,256,1400,256L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#1b6f1b;"></path></svg>
-<div class="main-container">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#228b22" fill-opacity="1" d="M0,160L40,170.7C80,181,160,203,240,181.3C320,160,400,96,480,90.7C560,85,640,139,720,138.7C800,139,880,85,960,96C1040,107,1120,181,1200,218.7C1280,256,1360,256,1400,256L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#1b6f1b;"></path></svg>
+  <div class="main-container">
     <ion-slides [options]="slideOpts" pager="true">
-
-          <ion-slide>
-            <div class="questionGraphic">
-              <img class="graphic-image"src="../../assets/images/form.png">
-              <div class="label">
-                <h1>Sign up with Go-cery.</h1>
-                <p>To get things started, let's start with your name.</p>
-                </div>
-                <div class="loginForm">
-                  <ion-input  placeholder="Last Name"></ion-input>
-                  <ion-input placeholder="First Name"></ion-input>
-                  <ion-input placeholder="Middle Name"></ion-input>
-                </div>
+  
+      <ion-slide>
+        <div class="questionGraphic">
+          <img class="graphic-image"src="../../assets/images/form.png">
+          <div class="label">
+            <h1>Sign up with Go-cery.</h1>
+            <p>To get things started, let's start with your name.</p>
             </div>
-            </ion-slide>
-
+            <div class="loginForm">
+              <ion-input [(ngModel)]="acc_lname" placeholder="Last Name"></ion-input>
+              <ion-input [(ngModel)]="acc_fname" placeholder="First Name"></ion-input>
+              <ion-input [(ngModel)]="acc_mname" placeholder="Middle Name"></ion-input>
+            </div>
+        </div>
+      </ion-slide>
+  
       <ion-slide>
         <div class="questionGraphic">
           <img class="graphic-image" src="../../assets/images/question.png">
@@ -29,13 +29,12 @@
           <div class="loginForm">
             <ion-item>
               <ion-label>MM DD YY</ion-label>
-              <ion-datetime displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+              <ion-datetime [(ngModel)]="acc_birthdate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
             </ion-item>
-            <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
           </div>
         </div>
       </ion-slide>
-
+  
       <ion-slide>
         <div class="questionGraphic">
           <img class="graphic-image" src="../../assets/images/address.png">
@@ -43,9 +42,9 @@
           <p>Where do you live?</p>
         </div>
           <div class="loginForm">
-            <ion-input placeholder="House Number"></ion-input>
-            <ion-input placeholder="Street"></ion-input>
-            <ion-select placeholder="Barangay" ok-text="SELECT">
+            <ion-input [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
+            <ion-input [(ngModel)]="acc_street" placeholder="Street"></ion-input>
+            <ion-select [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
             <ion-select-option value="ASINAN">ASINAN</ion-select-option>
             <ion-select-option value="BANICAIN">BANICAIN</ion-select-option>
             <ion-select-option value="BARRETTO">BARRETTO</ion-select-option>
@@ -63,41 +62,39 @@
             <ion-select-option value="WEST BAJAC BAJAC">WEST BAJAC BAJAC</ion-select-option>
             <ion-select-option value="WEST TAPINAC">WEST TAPINAC</ion-select-option>
             </ion-select>
-            <ion-input placeholder="City" value="OLONGAPO CITY" disabled></ion-input>
-            <ion-input placeholder="Province" value="ZAMBALES" disabled></ion-input>
+            <ion-input [(ngModel)]="acc_city" disabled></ion-input>
+            <ion-input [(ngModel)]="acc_province" disabled></ion-input>
         </div>
         </div>
       </ion-slide>
-  
-      <ion-slide>
-        <div class="questionGraphic">
-          <img  class="graphic-image" src="../../assets/images/gender.png">
-          <div class="questions">
-          <p>Select your Gender.</p>
-        </div>
-          <div class="loginForm">
-            <ion-list lines="none">
-              <ion-radio-group value="male">
-
-                <ion-item>
-                  <ion-label>Male</ion-label>
-                  <ion-radio slot="start" value="male"></ion-radio>
-                </ion-item>
-            
-                <ion-item>
-                  <ion-label>Female</ion-label>
-                  <ion-radio slot="start" value="female"></ion-radio>
-                </ion-item>
-
-              </ion-radio-group>
-            </ion-list>
+    
+        <ion-slide>
+          <div class="questionGraphic">
+            <img  class="graphic-image" src="../../assets/images/gender.png">
+            <div class="questions">
+            <p>Select your Gender.</p>
+            <div class="loginForm">
+              <ion-list lines="none">
+                <ion-radio-group [(ngModel)]="acc_gender" value="male">
+                  <ion-item>
+                    <ion-label>Male</ion-label>
+                      <ion-radio slot="start" value="1"></ion-radio>
+                    </ion-item>
+      
+                  <ion-item>
+                    <ion-label>Female</ion-label>
+                      <ion-radio slot="start" value="2"></ion-radio>
+                        </ion-item>
+                      </ion-radio-group>
+                    </ion-list>
+              </div>
           </div>
           </div>
         </ion-slide>
 
         <ion-slide >
           <div class="questionGraphic">
-            <img class="graphic-image"  src="../../assets/images/contactnum.png">
+            <img class="graphic-image"  src="../../assets/images/contactnum.png" style="margin-bottom: 10px;">
             <div class="questions">
               <p>To contact you about your orders, please provide your phone number.</p>
               <div class="loginForm">
@@ -107,53 +104,49 @@
           </div>
         </ion-slide>
         
-      <ion-slide>
-        <div class="questionGraphic">
-          <img class="graphic-image"  src="../../assets/images/emailaddress.png">
-          <div class="questions">
-          <p>To send updates to you via email, we also need your email address.</p>
-          <div class="loginForm">
-            <ion-input placeholder="Email Address"></ion-input>
-          </div>
-          </div>
-        </div>
-      </ion-slide>
-  
-        <ion-slide>
+        <ion-slide >
           <div class="questionGraphic">
-            <img  class="graphic-image"  src="../../assets/images/unamepword.png">
+            <img class="graphic-image"  src="../../assets/images/emailaddress.png">
             <div class="questions">
-            <p>Set your desired username and password that you can later use to sign in to Go-cery.</p>
-            </div>
+            <p>To send updates to you via email, we also need your email address.</p>
             <div class="loginForm">
-              <ion-input  placeholder="Username"></ion-input>
-              <ion-input  placeholder="Password"></ion-input>
-    
-              <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+              <ion-input [(ngModel)]="acc_email" placeholder="Email Address"></ion-input>
+            </div>
             </div>
           </div>
-      </ion-slide>
-
-      <ion-slide >
-        <div class="questionGraphic">
-          <img class="graphic-image" src="../../assets/images/acceptprivacypolicy.png">
-          <div class="label">
-          <h1>Accept terms.</h1>
-          <div class="termsCheckbox">
-            <ion-checkbox></ion-checkbox>
-            <p>I hereby agree to the terms, conditions, and privacy policy of Go-cery.</p>
-          </div>
-          </div>
-
-          <div class="label" style="margin-top: 90px;">
-            <p>Click the button below to complete your registration with Go-cery.</p>
+        </ion-slide>
+    
+          <ion-slide>
+            <div class="questionGraphic">
+              <img  class="graphic-image"  src="../../assets/images/unamepword.png">
+              <div class="questions">
+              <p>Set your desired username and password that you can later use to sign in to Go-cery.</p>
+              </div>
+              <div class="loginForm">
+                <ion-input [(ngModel)]="acc_username" placeholder="Username"></ion-input>
+                <ion-input [(ngModel)]="acc_password" type="password" placeholder="Password"></ion-input>
+              </div>
+            </div>
+        </ion-slide>
+  
+        <ion-slide >
+          <div class="questionGraphic">
+            <img class="graphic-image" src="../../assets/images/acceptprivacypolicy.png">
+            <div class="label">
+            <h1>Accept terms.</h1>
+            <div class="termsCheckbox">
+              <ion-checkbox></ion-checkbox>
+              <p>I hereby agree to the terms, conditions, and privacy policy of Go-cery.</p>
+            </div>
             </div>
   
-            <ion-button class="registerBtn" shape="round" expand="block">Register</ion-button>
-          <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
-        </div>
-      </ion-slide>
-
+            <div class="label" style="margin-top: 90px;">
+              <p>Click the button below to complete your registration with Go-cery.</p>
+              <ion-button (click)="register()" class="registerBtn" shape="round" expand="block">Register</ion-button>
+            </div>
+          </div>
+        </ion-slide>
+        
       <ion-slide >
         <div class="questionGraphic">
           <img class="graphic-image"  src="../../assets/images/otp.png">
@@ -164,31 +157,17 @@
           <div class="loginForm">
             <ion-input placeholder="OTP"></ion-input>
           </div>
-          </div>
-      </ion-slide>
-
-      <!-- <ion-slide >
-        <div class="questionGraphic">
-          <img class="graphic-image" src="../../assets/images/finishregister.png">
-          <div class="label">
-          <h1>Final touches.</h1>
-          <p>Click the button below to complete your registration with Go-cery.</p>
-          </div>
-
-          <ion-button class="registerBtn" shape="round" expand="block">Register</ion-button>
         </div>
-      </ion-slide> -->
+      </ion-slide>
+  </ion-slides>
 
-    </ion-slides>
-
-    <div class="reg-button">
-        <ion-fab-button class="backButton">
-          <ion-icon name="chevron-back-sharp"></ion-icon>
-        </ion-fab-button>
-      <ion-fab-button class="nextButton"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-fab-button>
-      <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
-    </div>
+  <div class="reg-button">
+    <ion-fab-button class="backButton">
+      <ion-icon name="chevron-back-sharp"></ion-icon>
+    </ion-fab-button>
+  <ion-fab-button class="nextButton"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-fab-button>
+  <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
+  </div>
 
 </div>
-
 </ion-content>

@@ -19,18 +19,17 @@
       
       <div class="loginForm">
         <ion-icon class="icon" name="person-circle"></ion-icon>
-        <ion-input   class="input" placeholder="Username">
+        <ion-input [(ngModel)]="acc_username" class="input" placeholder="Username">
      
         </ion-input>
         <ion-icon class="icon" name="lock-closed"></ion-icon>
-        <ion-input [type]="passwordType" placeholder="Password" class="input" placeholder="Password">
-    
+        <ion-input [(ngModel)]="acc_password" [type]="passwordType" placeholder="Password" class="input" placeholder="Password">
           
         </ion-input>
       <ion-icon class="eye" item-end [name]="passwordIcon" (click)='hideShowPassword()'></ion-icon>
         
         
-        <ion-button class="btn-signin" expand="block" shape="round">Sign in</ion-button>
+        <ion-button (click)="login()" class="btn-signin" expand="block" shape="round">Sign in</ion-button>
       </div>
     
       <p style="margin-top: 10px; text-align: center; font-family: 'Poppins', sans-serif;">New to Go-cery? 
