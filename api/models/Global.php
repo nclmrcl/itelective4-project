@@ -19,6 +19,19 @@
 				}
 			}
 
+			if($table == "tbl_products") {
+				if($filter_data != null) {
+					$this->sql .= " WHERE product_category='$filter_data'";
+				}
+			}
+
+			if($table == "tbl_cart") {
+				if($filter_data != null) {
+					$this->sql .= " LEFT JOIN tbl_products ON tbl_cart.product_id = tbl_products.product_id 
+						WHERE tbl_cart.acc_id=$filter_data";
+				}
+			}
+
 			$data = array(); $code = 0; $msg= ""; $remarks = "";
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchAll()) {

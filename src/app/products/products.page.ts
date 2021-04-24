@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-products',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductsPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, private ds: DataService) { }
 
   ngOnInit() {
   }
 
+  category(cat: string) {
+    this.ds.SharedData = cat;
+    this.router.navigate(['/catproducts']);
+  }
 }

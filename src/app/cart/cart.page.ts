@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,28 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartPage implements OnInit {
 
-  cardContent: any = [
-    {
-      itemName: 'Bounty Chicken Nuggets 200G',
-      itemPrice: 75.00
-    },
-    {
-      itemName: 'Bounty Fresh Saucy Torikaraage Teriyaki 450G',
-      itemPrice: 199.00
-    },
-    {
-      itemName: 'Carnation Hash Brown 10S',
-      itemPrice: 175.00
-    },
-    {
-      itemName: 'Fat & Thin Premium Chinese Sausage 300G',
-      itemPrice: 160.00
-    }
-  ];
-
-  constructor() { }
+  constructor(private ds: DataService, private router: Router, private user: UserService) { }
 
   ngOnInit() {
+    this.getCart();
   }
 
+  dt: any[] = [];
+
+  getCart() {
+    let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
+    this.ds.sendApiRequest("cart/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
+      this.dt = data.payload;
+      console.log(this.dt)
+    });
+  }
 }

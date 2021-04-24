@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-catproducts',
@@ -26,9 +28,24 @@ export class CatproductsPage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private ds: DataService, private router: Router) { }
 
   ngOnInit() {
+    this.categoryProducts();
   }
 
+  catName: any = this.ds.SharedData;
+  dt: any[] = [];
+
+  categoryProducts() {
+    this.ds.sendApiRequest("products/" + this.catName, null).subscribe((data: { payload: any[]; }) => {
+      this.dt = data.payload;
+      console.log(this.dt)
+    });
+  }
+
+  viewProduct(id) {
+    this.ds.productId = id;
+    this.router.navigate(['productdescription']);
+  }
 }

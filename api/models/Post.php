@@ -6,16 +6,12 @@
 			$this->pdo = $pdo;
 		}
 
-		public function pullMaleResidents($table, $filter_data) {
+		public function productDescrition($table, $filter_data) {
 
-			$this->sql = "SELECT res_gender FROM $table";
+			$this->sql = "SELECT * FROM $table";
 
-			if($table == "tbl_profiling_residents") {
-				$this->sql .= " WHERE res_status=1";
-
-				if($filter_data != null) {
-					$this->sql .= " AND res_gender=1";
-				}
+			if($filter_data != null) {
+				$this->sql .= " WHERE product_id=$filter_data";
 			}
 
 			$data = array(); $code = 0; $msg= ""; $remarks = "";

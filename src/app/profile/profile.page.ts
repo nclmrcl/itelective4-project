@@ -17,7 +17,7 @@ export class ProfilePage implements OnInit {
   dt: any[] = [];
   getUserProfile() {
     let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
-    this.ds.sendApiRequest("accounts/", pload.id).subscribe((data: { payload: any[]; }) => {
+    this.ds.sendApiRequest("accounts/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
       this.dt = data.payload;
       console.log(this.dt)
     });

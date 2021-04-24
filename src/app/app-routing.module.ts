@@ -4,17 +4,12 @@ import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'products',
-    loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule),
-    canActivate: [GuardGuard]
+    loadChildren: () => import('./products/products.module').then( m => m.ProductsPageModule)
   },
   {
     path: 'register',
@@ -22,11 +17,13 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule)
+    loadChildren: () => import('./cart/cart.module').then( m => m.CartPageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'catproducts',
@@ -38,15 +35,18 @@ const routes: Routes = [
   },
   {
     path: 'checkout',
-    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule)
+    loadChildren: () => import('./checkout/checkout.module').then( m => m.CheckoutPageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'myorders',
-    loadChildren: () => import('./myorders/myorders.module').then( m => m.MyordersPageModule)
+    loadChildren: () => import('./myorders/myorders.module').then( m => m.MyordersPageModule),
+    canActivate: [GuardGuard]
   },
   {
     path: 'editprofile',
-    loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule)
+    loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule),
+    canActivate: [GuardGuard]
   },
 ];
 

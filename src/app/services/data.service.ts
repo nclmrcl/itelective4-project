@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-
+  productId: any
   SharedData: any
   baseURL: string = "http://localhost/itelective4-project/api/";
   constructor(private http: HttpClient) { }

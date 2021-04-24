@@ -16,16 +16,16 @@
         <img src="../../assets/images/shoppingcartalt.png" style="width: 75%; height: 75%;">
       </div>
 
-      <ion-card *ngFor = "let cartItem of cardContent">
+      <ion-card *ngFor = "let cartItem of dt">
         <ion-card-content>
           <div class="cartItem">
             <img src="https://via.placeholder.com/100">
             <div class="cartItemDesc">
-              <p class="itemName">{{ cartItem.itemName}}</p>
-              <p>₱ {{ cartItem.itemPrice}}</p>
+              <p class="itemName">{{ cartItem.product_name}}</p>
+              <p>₱ {{ cartItem.product_price}}</p>
               <div class="quantityDecInc">
                 <ion-fab-button size="small"><ion-icon name="remove-sharp"></ion-icon></ion-fab-button>
-                <p>1</p>
+                <p> {{ cartItem.cart_quantity }}</p>
                 <ion-fab-button size="small"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
                 <ion-fab-button size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
               </div>

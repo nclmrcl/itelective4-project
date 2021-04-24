@@ -16,8 +16,8 @@
   </div>
 
   <div class="productDetailsContainer">
-    <div class="productDetails" *ngFor = "let item of cardContent">
-      <p class="header">{{ item.itemName }}</p>
+    <div class="productDetails" *ngFor = "let item of dt">
+      <p class="header">{{ item.product_name }}</p>
 
       <div class="stars">
         <ion-icon name="star"></ion-icon>
@@ -28,14 +28,14 @@
       </div>
 
       <div class="weightPriceDiv">
-        <p class="subheader"> {{ item.itemWeight }}</p>
-        <p class="subheader">₱ {{ item.itemPrice }}</p>
+        <!-- <p class="subheader"> {{ item.itemWeight }}</p> -->
+        <p class="subheader">₱ {{ item.product_price }}</p>
       </div>
       <p class="subheader">Product Description</p>
-      <p class="body" style="text-align: justify; color: dimgray;"> {{ item.itemDesc }}</p>
+      <p class="body" style="text-align: justify; color: dimgray;"> {{ item.product_desc }}</p>
 
       <div class="addToCartButton">
-        <ion-button class="addToCartBtn" shape="round" expand="full"><ion-icon name="cart" style="color: white; margin-right: 8px;"></ion-icon> Add to Cart</ion-button>
+        <ion-button (click)="addToCart(item.product_id)" class="addToCartBtn" shape="round" expand="full"><ion-icon name="cart" style="color: white; margin-right: 8px;"></ion-icon> Add to Cart</ion-button>
       </div>
     </div>
   </div>

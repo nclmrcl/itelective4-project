@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-productdescription',
@@ -16,9 +18,32 @@ export class ProductdescriptionPage implements OnInit {
     }
   ];
 
-  constructor() { }
+  constructor(private ds: DataService, private router: Router) { }
 
   ngOnInit() {
+    this.productDetails();
   }
 
+  dt: any[] = [];
+
+  productDetails() {
+    this.ds.sendApiRequest("productDesc/" + this.ds.productId, null).subscribe((data: { payload: any[]; }) => {
+      this.dt = data.payload;
+      console.log(this.dt)
+    });
+  }
+
+  cartContent: any = {};
+
+  addToCart(id) {
+    let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
+
+    this.cartContent.acc_id = pload.id;
+    this.cartContent.product_id = id;
+    
+    console.log(this.cartContent)
+    this.ds.sendApiRequest("addToCart/", this.cartContent).subscribe((data: { payload: any[]; }) => {
+      console.log('Success')
+    });
+  }
 }

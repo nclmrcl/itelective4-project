@@ -29,78 +29,76 @@
       <ion-searchbar style="margin-top:-20px;" mode="ios"></ion-searchbar>
 
       <div class="groceryItems">
-        <ion-card>
+        <ion-card button (click)="category('Meat')">
           <ion-card-content>
             <img src="../../assets/images/meat.png" style="width: 100px; height: 100px;">
             <p class="category-label">Meat</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Vegetables')">
           <ion-card-content>
             <img src="../../assets/images/cabbage.png" style="width: 100px; height: 100px;">
             <p class="category-label">Vegetables</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Seafood')">
           <ion-card-content>
             <img src="../../assets/images/shrimp.png" style="width: 100px; height: 100px;">
             <p class="category-label">Seafood</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Personal Care')">
           <ion-card-content>
             <img src="../../assets/images/soap.png" style="width: 100px; height: 100px;">
             <p class="category-label">Personal Care</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Beverages')">
           <ion-card-content>
             <img src="../../assets/images/drinks.png" style="width: 100px; height: 100px;">
             <p class="category-label">Beverages</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Canned Goods')">
           <ion-card-content>
             <img src="../../assets/images/canned-food.png" style="width: 100px; height: 100px;">
             <p class="category-label">Canned Goods</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Dairy')">
           <ion-card-content>
             <img src="../../assets/images/dairy.png" style="width: 100px; height: 100px;">
             <p class="category-label">Dairy</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Cleaners')">
           <ion-card-content>
             <img src="../../assets/images/detergent.png" style="width: 100px; height: 100px;">
             <p class="category-label">Cleaners</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card button (click)="category('Fruits')">
           <ion-card-content>
             <img src="../../assets/images/bananas.png" style="width: 100px; height: 100px;">
             <p class="category-label">Fruits</p>
           </ion-card-content>
         </ion-card>
 
-        <ion-card [routerLink]="['/catproducts']">
+        <ion-card button (click)="category('Bread')">
           <ion-card-content>
             <img src="../../assets/images/bread.png" style="width: 100px; height: 100px;">
             <p class="category-label">Bread</p>
           </ion-card-content>
         </ion-card>
-
     </div>
-
   </div>
 
 </ion-content>

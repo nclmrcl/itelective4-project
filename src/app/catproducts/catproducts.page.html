@@ -3,7 +3,7 @@
   <div class="sidenavBtn">
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/products"></ion-back-button>
-      <p style="font-size: 20px; color: white;">Breads</p> 
+      <p style="font-size: 20px; color: white;">{{ catName }}</p> 
     </ion-buttons>
   </div>
 
@@ -13,7 +13,7 @@
 
     <div class="categoryItems">
       
-      <div class="categoryItem" *ngFor = "let item of cardContent">
+      <div class="categoryItem" *ngFor = "let item of dt">
 
         <div class="catItemFirstHalf">
 
@@ -22,15 +22,15 @@
           </div>
   
           <div class="categoryItemDesc">
-            <p class="header">{{ item.itemName }}</p>
-            <p>₱ {{ item.itemPrice }}</p>
+            <p class="header">{{ item.product_name }}</p>
+            <p>₱ {{ item.product_price }}</p>
           </div>
 
         </div>
 
         <div class="catItemSecondHalf">
 
-          <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline" [routerLink]="['/productdescription']">
+          <ion-button class="viewDetailsBtn" shape="round" expand="full" fill="outline" (click)="viewProduct(item.product_id)">
             <ion-icon name="eye" style="color: white; margin-right: 10px;"></ion-icon>
             View Details
           </ion-button>
