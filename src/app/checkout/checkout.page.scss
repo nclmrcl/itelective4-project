@@ -82,6 +82,8 @@ ion-label {
     font-family: 'Poppins', sans-serif;
     height: 50px;
     font-size: 20px;
+    width:95%;
+    margin: 0 auto;
 }
 
 .information {
@@ -93,4 +95,8 @@ ion-label {
     padding: 15px;
     width: 95%;
     margin: 0 auto;
+}
+
+.information > p {
+    margin: 0;
 }

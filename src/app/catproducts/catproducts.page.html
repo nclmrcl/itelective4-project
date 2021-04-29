@@ -9,11 +9,11 @@
 
   <div class="categoryProducts">
 
-    <ion-searchbar style="margin-top: 5px;" mode="ios"></ion-searchbar>
+    <ion-searchbar style="margin-top: 5px;" mode="ios" [(ngModel)]="term"></ion-searchbar>
 
     <div class="categoryItems">
       
-      <div class="categoryItem" *ngFor = "let item of dt">
+      <div class="categoryItem" *ngFor = "let item of dt | filter:term">
 
         <div class="catItemFirstHalf">
 

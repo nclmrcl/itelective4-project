@@ -24,7 +24,7 @@
   
       <div class="outlineborder">
         <p class="header"><ion-icon name="calendar-number-outline" class="icon"></ion-icon><strong>Date of Birth </strong></p>
-        <p style="text-align: right;">{{ data.acc_birthdate }}</p>
+        <p style="text-align: right;">{{ data.acc_birthdate | date:'longDate'}}</p>
       </div>
   
       <div class="outlineborder">
@@ -43,6 +43,11 @@
       <div class="outlineborder">
         <p class="header"><ion-icon name="mail-outline" class="icon"></ion-icon><strong>Email Address</strong></p>
         <p style="text-align: right;">{{ data.acc_email }}</p>
+      </div>
+
+      <div class="outlineborder">
+        <p class="header"><ion-icon name="call-outline" class="icon"></ion-icon><strong>Contact Number</strong></p>
+        <p style="text-align: right;">{{ data.acc_mobile }}</p>
       </div>
   
       <div class="outlineborder">

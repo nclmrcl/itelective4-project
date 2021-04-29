@@ -1,0 +1,71 @@
+ion-input {
+	background-color: #EDEDED;
+	height: 50px;
+	margin: 5px auto;
+	border-radius: 25px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	width: 95%;
+}
+
+h1,
+p {
+	font-family: 'Poppins', sans-serif;
+	text-align: left;
+}
+
+.questionGraphic {
+	padding: 15px;
+}
+
+.main-container {
+	padding-bottom: 20px;
+}
+
+.questionGraphic {
+	width: auto;
+	height: 100%;
+	justify-content: center;
+}
+
+.graphic-image {
+	width: 90%;
+	height: 90%;
+	margin-top: -20px;
+	// position: relative;
+}
+
+.label {
+	font-family: 'Poppins', sans-serif;
+	padding:0px 30px;
+	margin-top: -20px;
+	p {
+		margin-top: -10px;
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 22px;
+	}
+}
+
+.loginForm {
+	padding: 15px;
+	margin-top: -15px;
+}
+
+.questions {
+	p {
+		font-family: 'Poppins', sans-serif;
+		padding:0px 30px;
+		text-align: justify;
+	}
+}
+
+.verifyOtpBtn {
+    --background: #228b22;
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+	width: 85%;
+    font-size: 20px;
+	margin: 0 auto;
+}

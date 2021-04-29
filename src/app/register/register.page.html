@@ -22,16 +22,37 @@
   
       <ion-slide>
         <div class="questionGraphic">
-          <img class="graphic-image" src="../../assets/images/question.png">
+          <img  class="graphic-image" src="../../assets/images/gender.png">
           <div class="questions">
-          <p>When is your birthday?</p>
-        </div>
-          <div class="loginForm">
-            <ion-item>
-              <ion-label>MM DD YY</ion-label>
-              <ion-datetime [(ngModel)]="acc_birthdate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
-            </ion-item>
+          <div class="questions">
+            <p>When is your birthday?</p>
           </div>
+            <div class="loginForm">
+              <ion-item>
+                <ion-label>MM DD YY</ion-label>
+                <ion-datetime [(ngModel)]="acc_birthdate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+              </ion-item>
+            </div>
+
+            <div class="questions">
+              <p>Please select your gender.</p>
+              <div class="loginForm">
+                <ion-list lines="none">
+                  <ion-radio-group [(ngModel)]="acc_gender" value="male">
+                    <ion-item>
+                      <ion-label>Male</ion-label>
+                        <ion-radio slot="start" value="1"></ion-radio>
+                      </ion-item>
+        
+                    <ion-item>
+                      <ion-label>Female</ion-label>
+                        <ion-radio slot="start" value="2"></ion-radio>
+                          </ion-item>
+                        </ion-radio-group>
+                      </ion-list>
+                </div>
+            </div>
+        </div>
         </div>
       </ion-slide>
   
@@ -39,7 +60,7 @@
         <div class="questionGraphic">
           <img class="graphic-image" src="../../assets/images/address.png">
           <div class="questions">
-          <p>Where do you live?</p>
+          <p>Please provide your home address.</p>
         </div>
           <div class="loginForm">
             <ion-input [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
@@ -68,54 +89,19 @@
         </div>
       </ion-slide>
     
-        <ion-slide>
+        <ion-slide >
           <div class="questionGraphic">
-            <img  class="graphic-image" src="../../assets/images/gender.png">
+            <img class="graphic-image"  src="../../assets/images/emailcontactnum.png" style="margin-bottom: 10px;">
             <div class="questions">
-            <p>Select your Gender.</p>
-            <div class="loginForm">
-              <ion-list lines="none">
-                <ion-radio-group [(ngModel)]="acc_gender" value="male">
-                  <ion-item>
-                    <ion-label>Male</ion-label>
-                      <ion-radio slot="start" value="1"></ion-radio>
-                    </ion-item>
-      
-                  <ion-item>
-                    <ion-label>Female</ion-label>
-                      <ion-radio slot="start" value="2"></ion-radio>
-                        </ion-item>
-                      </ion-radio-group>
-                    </ion-list>
+              <p>To send updates to you via sms and email, please provide your phone number and email address.</p>
+              <div class="loginForm">
+                <ion-input [(ngModel)]="acc_mobile" placeholder="Contact Number"></ion-input>
+                <ion-input [(ngModel)]="acc_email" placeholder="Email Address"></ion-input>
               </div>
-          </div>
+            </div>
           </div>
         </ion-slide>
 
-        <ion-slide >
-          <div class="questionGraphic">
-            <img class="graphic-image"  src="../../assets/images/contactnum.png" style="margin-bottom: 10px;">
-            <div class="questions">
-              <p>To contact you about your orders, please provide your phone number.</p>
-              <div class="loginForm">
-                <ion-input placeholder="Contact Number"></ion-input>
-              </div>
-            </div>
-          </div>
-        </ion-slide>
-        
-        <ion-slide >
-          <div class="questionGraphic">
-            <img class="graphic-image"  src="../../assets/images/emailaddress.png">
-            <div class="questions">
-            <p>To send updates to you via email, we also need your email address.</p>
-            <div class="loginForm">
-              <ion-input [(ngModel)]="acc_email" placeholder="Email Address"></ion-input>
-            </div>
-            </div>
-          </div>
-        </ion-slide>
-    
           <ion-slide>
             <div class="questionGraphic">
               <img  class="graphic-image"  src="../../assets/images/unamepword.png">
@@ -146,19 +132,7 @@
             </div>
           </div>
         </ion-slide>
-        
-      <ion-slide >
-        <div class="questionGraphic">
-          <img class="graphic-image"  src="../../assets/images/otp.png">
-          <div class="label">
-            <h1>Verification.</h1>
-            <p>Enter the One Time Pin code we sent you so we know its you.</p>
-          </div>
-          <div class="loginForm">
-            <ion-input placeholder="OTP"></ion-input>
-          </div>
-        </div>
-      </ion-slide>
+
   </ion-slides>
 
   <div class="reg-button">
@@ -166,7 +140,6 @@
       <ion-icon name="chevron-back-sharp"></ion-icon>
     </ion-fab-button>
   <ion-fab-button class="nextButton"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-fab-button>
-  <!-- <ion-button shape="round"><ion-icon name="chevron-forward-sharp"></ion-icon></ion-button> -->
   </div>
 
 </div>

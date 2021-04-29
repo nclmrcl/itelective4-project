@@ -25,6 +25,7 @@ export class RegisterPage implements OnInit {
   acc_province: any = 'Zambales';
   acc_gender: any;
   acc_email: any;
+  acc_mobile: any;
   acc_username: any;
   acc_password: any;
   acc_info: any = {};
@@ -41,6 +42,7 @@ export class RegisterPage implements OnInit {
     this.acc_info.acc_province = this.acc_province;
     this.acc_info.acc_gender = this.acc_gender;
     this.acc_info.acc_email = this.acc_email;
+    this.acc_info.acc_mobile = this.acc_mobile;
     this.acc_info.acc_username = this.acc_username;
     this.acc_info.acc_password = this.acc_password;
 

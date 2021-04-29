@@ -10,11 +10,11 @@
 
     <div class="products">
 
-      <div class="productsContent">
+      <div class="productsContent" *ngFor="let data of dt">
         <div class="searchDiv">
           <div class="productTopHeader">
             <div class="greetings">
-              <p style="font-size: 20px;"><b>Hello, Juan Dela Cruz</b></p>
+              <p style="font-size: 20px;"><b>Hello, {{ data.acc_username }}</b></p>
             </div>
             <div class="greetingQuestion" style="margin-top: -20px;">
               <p>What would you like to buy today?</p>
