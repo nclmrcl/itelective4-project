@@ -66,3 +66,13 @@ ion-icon {
 .stars {
     display: flex;
 }
+
+ion-fab-button {
+	--background: white;
+    
+    border-radius: 50%;
+
+    ion-icon{
+        color: forestgreen;
+    }
+}

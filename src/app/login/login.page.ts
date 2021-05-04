@@ -39,8 +39,13 @@ export class LoginPage implements OnInit {
       this.dt = data.payload;
       window.sessionStorage.setItem(btoa('payload'), this.dt);
       this.user.setLogin();
-      this.router.navigate(['/products']);
       
+      let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
+      this.ds.sendApiRequest("accounts/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
+        this.dt = data.payload;
+        this.welcomeToast("Welcome, " + this.dt[0].acc_fname + " " + this.dt[0].acc_lname + "!");
+      });
+      this.router.navigate(['/products']);
     }, er => {
       this.presentToast('Invalid Username/Password!', 'The Username/Password you entered is incorrect');
     });
@@ -58,6 +63,17 @@ export class LoginPage implements OnInit {
         message: messageError,
         position: 'bottom',
         cssClass: 'my-custom-class'
+      });
+    toast.present();
+  }
+
+  async welcomeToast(messageSuccess) {
+    const toast = await this.toastCtrl.create({
+        duration: 1000,
+        color: 'dark',
+        message: messageSuccess,
+        position: 'bottom',
+        cssClass: 'my-custom-class',
       });
     toast.present();
   }
