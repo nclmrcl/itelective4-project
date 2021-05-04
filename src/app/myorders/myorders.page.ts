@@ -13,7 +13,7 @@ export class MyordersPage implements OnInit {
 
   ngOnInit() {
     //Set first tab as default selected segment
-    this.type = "completedOrders";
+    this.type = "pendingOrders";
   }
 
 }

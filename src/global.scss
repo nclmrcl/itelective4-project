@@ -25,8 +25,81 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-.swiper-pagination {
-    position: relative;
-    // padding-top:20px;
+
+/* Registration Component Styles */
+
+.main-container {
+    padding-bottom: 20px;
 }
 
+.registerContent, .questionGraphic {
+    padding: 15px;
+    margin: 0 auto;
+
+    ion-input {
+        margin: 0 auto;
+        background-color: #EDEDED;
+        height: 50px;
+        margin-bottom:  10px !important;
+        padding: 0px 20px !important;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        width: 95%;
+    }
+
+    ion-select {
+        margin: 0 auto;
+        background-color: #EDEDED;
+        height: 50px;
+        margin-bottom:  10px !important;
+        padding: 0px 20px !important;
+        border-radius: 25px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 16px;
+        width: 95%;
+        --placeholder-opacity: 0.5
+    }
+
+    ion-radio-group {
+        display: flex;
+        place-content: center;
+    }
+    
+    ion-radio {
+        --color: #228b22;
+        --color-checked: #228b22;
+    }
+
+}
+
+.graphic-image {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+}
+
+.registerMidHeader {
+    font-size: 18px;
+    text-align: justify;
+    padding: 0 15px;
+}
+
+.poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.navBtnDiv {
+    display: flex;
+    justify-content: center;
+    padding: 0 15px;
+	width: 95%;
+}
+
+.navBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+    font-size: 20px;
+}
+
+/* Registration Component Styles */

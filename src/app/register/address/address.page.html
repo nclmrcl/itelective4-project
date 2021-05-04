@@ -1,0 +1,46 @@
+
+<ion-content class="main-container" mode="md">
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#228b22" fill-opacity="1" d="M0,160L40,170.7C80,181,160,203,240,181.3C320,160,400,96,480,90.7C560,85,640,139,720,138.7C800,139,880,85,960,96C1040,107,1120,181,1200,218.7C1280,256,1360,256,1400,256L1440,256L1440,0L1400,0C1360,0,1280,0,1200,0C1120,0,1040,0,960,0C880,0,800,0,720,0C640,0,560,0,480,0C400,0,320,0,240,0C160,0,80,0,40,0L0,0Z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#1b6f1b;"></path></svg>
+  <div class="main-container">
+
+    <div class="questionGraphic">
+      <div class="graphic-image">
+        <img src="../../assets/images/address.png">
+      </div>
+      <div class="registerContent">
+        <p class="registerMidHeader poppins">Please provide your home address.</p>
+        <ion-input [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
+        <ion-input [(ngModel)]="acc_street" placeholder="Street"></ion-input>
+        <ion-select [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
+        <ion-select-option value="ASINAN">ASINAN</ion-select-option>
+        <ion-select-option value="BANICAIN">BANICAIN</ion-select-option>
+        <ion-select-option value="BARRETTO">BARRETTO</ion-select-option>
+        <ion-select-option value="EAST BAJAC BAJAC">EAST BAJAC BAJAC</ion-select-option>
+        <ion-select-option value="EAST TAPINAC">EAST TAPINAC</ion-select-option>
+        <ion-select-option value="GORDON HEIGHTS">GORDON HEIGHTS</ion-select-option>
+        <ion-select-option value="KALAKLAN">KALAKLAN</ion-select-option>
+        <ion-select-option value="MABAYUAN">MABAYUAN</ion-select-option>
+        <ion-select-option value="NEW CABALAN">NEW CABALAN</ion-select-option>
+        <ion-select-option value="NEW ILALIM">NEW ILALIM</ion-select-option>
+        <ion-select-option value="NEW KABABAE">NEW KABABAE</ion-select-option>
+        <ion-select-option value="OLD CABALAN">OLD CABALAN</ion-select-option>
+        <ion-select-option value="PAG-ASA">PAG-ASA</ion-select-option>
+        <ion-select-option value="SANTA RITA">SANTA RITA</ion-select-option>
+        <ion-select-option value="WEST BAJAC BAJAC">WEST BAJAC BAJAC</ion-select-option>
+        <ion-select-option value="WEST TAPINAC">WEST TAPINAC</ion-select-option>
+        </ion-select>
+        <ion-input [(ngModel)]="acc_city" disabled></ion-input>
+        <ion-input [(ngModel)]="acc_province" disabled></ion-input>
+      </div>
+
+      <div class="navBtnDiv">
+        <ion-button class="navBtn" shape="round" fill="outline">Back</ion-button>
+        <ion-button class="navBtn" shape="round">Next</ion-button>
+      </div>
+
+    </div>
+
+    
+</div>
+</ion-content>

@@ -13,12 +13,12 @@
       <div class="myOrdersContent">
 
         <div class="myOrdersSegment">
-          <ion-segment [(ngModel)]="type" (ionChange)="segmentChanged($event)">
+          <ion-segment [(ngModel)]="type">
          
             <ion-segment-button value="pendingOrders">
               <ion-label>Pending</ion-label>
             </ion-segment-button>
-            <ion-segment-button value="completedOrders" checked>
+            <ion-segment-button value="completedOrders">
               <ion-label>Completed</ion-label>
             </ion-segment-button>
           </ion-segment>

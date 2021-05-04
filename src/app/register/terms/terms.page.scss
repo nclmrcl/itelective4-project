@@ -1,0 +1,29 @@
+.registerBtn {
+    --background: #228b22;
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+	width: 85%;
+    font-size: 20px;
+	margin: 20px auto;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+.termsCheckbox {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 20px;
+
+    ion-checkbox {
+        height: max-content;
+    }
+
+    p {
+        font-size: 14px;
+        margin: 0;
+        text-align: justify;
+    }
+}
