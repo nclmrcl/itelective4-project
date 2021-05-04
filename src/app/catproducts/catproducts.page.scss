@@ -63,3 +63,15 @@ ion-back-button {
     font-size: 16px;
     border-radius: 25px;
 }
+
+ion-fab-button {
+	--background: white;
+    
+    border-radius: 50%;
+
+    ion-icon{
+        color: forestgreen;
+    }
+}
+
+

@@ -4,6 +4,10 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/catproducts"></ion-back-button> 
       <p style="font-size: 20px; color: white;">Back to products</p> 
+      <span  style="flex: 1 1 auto"></span>
+      <div style="float:right;">
+        <ion-fab-button [routerLink]="['/cart']"><ion-icon  class="cart-btn" name="cart-sharp"></ion-icon></ion-fab-button>
+      </div>
     </ion-buttons>
   </div>
 
