@@ -6,7 +6,7 @@
 
     <div class="sidenavBtn">
       <ion-buttons slot="start">
-        <ion-back-button color="primary" defaultHref="/register"></ion-back-button> 
+        <ion-back-button (click)="prevForm()" color="primary" defaultHref="/register"></ion-back-button> 
       </ion-buttons>
     </div>
 
@@ -19,29 +19,29 @@
         <ion-input [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
         <ion-input [(ngModel)]="acc_street" placeholder="Street"></ion-input>
         <ion-select [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
-        <ion-select-option value="ASINAN">ASINAN</ion-select-option>
-        <ion-select-option value="BANICAIN">BANICAIN</ion-select-option>
-        <ion-select-option value="BARRETTO">BARRETTO</ion-select-option>
-        <ion-select-option value="EAST BAJAC BAJAC">EAST BAJAC BAJAC</ion-select-option>
-        <ion-select-option value="EAST TAPINAC">EAST TAPINAC</ion-select-option>
-        <ion-select-option value="GORDON HEIGHTS">GORDON HEIGHTS</ion-select-option>
-        <ion-select-option value="KALAKLAN">KALAKLAN</ion-select-option>
-        <ion-select-option value="MABAYUAN">MABAYUAN</ion-select-option>
-        <ion-select-option value="NEW CABALAN">NEW CABALAN</ion-select-option>
-        <ion-select-option value="NEW ILALIM">NEW ILALIM</ion-select-option>
-        <ion-select-option value="NEW KABABAE">NEW KABABAE</ion-select-option>
-        <ion-select-option value="OLD CABALAN">OLD CABALAN</ion-select-option>
-        <ion-select-option value="PAG-ASA">PAG-ASA</ion-select-option>
-        <ion-select-option value="SANTA RITA">SANTA RITA</ion-select-option>
-        <ion-select-option value="WEST BAJAC BAJAC">WEST BAJAC BAJAC</ion-select-option>
-        <ion-select-option value="WEST TAPINAC">WEST TAPINAC</ion-select-option>
+        <ion-select-option value="Asinan">Asinan</ion-select-option>
+        <ion-select-option value="Banicain">Banicain</ion-select-option>
+        <ion-select-option value="Barretto">Barretto</ion-select-option>
+        <ion-select-option value="East Bajac-Bajac">East Bajac-Bajac</ion-select-option>
+        <ion-select-option value=">East Tapinac">East Tapinac</ion-select-option>
+        <ion-select-option value="Gordon Heights">Gordon Heights</ion-select-option>
+        <ion-select-option value="Kalaklan">Kalaklan</ion-select-option>
+        <ion-select-option value="Mabayuan">Mabayuan</ion-select-option>
+        <ion-select-option value="New CabalanN">New Cabalan</ion-select-option>
+        <ion-select-option value="New Ilalim">New Ilalim</ion-select-option>
+        <ion-select-option value="New Kababae">New Kababae</ion-select-option>
+        <ion-select-option value="Old Cabalan">Old Cabalan</ion-select-option>
+        <ion-select-option value="Pag-asa">Pag-asa</ion-select-option>
+        <ion-select-option value="Santa Rita">Santa Rita</ion-select-option>
+        <ion-select-option value="West Bajac-Bajac">West Bajac-Bajac</ion-select-option>
+        <ion-select-option value="West Tapinac">West Tapinac</ion-select-option>
         </ion-select>
         <ion-input [(ngModel)]="acc_city" disabled></ion-input>
         <ion-input [(ngModel)]="acc_province" disabled></ion-input>
       </div>
 
       <div class="navBtnDiv">
-        <ion-button class="navBtn" shape="round">Next</ion-button>
+        <ion-button class="navBtn" (click)="nextForm()" shape="round">Next</ion-button>
       </div>
 
     </div>

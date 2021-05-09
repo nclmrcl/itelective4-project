@@ -16,13 +16,31 @@ export class CartPage implements OnInit {
     this.getCart();
   }
 
+  cart_qty: any = "";
   dt: any[] = [];
 
   getCart() {
     let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
     this.ds.sendApiRequest("cart/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
       this.dt = data.payload;
+      this.cart_qty = this.dt[0].cart_quantity;
       console.log(this.dt)
     });
+  }
+
+  addQuantity(id, qty) {
+    console.log(id)
+    this.ds.sendApiRequest("addQuantity/", null).subscribe((data: { payload: any[]; }) => {
+      this.dt = data.payload;
+      console.log(this.dt)
+    });
+  }
+
+  subtractQuantity(id, qty) {
+
+  }
+
+  deleteProduct(id, qty) {
+
   }
 }

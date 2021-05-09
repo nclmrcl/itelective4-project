@@ -6,7 +6,7 @@
 
     <div class="sidenavBtn">
       <ion-buttons slot="start">
-        <ion-back-button color="primary" defaultHref="/register/credentials"></ion-back-button> 
+        <ion-back-button (click)="prevForm()" color="primary" defaultHref="/register/credentials"></ion-back-button> 
       </ion-buttons>
     </div>
 
@@ -27,10 +27,10 @@
           <ion-button class="navBtn" shape="round">Next</ion-button>
         </div>
 
-        <!-- <div class="finishRegister">
+        <div class="finishRegister">
           <p class="poppins">Click the button below to complete your registration with Go-cery.</p>
-          <ion-button (click)="register()" class="registerBtn" shape="round" expand="block">Register</ion-button>
-        </div> -->
+          <ion-button (click)="nextForm()" class="registerBtn" shape="round" expand="block">Register</ion-button>
+        </div>
 
       </div>
     </div>

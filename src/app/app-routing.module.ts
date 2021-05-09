@@ -4,7 +4,7 @@ import { GuardGuard } from './services/guard.guard';
 
 const routes: Routes = [
   {
-    path: 'login',
+    path: '',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {

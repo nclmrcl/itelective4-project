@@ -6,7 +6,7 @@
 
     <div class="sidenavBtn">
       <ion-buttons slot="start">
-        <ion-back-button color="primary" defaultHref="/register/birthday"></ion-back-button> 
+        <ion-back-button (click)="prevForm()" color="primary" defaultHref="/register/birthday"></ion-back-button> 
       </ion-buttons>
     </div>
 
@@ -22,7 +22,7 @@
       </div>
 
       <div class="navBtnDiv">
-        <ion-button class="navBtn" shape="round">Next</ion-button>
+        <ion-button (click)="nextForm()" class="navBtn" shape="round">Next</ion-button>
       </div>
 
     </div>

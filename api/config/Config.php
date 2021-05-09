@@ -12,6 +12,7 @@
 	require_once("./models/Auth.php");
 	require_once("./models/Get.php");
 	require_once("./models/Post.php");
+	require_once("./models/OTP.php");
 
 	define("DBASE", "db_gocery");
 	define("USER", "root");

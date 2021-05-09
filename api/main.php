@@ -53,6 +53,21 @@
 					echo json_encode($gm->insert("tbl_cart", $d));
 				break;
 
+				case 'checkEmail':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($auth->checkEmail($d));
+				break;
+
+				case 'checkUsername':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($auth->checkUsername($d));
+				break;
+
+				case 'verifyEmail':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($auth->verifyEmail($d));
+				break;
+
 				case 'login':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
 					echo json_encode($auth->login($d));

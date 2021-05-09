@@ -9,14 +9,16 @@ export class UserService {
   constructor() { }
 
   isLoggedIn(): boolean {
-    return this.loginState;
+    let log = window.sessionStorage.getItem('loginState');
+    return (log==='true'?true:false);
   }
 
   setLogin(): void {
-    this.loginState = true;
+    window.sessionStorage.setItem('loginState', 'true');
   }
 
   setLogout(): void {
+    window.sessionStorage.clear();
     this.loginState = false;
   }
 

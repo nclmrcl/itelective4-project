@@ -14,10 +14,8 @@ export class GuardGuard implements CanActivate {
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     
       if(!this.user.isLoggedIn()) {
-        this.router.navigate(['login']);
+        this.router.navigate(['']);
         return false;
-      } else {
-        
       }
       return true;
   }

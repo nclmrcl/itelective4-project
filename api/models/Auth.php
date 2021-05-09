@@ -76,6 +76,8 @@
 							$token = $this->showToken($rec);
 							$data = array(
 								"id"=>$rec['acc_id'],
+								"fname"=>$rec['acc_fname'],
+								"lname"=>$rec['acc_lname'],
 							);
 						} else{
 							$res = null; $code = 401; $msg = "Incorrect Password"; $remarks = "failed";
@@ -122,6 +124,72 @@
 				$code = 403;
 			}
 			return $this->sendPayload($data, $remarks, $msg, $code, $token);
+		}
+
+		public function checkEmail($dt) {
+
+			$this->sql="SELECT * FROM tbl_accounts WHERE acc_email='$dt->acc_email' LIMIT 1";
+
+			try {
+				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
+					$result=$this->pdo->query($this->sql)->fetchAll();
+					$res = null; $code = 200; $msg = "Email exist"; $remarks = "success";
+				} else{
+					http_response_code(401);
+					$res = null; $code = 401; $msg = "Email does not exist"; $remarks = "failed";
+				}
+			} catch (\PDOException $e) {
+				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
+			}
+			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code, null);
+		}
+
+		public function checkUsername($dt) {
+
+			$this->sql="SELECT * FROM tbl_accounts WHERE acc_username='$dt->acc_username' LIMIT 1";
+
+			try {
+				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
+					$result=$this->pdo->query($this->sql)->fetchAll();
+					$res = null; $code = 200; $msg = "Username exist"; $remarks = "success";
+				} else{
+					http_response_code(401);
+					$res = null; $code = 401; $msg = "Username does not exist"; $remarks = "failed";
+				}
+			} catch (\PDOException $e) {
+				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
+			}
+			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code, null);
+		}
+
+		public function verifyEmail($dt) {
+
+			$this->sql="SELECT * FROM tbl_accounts WHERE acc_email='$dt->acc_email' LIMIT 1";
+
+			try {
+				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
+					$result=$this->pdo->query($this->sql)->fetchAll();
+
+					$data = array(); $code = 0; $msg = ""; $remarks = ""; $token = "";
+					foreach ($result as $rec) { 
+						if($dt->acc_otp == $rec['acc_otp']){
+							$this->sql = "UPDATE tbl_accounts SET is_activated=1 WHERE acc_email='$dt->acc_email'";
+							$sqlstr = $this->pdo->prepare($this->sql);
+							$sqlstr->execute();
+							$res = null; $code = 200; $msg = "Successfully retrieved the requested records"; $remarks = "success";
+						} else{
+							http_response_code(401);
+							$res = null; $code = 401; $msg = "Incorrect otp"; $remarks = "failed";
+						}
+					}
+				} else{
+					http_response_code(401);
+					$res = null; $code = 401; $msg = "User does not exist"; $remarks = "failed";
+				}
+			} catch (\PDOException $e) {
+				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
+			}
+			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code, null);
 		}
 
 		public function sendPayload($payload, $remarks, $message, $code, $token) {
