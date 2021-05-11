@@ -16,7 +16,7 @@ export class TermsPage implements OnInit {
 
   nextForm() {
     this.ds.sendApiRequest("register/", this.ds.acc_info).subscribe((data: { payload: any[]; }) => {
-      this.router.navigate(['/register/otp']);
+    this.router.navigate(['/register/otp']);
     }, (err: any) => {
 
     });

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+
 
 @Component({
   selector: 'app-credentials',
@@ -9,27 +11,60 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class CredentialsPage implements OnInit {
 
-  constructor(private router: Router, private ds: DataService) { }
+  registrationForm: FormGroup;
+  isSubmitted = false;
+
+  constructor(private router: Router, private ds: DataService, public formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.registrationForm = this.formBuilder.group({
+      acc_username: ['', [Validators.required, Validators.minLength(2)]],
+      acc_password: ['', [Validators.required, Validators.minLength(8)]]
+    })
+  }
+
+  get errorControl() {
+    return this.registrationForm.controls;
   }
 
   acc_username: any;
   acc_password: any;
   acc_credentails: any = {};
 
-
   nextForm() {
-    this.acc_credentails.acc_username = this.acc_username;
-    this.ds.sendApiRequest("checkEmail/", this.acc_credentails).subscribe((data: { payload: any[]; }) => {
+    this.isSubmitted = true;
+    if (!this.registrationForm.valid) {
+      console.log('Please provide all the required values!')
+      return false;
+    } else {
+      console.log(this.registrationForm.value)
+      this.acc_credentails.acc_username = this.acc_username;
+      this.ds.sendApiRequest("checkEmail/", this.acc_credentails).subscribe((data: { payload: any[]; }) => {
       
-    }, (err: any) => {
+      }, (err: any) => {
       this.ds.acc_info.acc_username = this.acc_username;
       this.ds.acc_info.acc_password = this.acc_password;
     this.router.navigate(['/register/terms']);
     });
-    
+    }
   }
+
+  // acc_username: any;
+  // acc_password: any;
+  // acc_credentails: any = {};
+
+
+  // nextForm() {
+  //   this.acc_credentails.acc_username = this.acc_username;
+  //   this.ds.sendApiRequest("checkEmail/", this.acc_credentails).subscribe((data: { payload: any[]; }) => {
+      
+  //   }, (err: any) => {
+  //     this.ds.acc_info.acc_username = this.acc_username;
+  //     this.ds.acc_info.acc_password = this.acc_password;
+  //   this.router.navigate(['/register/terms']);
+  //   });
+    
+  // }
   
   prevForm() {
     this.router.navigate(['/register/contact']);

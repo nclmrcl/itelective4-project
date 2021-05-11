@@ -14,30 +14,35 @@
         <img src="../../assets/images/gender.png">
       </div>
       <div class="registerContent">
-        <p class="registerMidHeader poppins">When is your birthday?</p>
-        <ion-item>
-          <ion-label>MM DD YY</ion-label>
-          <ion-datetime [(ngModel)]="acc_birthdate" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
-        </ion-item>
+        <form [formGroup]="registrationForm" novalidate>
+          <p class="registerMidHeader poppins">When is your birthday?</p>
+          <ion-item>
+            <ion-label>MM DD YY</ion-label>
+            <ion-datetime [(ngModel)]="acc_birthdate" [ngModelOptions]="{standalone: true}" displayFormat="MM DD YY" placeholder="Select Date"></ion-datetime>
+          </ion-item>
 
-        <p class="registerMidHeader poppins">Please select your gender.</p>
-        <ion-list lines="none">
-          <ion-radio-group [(ngModel)]="acc_gender" value="male">
-            <ion-item>
-              <ion-label>Male</ion-label>
-                <ion-radio slot="start" value="1"></ion-radio>
-              </ion-item>
+          <p class="registerMidHeader poppins">Please select your gender.</p>
+          <ion-list lines="none">
+            <ion-radio-group formControlName="acc_gender" [(ngModel)]="acc_gender" value="male">
+              <ion-item>
+                <ion-label>Male</ion-label>
+                  <ion-radio slot="start" value="1"></ion-radio>
+                </ion-item>
 
-            <ion-item>
-              <ion-label>Female</ion-label>
-                <ion-radio slot="start" value="2"></ion-radio>
-                  </ion-item>
-                </ion-radio-group>
-              </ion-list>
+              <ion-item>
+                <ion-label>Female</ion-label>
+                  <ion-radio slot="start" value="2"></ion-radio>
+                    </ion-item>
+                  </ion-radio-group>
+                </ion-list>
+                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_gender.errors?.required">
+                  Your gender is required.
+                </span>
+        </form>
       </div>
 
       <div class="navBtnDiv">
-        <ion-button (click)="nextForm()" class="navBtn" shape="round">Next</ion-button>
+        <ion-button (click)="nextForm()" class="navBtn" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
       </div>
     </div>
 

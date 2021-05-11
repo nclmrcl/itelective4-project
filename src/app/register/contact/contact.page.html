@@ -17,12 +17,26 @@
 
       <div class="registerContent">
         <p class="registerMidHeader poppins">To send updates to you via sms and email, please provide your phone number and email address.</p>
-        <ion-input [(ngModel)]="acc_mobile" placeholder="Contact Number"></ion-input>
-          <ion-input [(ngModel)]="acc_email" placeholder="Email Address"></ion-input>
+        <form [formGroup]="registrationForm" novalidate>
+          <ion-input formControlName="acc_mobile" [(ngModel)]="acc_mobile" placeholder="Contact Number"></ion-input>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.required">
+            Mobile number is required.
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.pattern">
+            Mobile number should not contain any letters.
+          </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.minlength">
+            Mobile number should be 11 numbers long.
+          </span>
+          <ion-input formControlName="acc_email" [(ngModel)]="acc_email" placeholder="Email Address"></ion-input>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_email.errors?.required">
+            Email is required.
+          </span>
+        </form>
       </div>
 
       <div class="navBtnDiv">
-        <ion-button (click)="nextForm()" class="navBtn" shape="round">Next</ion-button>
+        <ion-button (click)="nextForm()" class="navBtn" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
       </div>
 
     </div>

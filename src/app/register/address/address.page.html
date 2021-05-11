@@ -16,32 +16,43 @@
       </div>
       <div class="registerContent">
         <p class="registerMidHeader poppins">Please provide your home address.</p>
-        <ion-input [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
-        <ion-input [(ngModel)]="acc_street" placeholder="Street"></ion-input>
-        <ion-select [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
-        <ion-select-option value="Asinan">Asinan</ion-select-option>
-        <ion-select-option value="Banicain">Banicain</ion-select-option>
-        <ion-select-option value="Barretto">Barretto</ion-select-option>
-        <ion-select-option value="East Bajac-Bajac">East Bajac-Bajac</ion-select-option>
-        <ion-select-option value=">East Tapinac">East Tapinac</ion-select-option>
-        <ion-select-option value="Gordon Heights">Gordon Heights</ion-select-option>
-        <ion-select-option value="Kalaklan">Kalaklan</ion-select-option>
-        <ion-select-option value="Mabayuan">Mabayuan</ion-select-option>
-        <ion-select-option value="New CabalanN">New Cabalan</ion-select-option>
-        <ion-select-option value="New Ilalim">New Ilalim</ion-select-option>
-        <ion-select-option value="New Kababae">New Kababae</ion-select-option>
-        <ion-select-option value="Old Cabalan">Old Cabalan</ion-select-option>
-        <ion-select-option value="Pag-asa">Pag-asa</ion-select-option>
-        <ion-select-option value="Santa Rita">Santa Rita</ion-select-option>
-        <ion-select-option value="West Bajac-Bajac">West Bajac-Bajac</ion-select-option>
-        <ion-select-option value="West Tapinac">West Tapinac</ion-select-option>
-        </ion-select>
-        <ion-input [(ngModel)]="acc_city" disabled></ion-input>
-        <ion-input [(ngModel)]="acc_province" disabled></ion-input>
+        <form [formGroup]="registrationForm" novalidate>
+          <ion-input formControlName="acc_no" [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_no.errors?.required">
+            House number is required.
+          </span>
+          <ion-input formControlName="acc_street" [(ngModel)]="acc_street" placeholder="Street"></ion-input>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_street.errors?.required">
+            Street is required.
+          </span>
+          <ion-select formControlName="acc_barangay" [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
+          <ion-select-option value="Asinan">Asinan</ion-select-option>
+          <ion-select-option value="Banicain">Banicain</ion-select-option>
+          <ion-select-option value="Barretto">Barretto</ion-select-option>
+          <ion-select-option value="East Bajac-Bajac">East Bajac-Bajac</ion-select-option>
+          <ion-select-option value=">East Tapinac">East Tapinac</ion-select-option>
+          <ion-select-option value="Gordon Heights">Gordon Heights</ion-select-option>
+          <ion-select-option value="Kalaklan">Kalaklan</ion-select-option>
+          <ion-select-option value="Mabayuan">Mabayuan</ion-select-option>
+          <ion-select-option value="New CabalanN">New Cabalan</ion-select-option>
+          <ion-select-option value="New Ilalim">New Ilalim</ion-select-option>
+          <ion-select-option value="New Kababae">New Kababae</ion-select-option>
+          <ion-select-option value="Old Cabalan">Old Cabalan</ion-select-option>
+          <ion-select-option value="Pag-asa">Pag-asa</ion-select-option>
+          <ion-select-option value="Santa Rita">Santa Rita</ion-select-option>
+          <ion-select-option value="West Bajac-Bajac">West Bajac-Bajac</ion-select-option>
+          <ion-select-option value="West Tapinac">West Tapinac</ion-select-option>
+          </ion-select>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_barangay.errors?.required">
+            Barangay is required.
+          </span>
+          <ion-input [(ngModel)]="acc_city" [ngModelOptions]="{standalone: true}" disabled></ion-input>
+          <ion-input [(ngModel)]="acc_province" [ngModelOptions]="{standalone: true}" disabled></ion-input>
+        </form>
       </div>
 
       <div class="navBtnDiv">
-        <ion-button class="navBtn" (click)="nextForm()" shape="round">Next</ion-button>
+        <ion-button class="navBtn" (click)="nextForm()" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
       </div>
 
     </div>
