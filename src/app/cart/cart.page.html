@@ -27,7 +27,7 @@
                 <ion-fab-button (click)="subtractQuantity(cartItem.cart_id, cartItem.cart_quantity)" size="small"><ion-icon name="remove-sharp"></ion-icon></ion-fab-button>
                 <p> {{ cartItem.cart_quantity }}</p>
                 <ion-fab-button (click)="addQuantity(cartItem.cart_id, cartItem.cart_quantity)"size="small"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
-                <ion-fab-button (click)="deleteProduct(cartItem.cart_id, cartItem.cart_quantity)" size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
+                <ion-fab-button (click)="deleteProduct(cartItem.cart_id)" size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
       </ion-card>
 
       <div class="checkoutButton">
-        <ion-button class="checkoutBtn" shape="round" [routerLink]="['/checkout']">Checkout</ion-button>
+        <ion-button class="checkoutBtn" shape="round" (click)="checkOut()">Checkout</ion-button>
       </div>
 
     </div>

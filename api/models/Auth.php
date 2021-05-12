@@ -133,10 +133,11 @@
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
 					$result=$this->pdo->query($this->sql)->fetchAll();
-					$res = null; $code = 200; $msg = "Email exist"; $remarks = "success";
-				} else{
 					http_response_code(401);
-					$res = null; $code = 401; $msg = "Email does not exist"; $remarks = "failed";
+					$res = null; $code = 401; $msg = "Email exist"; $remarks = "success";
+				} else{
+					http_response_code(200);
+					$res = null; $code = 200; $msg = "Email does not exist"; $remarks = "failed";
 				}
 			} catch (\PDOException $e) {
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
@@ -151,10 +152,11 @@
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
 					$result=$this->pdo->query($this->sql)->fetchAll();
-					$res = null; $code = 200; $msg = "Username exist"; $remarks = "success";
-				} else{
 					http_response_code(401);
-					$res = null; $code = 401; $msg = "Username does not exist"; $remarks = "failed";
+					$res = null; $code = 401; $msg = "Username exist"; $remarks = "success";
+				} else{
+					http_response_code(200);
+					$res = null; $code = 200; $msg = "Username does not exist"; $remarks = "failed";
 				}
 			} catch (\PDOException $e) {
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";

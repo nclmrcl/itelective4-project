@@ -13,11 +13,11 @@
       <img src="../../assets/images/payment.png">
     </div>
 
-    <div class="coloredCard">
+    <div class="coloredCard" *ngFor="let data of dt">
       <p class="header">Delivery Information</p>
-      <p class="body"><ion-icon name="person-circle-outline" class="icon"></ion-icon> Juan Dela Cruz</p>
-      <p class="body"><ion-icon name="location-outline" class="icon"></ion-icon> 1234 Yonip Street Sta. Rita Olongapo City</p>
-      <p class="body"><ion-icon name="call-outline" class="icon"></ion-icon> 09123456789</p>
+      <p class="body"><ion-icon name="person-circle-outline" class="icon"></ion-icon>{{ data.acc_fname }} {{ data.acc_mname }} {{ data.acc_lname }}</p>
+      <p class="body"><ion-icon name="location-outline" class="icon"></ion-icon>{{ data.acc_no }} {{ data.acc_street }} {{ data.acc_barangay }}, {{ data.acc_city }} {{ data.acc_province }}</p>
+      <p class="body"><ion-icon name="call-outline" class="icon"></ion-icon>{{ data.acc_mobile }}</p>
     </div>
 
     <div class="coloredCard">

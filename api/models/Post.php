@@ -26,6 +26,40 @@
 			return $this->sendPayload($data, $remarks, $msg, $code);
 		}
 
+		public function placeOrder($data) {
+			$this->sql = "INSERT INTO tbl_order (acc_id, order_total, order_shipping, order_grandtotal)
+				VALUES ($data->acc_id, $data->order_total, $data->order_shipping, $data->order_grandtotal)";
+
+			try {
+				if($this->pdo->query($this->sql)) {
+					$id = $this->pdo->lastInsertId();
+
+					$product_id = [];
+					$order_id = [];
+					$item_quantity = [];
+					$values = [];
+
+					for($i = 0; $i < sizeof($data->product_id); $i++) {
+						$product_id[] = $data->product_id[$i];
+						$order_id[] = $id;
+						$item_quantity[] = $data->item_quantity[$i];
+						$values[] = "($product_id[$i], $order_id[$i], $item_quantity[$i])";
+					}
+
+					$this->sql = "INSERT INTO tbl_order_item (product_id, order_id, item_quantity) VALUES " . implode(', ', $values);
+					
+					if($this->pdo->query($this->sql)) {
+						return array("code"=>200, "remarks"=>"success");
+					}
+
+				}
+			} catch (\PDOException $e) {
+				$errmsg = $e->getMessage();
+				$code = 403;
+			}
+			return array("code"=>$code, "errmsg"=>$errmsg);
+		}
+
         public function sendPayload($payload, $remarks, $message, $code) {
 			$status = array("remarks"=>$remarks, "message"=>$message);
 			http_response_code($code);

@@ -9,6 +9,7 @@ export class DataService {
   productId: any
   SharedData: any
   acc_info: any = {};
+  cart_content: any = {};
   baseURL: string = "http://localhost/itelective4-project/api/";
   constructor(private http: HttpClient) { }
 

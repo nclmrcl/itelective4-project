@@ -27,12 +27,12 @@
         <div class="segmentContent" [ngSwitch]="type">
 
           <div class="pendingSegment" *ngSwitchCase="'pendingOrders'">
-            <ion-list>
+            <ion-list *ngFor="let data of dt">
               <ion-item>
                 <img src="../../assets/images/pendingorders.png" style="width: 40px; height: 40px; margin-right: 10px;">
                 <ion-label>
-                  <h2>Order ID #1</h2>
-                  <h3>Order Date: 12-07-2019</h3>
+                  <h2>Order ID {{ data.order_id }}</h2>
+                  <h3>Order Date: {{ data.createdAt }}</h3>
                   <p>Status: 
                     <span class="status" style="background-color: crimson;">To be Delivered</span>
                   </p>
