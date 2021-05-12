@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2021 at 05:36 PM
+-- Generation Time: May 12, 2021 at 02:56 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -55,7 +55,8 @@ CREATE TABLE `tbl_accounts` (
 --
 
 INSERT INTO `tbl_accounts` (`acc_id`, `acc_username`, `acc_password`, `acc_fname`, `acc_lname`, `acc_mname`, `acc_gender`, `acc_birthdate`, `acc_no`, `acc_street`, `acc_barangay`, `acc_city`, `acc_province`, `acc_email`, `acc_mobile`, `acc_role`, `is_activated`, `acc_otp`, `acc_status`, `date_created`) VALUES
-(9, 'binociete', '$2y$10$NzIyNTQzOWQ1N2I2MGQwYOL/oTCUuhJNdKnodYiA7Lsj/MPI4c8OS', 'Bernie', 'Inociete', 'Legua', 1, '2000-01-18', 'No. 1687', 'Dominguez', 'SANTA RITA', 'Olongapo City', 'Zambales', 'binociete@gmail.com', '', 'user', 0, '837024', 1, '2021-04-23 03:51:47');
+(9, 'binociete', '$2y$10$NzIyNTQzOWQ1N2I2MGQwYOL/oTCUuhJNdKnodYiA7Lsj/MPI4c8OS', 'Bernie', 'Inociete', 'Legua', 1, '2000-01-18', 'No. 1687', 'Dominguez', 'SANTA RITA', 'Olongapo City', 'Zambales', 'binociete@gmail.com', '09292918464', 'user', 0, '837024', 1, '2021-05-10 13:41:10'),
+(14, 'binociete18', '$2y$10$MTdiMzRlNWRlZWNjNmY0OOHHiroSWywm1/yvQWwhKNGHgbP.vffaa', 'Bernie', 'Inociete', 'Legua', 1, '2000-01-18', 'No. 1687', 'Dominguez', 'Santa Rita', 'Olongapo City', 'Zambales', 'binociete18@gmail.com', '09461336603', 'user', 0, '429393', 1, '2021-05-07 01:49:49');
 
 -- --------------------------------------------------------
 
@@ -77,8 +78,10 @@ CREATE TABLE `tbl_cart` (
 --
 
 INSERT INTO `tbl_cart` (`cart_id`, `acc_id`, `product_id`, `cart_quantity`, `cart_dateAdded`, `cart_status`) VALUES
-(1, 9, 1, 1, '2021-04-24 08:48:27', 1),
-(2, 9, 2, 1, '2021-04-24 09:18:15', 1);
+(1, 9, 1, 2, '2021-05-12 03:07:05', 0),
+(2, 9, 2, 1, '2021-05-12 03:07:05', 0),
+(3, 9, 1, 2, '2021-05-10 12:59:30', 0),
+(4, 9, 1, 2, '2021-05-10 12:59:28', 0);
 
 -- --------------------------------------------------------
 
@@ -134,13 +137,13 @@ ALTER TABLE `tbl_products`
 -- AUTO_INCREMENT for table `tbl_accounts`
 --
 ALTER TABLE `tbl_accounts`
-  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `acc_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `tbl_cart`
 --
 ALTER TABLE `tbl_cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
