@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
+import { ToastController} from '@ionic/angular';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class ContactPage implements OnInit {
   registrationForm: FormGroup;
   isSubmitted = false;
 
-  constructor(private router: Router, private ds: DataService, public formBuilder: FormBuilder) { }
+  constructor(private router: Router, private ds: DataService, public formBuilder: FormBuilder, private toastCtrl: ToastController) { }
 
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
@@ -39,12 +40,12 @@ export class ContactPage implements OnInit {
     } else {
       console.log(this.registrationForm.value)
       this.acc_contact.acc_email = this.acc_email;
-      this.ds.sendApiRequest("checkEmail/", this.acc_contact).subscribe((data: { payload: any[]; }) => {
-      
-      }, (err: any) => {
-      this.ds.acc_info.acc_email = this.acc_email;
       this.ds.acc_info.acc_mobile = this.acc_mobile;
-      this.router.navigate(['/register/credentials'])
+      this.ds.sendApiRequest("checkEmail/", this.acc_contact).subscribe((data: { payload: any[]; }) => {
+        this.router.navigate(['/register/credentials'])
+      }, (err: any) => {
+        this.presentToast('Email address already exists','');
+        return;
     });
     }
   }
@@ -67,6 +68,17 @@ export class ContactPage implements OnInit {
   
   prevForm() {
     this.router.navigate(['/register/birthday']);
+  }
+
+  async presentToast(messageError, headerError) {
+    const toast = await this.toastCtrl.create({
+        duration: 1200,
+        color: 'danger',
+        message: messageError,
+        position: 'bottom',
+        cssClass: 'my-custom-class'
+      });
+    toast.present();
   }
 
 }
