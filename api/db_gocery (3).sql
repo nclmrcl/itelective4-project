@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 12, 2021 at 02:56 PM
+-- Generation Time: May 14, 2021 at 04:57 AM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -86,6 +86,53 @@ INSERT INTO `tbl_cart` (`cart_id`, `acc_id`, `product_id`, `cart_quantity`, `car
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_order`
+--
+
+CREATE TABLE `tbl_order` (
+  `order_id` int(11) NOT NULL,
+  `acc_id` int(11) NOT NULL,
+  `order_total` float NOT NULL,
+  `order_shipping` float NOT NULL,
+  `order_grandtotal` float NOT NULL,
+  `order_status` int(11) NOT NULL DEFAULT 1,
+  `createdAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_order`
+--
+
+INSERT INTO `tbl_order` (`order_id`, `acc_id`, `order_total`, `order_shipping`, `order_grandtotal`, `order_status`, `createdAt`, `updatedAt`) VALUES
+(9, 9, 200, 100, 300, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_order_item`
+--
+
+CREATE TABLE `tbl_order_item` (
+  `item_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `item_quantity` int(11) NOT NULL,
+  `createdAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `updatedAt` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tbl_order_item`
+--
+
+INSERT INTO `tbl_order_item` (`item_id`, `product_id`, `order_id`, `item_quantity`, `createdAt`, `updatedAt`) VALUES
+(5, 1, 9, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
+(6, 2, 9, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_products`
 --
 
@@ -124,6 +171,18 @@ ALTER TABLE `tbl_cart`
   ADD PRIMARY KEY (`cart_id`);
 
 --
+-- Indexes for table `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `tbl_order_item`
+--
+ALTER TABLE `tbl_order_item`
+  ADD PRIMARY KEY (`item_id`);
+
+--
 -- Indexes for table `tbl_products`
 --
 ALTER TABLE `tbl_products`
@@ -144,6 +203,18 @@ ALTER TABLE `tbl_accounts`
 --
 ALTER TABLE `tbl_cart`
   MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `tbl_order`
+--
+ALTER TABLE `tbl_order`
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `tbl_order_item`
+--
+ALTER TABLE `tbl_order_item`
+  MODIFY `item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `tbl_products`
