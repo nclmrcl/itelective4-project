@@ -60,6 +60,11 @@ ion-label {
     font-family: 'Poppins', sans-serif;
 }
 
+.item {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
 .body {
     font-family: 'Poppins', sans-serif;
 }
@@ -75,6 +80,7 @@ ion-label {
     justify-content: space-between;
     padding-left: 15px;
     padding-right: 15px;
+    margin: -5px 0px;
 }
 
 .placeOrderBtn {

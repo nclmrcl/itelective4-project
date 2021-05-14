@@ -37,6 +37,16 @@
       </div>
     </div>
 
+    <div class="totalPriceDiv" *ngFor="let item of cart" >
+      <p class="item">{{item.product_name}} </p>
+      <p class="item"><b>₱ {{item.product_price}} x {{item.cart_quantity}}</b></p>
+    </div>
+
+    <div class="totalPriceDiv">
+      <p class="item">Shipping Fee</p>
+      <p class="item"><b>₱ {{order_info.order_shipping}}</b></p>
+    </div>
+
     <div class="totalPriceDiv">
       <p class="subheader">Total Price</p>
       <p class="subheader"><b>₱ {{order_info.order_grandtotal}}</b></p>

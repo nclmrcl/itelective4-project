@@ -53,7 +53,7 @@ export class CheckoutPage implements OnInit {
         this.presentToast("Your cart doesn't have any product/s yet");
       }
     }, er => {
-        this.presentToast("Yourart doesn't have products yet");
+        this.presentToast("Your cart doesn't have products yet");
       });
   
   }
@@ -118,6 +118,7 @@ export class CheckoutPage implements OnInit {
       this.cart = data.payload;
       console.log(this.cart);
       this.clearCart();
+      this.presentToast("Purchased");
       this.router.navigate(['/myorders']);
     });
   }

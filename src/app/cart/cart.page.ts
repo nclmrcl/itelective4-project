@@ -41,7 +41,7 @@ export class CartPage implements OnInit {
         this.presentToast("Your cart doesn't have any product/s yet");
       }
     }, er => {
-        this.presentToast("Yourart doesn't have products yet");
+        this.presentToast("Your cart doesn't have products yet");
       });
   }
 
@@ -49,7 +49,6 @@ export class CartPage implements OnInit {
     this.cart_info.cart_quantity = qty + 1;
     this.ds.sendApiRequest("addQuantity/" + id, this.cart_info).subscribe((data: { payload: any[]; }) => {
       this.dt = data.payload;
-    
       this.getCart();
       console.log(this.dt)
     });
