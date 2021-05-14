@@ -39,11 +39,11 @@
 
     <div class="totalPriceDiv">
       <p class="subheader">Total Price</p>
-      <p class="subheader"><b>₱ 609.00</b></p>
+      <p class="subheader"><b>₱ {{order_info.order_grandtotal}}</b></p>
     </div>
 
     <div class="placeOrderButton">
-      <ion-button class="placeOrderBtn" shape="round" expand="full"><ion-icon name="bag-check" style="color: white; margin-right: 8px;"></ion-icon> Place Order</ion-button>
+      <ion-button class="placeOrderBtn" shape="round" expand="full" (click)="checkOut()"><ion-icon name="bag-check" style="color: white; margin-right: 8px;" ></ion-icon> Place Order</ion-button>
     </div>
     
   </div>
