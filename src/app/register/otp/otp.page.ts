@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-otp',
@@ -9,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class OtpPage implements OnInit {
 
-  constructor(private router: Router, private ds: DataService) { }
+  constructor(private router: Router, private ds: DataService, private toastCtrl: ToastController) { }
 
   ngOnInit() {
     this.getUserOtp();
@@ -42,8 +43,9 @@ export class OtpPage implements OnInit {
   nextForm() {
     if(this.dt[0].acc_otp == this.acc_otp) {
       this.router.navigate(['/']);
+      this.presentToast('Successfully Registered','');
     } else {
-      
+      this.presentToast('OTP Code is incorrect','');
     }
     
   }
@@ -52,4 +54,16 @@ export class OtpPage implements OnInit {
     this.router.navigate(['/register/register']);
   }
 
+  async presentToast(messageError, headerError) {
+    const toast = await this.toastCtrl.create({
+        duration: 1200,
+        color: 'danger',
+        message: messageError,
+        position: 'bottom',
+        cssClass: 'my-custom-class'
+      });
+    toast.present();
+  }
 }
+
+

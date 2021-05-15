@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { ToastController} from '@ionic/angular';
 
@@ -19,8 +19,9 @@ export class ProductdescriptionPage implements OnInit {
     }
   ];
 
-  constructor(private ds: DataService, private router: Router, private toastCtrl: ToastController) { }
-
+  constructor(private ds: DataService, private router: Router, private toastCtrl: ToastController, route:ActivatedRoute) {route.params.subscribe(val => {
+    this.productDetails();
+  });}
   ngOnInit() {
     this.productDetails();
   }

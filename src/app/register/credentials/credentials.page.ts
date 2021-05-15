@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
-
+import { ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-credentials',
@@ -14,7 +14,7 @@ export class CredentialsPage implements OnInit {
   registrationForm: FormGroup;
   isSubmitted = false;
 
-  constructor(private router: Router, private ds: DataService, public formBuilder: FormBuilder) { }
+  constructor(private router: Router, private ds: DataService, public formBuilder: FormBuilder, private toastCtrl: ToastController) { }
 
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
@@ -44,7 +44,7 @@ export class CredentialsPage implements OnInit {
         this.ds.acc_info.acc_password = this.acc_password;
         this.router.navigate(['/register/terms']);
       }, (err: any) => {
-      
+        this.presentToast('Username already exists','');
     });
     }
   }
@@ -68,5 +68,17 @@ export class CredentialsPage implements OnInit {
   
   prevForm() {
     this.router.navigate(['/register/contact']);
+  }
+
+  
+  async presentToast(messageError, headerError) {
+    const toast = await this.toastCtrl.create({
+        duration: 1200,
+        color: 'danger',
+        message: messageError,
+        position: 'bottom',
+        cssClass: 'my-custom-class'
+      });
+    toast.present();
   }
 }

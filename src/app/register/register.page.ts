@@ -45,6 +45,10 @@ export class RegisterPage implements OnInit {
     }
   }
 
+  prevForm() {
+    this.router.navigate(['/']);
+  }
+
   // acc_fname: any;
   // acc_lname: any;
   // acc_mname: any;
