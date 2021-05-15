@@ -8,7 +8,7 @@ use PHPMailer\PHPMailer\Exception;
 //Load Composer's autoloader
 require 'PHPMailer/vendor/autoload.php';
 
-function sendOTP($receiver, $subject, $body) {
+function sendOTP($dt) {
     $mail = new PHPMailer(true);
 
     try {
@@ -17,16 +17,16 @@ function sendOTP($receiver, $subject, $body) {
         $mail->isSMTP();                                            //Send using SMTP
         $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
         $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-        $mail->Username   = 'binociete@gmail.com';                     //SMTP username
-        $mail->Password   = 'tanginamojayjordan!';                               //SMTP password
+        $mail->Username   = '201811259@gordoncollege.edu.ph';                     //SMTP username
+        $mail->Password   = 'inocieteGC2020';                               //SMTP password
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
         $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
 
         //Recipients
         $mail->setFrom('from@example.com', 'Mailer');
         //$mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
-        $mail->addAddress($receiver);               //Name is optional
-        $mail->addReplyTo('binociete@gmail.com', 'Information');
+        $mail->addAddress($dt->acc_email);               //Name is optional
+        $mail->addReplyTo('201811259@gordoncollege.edu.ph', 'Information');
         //$mail->addCC('cc@example.com');
         //$mail->addBCC('bcc@example.com');
 
@@ -36,9 +36,9 @@ function sendOTP($receiver, $subject, $body) {
 
         //Content
         $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = $subject;
-        $mail->Body    = $body;
-        $mail->AltBody = $body;
+        $mail->Subject = "Your OTP is $dt->acc_otp";
+        $mail->Body    = "Your otp code is $dt->acc_otp";
+        $mail->AltBody = "Your otp code is $dt->acc_otp";
 
         $mail->send();
         

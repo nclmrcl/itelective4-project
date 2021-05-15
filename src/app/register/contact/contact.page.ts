@@ -40,8 +40,11 @@ export class ContactPage implements OnInit {
     } else {
       console.log(this.registrationForm.value)
       this.acc_contact.acc_email = this.acc_email;
-      this.ds.acc_info.acc_mobile = this.acc_mobile;
+      
       this.ds.sendApiRequest("checkEmail/", this.acc_contact).subscribe((data: { payload: any[]; }) => {
+        this.ds.acc_info.acc_mobile = this.acc_mobile;
+        this.ds.acc_info.acc_email = this.acc_email;
+        window.sessionStorage.setItem('email', this.acc_email);
         this.router.navigate(['/register/credentials'])
       }, (err: any) => {
         this.presentToast('Email address already exists','');

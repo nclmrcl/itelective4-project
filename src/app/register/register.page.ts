@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
 
   acc_fname: any;
   acc_lname: any;
-  acc_mname: any;
+  acc_mname: any = '';
 
   nextForm() {
     this.isSubmitted = true;

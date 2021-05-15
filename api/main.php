@@ -1,5 +1,6 @@
 <?php 
 	require_once("./config/Config.php");
+	require_once("./models/OTP.php");
 
 	$db = new Connection();
 	$pdo = $db->connect();
@@ -109,6 +110,16 @@
 				case 'register':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
 					echo json_encode($auth->register($d));
+				break;
+
+				case 'sendOTP':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo sendOTP($d);
+				break;
+
+				case 'getOTP':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($post->getOTP($d));
 				break;
 
 				default:

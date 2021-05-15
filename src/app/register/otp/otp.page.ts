@@ -12,20 +12,39 @@ export class OtpPage implements OnInit {
   constructor(private router: Router, private ds: DataService) { }
 
   ngOnInit() {
+    this.getUserOtp();
   }
 
   acc_otp: any;
   acc_email: any;
   acc_otp_info: any = {};
 
-  nextForm() {
-    this.acc_otp_info.acc_email = this.ds.acc_info.acc_email;
-    this.acc_otp_info.acc_otp = this.acc_otp;
-    this.ds.sendApiRequest("verifyEmail/", this.acc_otp_info).subscribe((data: { payload: any[]; }) => {
-      this.router.navigate(['/']);
+  dt: any = {};
+
+  getUserOtp() {
+    this.acc_otp_info.acc_email = window.sessionStorage.getItem('email');
+    this.ds.sendApiRequest("getOTP/", this.acc_otp_info).subscribe((data: { payload: any[]; }) => {
+      this.dt = data.payload;
+      this.sendUserOTP();
     }, (err: any) => {
 
     });
+  }
+
+  sendUserOTP() {
+    this.acc_otp_info.acc_email = window.sessionStorage.getItem('email');
+    this.acc_otp_info.acc_otp = this.dt[0].acc_otp;
+    this.ds.sendApiRequest("sendOTP/", this.acc_otp_info).subscribe((data: { payload: any[]; }) => {
+    }, (err: any) => {
+    });
+  }
+
+  nextForm() {
+    if(this.dt[0].acc_otp == this.acc_otp) {
+      this.router.navigate(['/']);
+    } else {
+      
+    }
     
   }
   

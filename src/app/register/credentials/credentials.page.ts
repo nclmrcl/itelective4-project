@@ -39,12 +39,12 @@ export class CredentialsPage implements OnInit {
     } else {
       console.log(this.registrationForm.value)
       this.acc_credentails.acc_username = this.acc_username;
-      this.ds.sendApiRequest("checkEmail/", this.acc_credentails).subscribe((data: { payload: any[]; }) => {
-      
+      this.ds.sendApiRequest("checkUsername/", this.acc_credentails).subscribe((data: { payload: any[]; }) => {
+        this.ds.acc_info.acc_username = this.acc_username;
+        this.ds.acc_info.acc_password = this.acc_password;
+        this.router.navigate(['/register/terms']);
       }, (err: any) => {
-      this.ds.acc_info.acc_username = this.acc_username;
-      this.ds.acc_info.acc_password = this.acc_password;
-    this.router.navigate(['/register/terms']);
+      
     });
     }
   }
