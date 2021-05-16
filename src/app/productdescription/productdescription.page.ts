@@ -10,23 +10,17 @@ import { ToastController} from '@ionic/angular';
 })
 export class ProductdescriptionPage implements OnInit {
 
-  cardContent: any = [
-    {
-      itemName: 'Gardenia Classic White Bread',
-      itemWeight: '400G',
-      itemDesc: 'Taste the latest from Gardenia! Your freshly baked white bread filled with delicious spreads and perfectly sealed to lock in its freshness.',
-      itemPrice: 47.50
-    }
-  ];
-
   constructor(private ds: DataService, private router: Router, private toastCtrl: ToastController, route:ActivatedRoute) {route.params.subscribe(val => {
     this.productDetails();
   });}
+
   ngOnInit() {
     this.productDetails();
+    this.getCart();
   }
 
   dt: any[] = [];
+  cart_content: any = {};
 
   productDetails() {
     this.ds.sendApiRequest("productDesc/" + this.ds.productId, null).subscribe((data: { payload: any[]; }) => {
@@ -37,16 +31,31 @@ export class ProductdescriptionPage implements OnInit {
 
   cartContent: any = {};
 
+  getCart() {
+    let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
+    this.ds.sendApiRequest("cart/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
+      this.cart_content = data.payload;
+    }, er => {
+    
+    });
+  }
+
   addToCart(id) {
     let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
     console.log(this.dt);
     this.cartContent.acc_id = pload.id;
     this.cartContent.product_id = id;
     
-    console.log(this.cartContent)
-    this.ds.sendApiRequest("addToCart/", this.cartContent).subscribe((data: { payload: any[]; }) => {
-      this.successToast( this.dt[0].product_name + " successfully added to your cart");
-    });
+    console.log(this.cart_content[0].product_id)
+    for(var i = 0; i < this.cart_content.length; i++) {
+      if(this.cart_content[i].product_id == id) {
+        console.log("product already in cart");
+      } else {
+        this.ds.sendApiRequest("addToCart/", this.cartContent).subscribe((data: { payload: any[]; }) => {
+          this.successToast( this.dt[0].product_name + " successfully added to your cart");
+        });
+      }
+    }
   }
 
   async successToast(messageSuccess) {
