@@ -28,27 +28,33 @@
 
           <div class="pendingSegment" *ngSwitchCase="'pendingOrders'">
             <ion-list *ngFor="let data of dt">
+              <div  *ngIf="data.order_status == 1 || data.order_status == 2 ">
               <ion-item>
                 <img src="../../assets/images/pendingorders.png" style="width: 40px; height: 40px; margin-right: 10px;">
                 <ion-label>
                   <h2>Order ID {{ data.order_id }}</h2>
-                  <h3>Order Date: {{ data.createdAt }}</h3>
+                  <h3>Order ID {{ data.order_id }}</h3>
                   <p>Status: 
-                    <span class="status" style="background-color: crimson;">To be Delivered</span>
+                    <span  *ngIf="data.order_status == 1"  class="status" style="background-color: orangered">Pending</span>
+                    <span  *ngIf="data.order_status == 2"  class="status" style="background-color: darkgoldenrod">To be delivered</span>
                   </p>
                 </ion-label>
               </ion-item>
+            </div>
             </ion-list>
           </div>
 
           <div class="completedSegment" *ngSwitchCase="'completedOrders'">
-            <ion-list>
-              <ion-item>
+            <ion-list *ngFor="let data of dt">
+              <ion-item   *ngIf="data.order_status == 3 || data.order_status == 0 ">
                 <img src="../../assets/images/orderdelivered.png" style="width: 40px; height: 40px; margin-right: 10px;">
                 <ion-label>
-                  <h2>Order ID #1</h2>
-                  <h3>Order Date: 12-07-2019</h3>
-                  <p>Status: <span class="status" style="background-color: forestgreen"> Delivered</span></p>
+                  <h2>Order ID {{ data.order_id }}</h2>
+                  <h3>Order ID {{ data.order_id }}</h3>
+                  <p>Status: 
+                  <span  *ngIf="data.order_status == 3"  class="status" style="background-color: forestgreen">Delivered</span>
+                  <span  *ngIf="data.order_status == 0"  class="status" style="background-color: crimson">Cancelled</span>
+                  </p>
                 </ion-label>
               </ion-item>
             </ion-list>
