@@ -34,20 +34,20 @@
 
           <div class="pendingSegment" *ngSwitchCase="'pendingOrders'">
             <ion-list *ngFor="let data of dt">
-              <div  *ngIf="data.order_status == 1 || data.order_status == 2 ">
-              <ion-item>
+       
+              <ion-item *ngIf="data.order_status == 1 || data.order_status == 2 ">
                 <img src="../../assets/images/pendingorders.png" style="width: 40px; height: 40px; margin-right: 10px;">
                 <ion-label>
                   <h2>Order ID {{ data.order_id }}</h2>
-                  <h3>Order ID {{ data.order_id }}</h3>
                   <p>Status: 
                     <span  *ngIf="data.order_status == 1"  class="status" style="background-color: #f89406;">Pending</span>
                     <span  *ngIf="data.order_status == 2"  class="status" style="background-color: #D9B611;">To be delivered</span>
                   </p>
                 </ion-label>
               </ion-item>
-            </div>
+ 
             </ion-list>
+            
           </div>
 
           <div class="completedSegment" *ngSwitchCase="'completedOrders'">
@@ -57,7 +57,6 @@
                 <img *ngIf="data.order_status == 0" src="../../assets/images/cancelledorder.png" style="width: 40px; height: 40px; margin-right: 10px;">
                 <ion-label>
                   <h2>Order ID {{ data.order_id }}</h2>
-                  <h3>Order ID {{ data.order_id }}</h3>
                   <p>Status: 
                   <span  *ngIf="data.order_status == 3"  class="status" style="background-color: forestgreen">Delivered</span>
                   <span  *ngIf="data.order_status == 0"  class="status" style="background-color: crimson">Cancelled</span>
