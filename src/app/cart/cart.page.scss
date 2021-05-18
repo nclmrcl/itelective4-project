@@ -20,6 +20,11 @@ p {
     justify-content: center;
 }
 
+.emptyCartImg {
+    text-align: center;
+    margin-top: 150px;
+}
+
 .cartItem {
     display: flex;
     justify-content: space-evenly;
@@ -31,7 +36,7 @@ p {
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
     background-color: white;
-    min-height:100vh;
+    min-height: 100vh;
     margin-top: -10px;
 }
 

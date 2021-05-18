@@ -1,0 +1,83 @@
+.sidenavBtn {
+    padding: 15px;
+}
+
+ion-content {
+    --ion-background-color:#228b22;
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-back-button {
+    --color: white;
+}
+
+.whiteMainDiv {
+    padding: 15px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height: 100vh;
+    margin-top: -10px;
+}
+
+.orderDetail {
+    border: 1.5px solid #228b22;
+    border-radius: 20px;
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    padding: 15px;
+
+    img {
+        height: fit-content;
+    }
+
+    p {
+        margin: 0;
+    }
+
+}
+
+.orderItems {
+    display: flex;
+    gap: 1em;
+    justify-content: space-between;
+}
+
+.detailText {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 100;
+}
+
+.header {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px !important;
+}
+
+
+.orderDateTimeDiv {
+    border: 1.5px solid #228b22;
+    border-radius: 20px;
+    width: 95%;
+    margin: 10px auto;
+    padding: 15px;
+    text-align: center;
+}
+
+.orderDateTime {
+    display: flex;
+    justify-content: space-between;
+
+    p {
+        margin: 0;
+        height: min-content;
+    }
+}
+
+.orderDetailsImg {
+    margin-top: 15px;
+}

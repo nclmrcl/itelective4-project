@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 
@@ -7,17 +7,16 @@ import { DataService } from '../services/data.service';
   templateUrl: './myorders.page.html',
   styleUrls: ['./myorders.page.scss'],
 })
-export class MyordersPage implements OnInit {
+export class MyordersPage {
 
   type:string;
 
   constructor(private ds: DataService, private router: Router) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     //Set first tab as default selected segment
     this.type = "pendingOrders";
     this.myOrders();
-    
   }
 
   dt: any[] = [];

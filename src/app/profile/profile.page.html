@@ -12,7 +12,8 @@
       <ion-card>
         <ion-card-content>
           <div class="avatarContainer">
-            <img class="userAvatar" src="../../assets/images/useravatar.png">
+            <img *ngIf="(data.acc_gender == 1)" class="userAvatar" src="../../assets/images/maleavatar.png">
+            <img *ngIf="(data.acc_gender == 2)" class="userAvatar" src="../../assets/images/femaleavatar.png">
             <ion-fab-button size="small" [routerLink]="['/editprofile']"><ion-icon name="create"></ion-icon></ion-fab-button>
             <h1 style="color:#228b22;"><strong>{{ data.acc_fname }} {{ data.acc_mname[0] }}. {{ data.acc_lname}}</strong></h1>
           </div>

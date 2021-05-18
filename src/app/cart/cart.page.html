@@ -10,7 +10,19 @@
       </ion-buttons>
     </div>
 
-    <div class="cartItems">
+    <div class="cartItems" *ngIf = "cart_qty.length === 0">
+
+      <div class="emptyCartImg">
+        <div class="centerEmptyCart">
+          <img src="../../assets/images/emptycart.png" style="width: 75%; height: 75%;">
+          <p style="font-size: 20px;">Nothing in your cart.</p>
+          <p style="margin-top: -10px;">Products you add in your cart will appear here.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="cartItems" *ngIf = "cart_qty.length != 0">
 
       <div class="cartImg">
         <img src="../../assets/images/shoppingcartalt.png" style="width: 75%; height: 75%;">

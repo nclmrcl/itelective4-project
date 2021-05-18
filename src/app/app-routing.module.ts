@@ -47,7 +47,11 @@ const routes: Routes = [
     path: 'editprofile',
     loadChildren: () => import('./editprofile/editprofile.module').then( m => m.EditprofilePageModule),
     canActivate: [GuardGuard]
+  },  {
+    path: 'fullorderdetails',
+    loadChildren: () => import('./fullorderdetails/fullorderdetails.module').then( m => m.FullorderdetailsPageModule)
   },
+
 ];
 
 @NgModule({

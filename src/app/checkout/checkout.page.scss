@@ -83,6 +83,18 @@ ion-label {
     margin: -5px 0px;
 }
 
+.orderItemsDiv {
+    display: flex;
+    justify-content: space-between;
+    margin: -5px 0px;
+
+    p {
+        margin: 0;
+        padding-bottom: 15px;
+    }
+}
+
+
 .placeOrderBtn {
     --background: #228b22;
     font-family: 'Poppins', sans-serif;
