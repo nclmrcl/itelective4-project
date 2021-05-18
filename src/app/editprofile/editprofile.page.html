@@ -9,6 +9,59 @@
 
   <div class="editProfDiv">
     
+    <div class="editQuestionDiv">
+      <h1>What would you like to edit from your profile?</h1>
+    </div>
+
+    <div class="editOptions" style="margin-top: 25px;">
+      <div class="editImg">
+        <img src="../../assets/images/editname.png">
+      </div>
+      <div class="editBtn">
+        <p>Update Name</p>
+        <ion-fab-button [routerLink]="['/editprofile/editname']" size="small"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
+      </div>
+    </div>
+
+    <div class="editOptions">
+      <div class="editImg">
+        <img src="../../assets/images/location.png">
+      </div>
+      <div class="editBtn">
+        <p>Change Address</p>
+        <ion-fab-button [routerLink]="['/editprofile/editaddress']" size="small"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
+      </div>
+    </div>
+
+    <div class="editOptions">
+      <div class="editImg">
+        <img src="../../assets/images/emailcontact.png">
+      </div>
+      <div class="editBtn">
+        <p>Contact Info</p>
+        <ion-fab-button [routerLink]="['/editprofile/editcontactinfo']" size="small"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
+      </div>
+    </div>
+
+    <div class="editOptions">
+      <div class="editImg">
+        <img src="../../assets/images/passwordlock.png">
+      </div>
+      <div class="editBtn">
+        <p>Change Password</p>
+        <ion-fab-button [routerLink]="['/editprofile/editpassword']" size="small"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
+      </div>
+    </div>
+
+    <!-- <div class="editOptions">
+      <div class="editImg">
+        <img src="../../assets/images/changeprofilepic.png">
+      </div>
+      <div class="editBtn">
+        <p>New Profile Pic</p>
+        <ion-fab-button size="small"><ion-icon name="arrow-forward"></ion-icon></ion-fab-button>
+      </div>
+    </div> -->
   </div>
 
 

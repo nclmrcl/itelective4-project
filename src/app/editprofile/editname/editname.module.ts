@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EditprofilePageRoutingModule } from './editprofile-routing.module';
+import { EditnamePageRoutingModule } from './editname-routing.module';
 
-import { EditprofilePage } from './editprofile.page';
+import { EditnamePage } from './editname.page';
 
 @NgModule({
   imports: [
@@ -14,8 +14,8 @@ import { EditprofilePage } from './editprofile.page';
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    EditprofilePageRoutingModule
+    EditnamePageRoutingModule
   ],
-  declarations: [EditprofilePage]
+  declarations: [EditnamePage]
 })
-export class EditprofilePageModule {}
+export class EditnamePageModule {}

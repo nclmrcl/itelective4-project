@@ -11,7 +11,7 @@ ion-back-button {
     padding: 15px;
 }
 
-.editProfDiv {
+.editNameContainer {
     padding: 15px;
     border-top-left-radius: 35px;
     border-top-right-radius: 35px;
@@ -20,24 +20,27 @@ ion-back-button {
     margin-top: -10px;
 }
 
-.editQuestionDiv {
+.header {
     padding: 0 15px;
 }
 
-.editOptions {
-    border: 1.5px solid #228b22;
-    border-radius: 20px;
-    width: 95%;
-    margin: 15px auto;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    gap: .5em;
+.zontaline {
+    border-bottom: 1px solid dimgray;
 }
 
-.editBtn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 100;
+.imgDiv {
+    text-align: center;
+    margin: 15px;
+}
+
+.registerBtn {
+    font-family: 'Poppins', sans-serif;
+    height: 50px;
+	width: 85%;
+    font-size: 20px;
+	margin: 15px auto;
+}
+
+.addressimg {
+    height: 250px;
 }

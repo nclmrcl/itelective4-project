@@ -1,0 +1,46 @@
+<ion-content mode="md">
+
+  <div class="sidenavBtn">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/editprofile"></ion-back-button>
+      <p style="font-size: 20px; color: white;">Back to edit profile</p>
+    </ion-buttons>
+  </div>
+
+  <div class="editNameContainer">
+
+    <div class="header">
+      <h1>Update Contact</h1>
+      <div class="zontaline">
+
+      </div>
+    </div>
+
+    <div class="imgDiv">
+      <img src="../../../assets/images/textfield.png">
+    </div>
+
+    <div class="registerContent">
+      <form [formGroup]="registrationForm" novalidate>
+        <ion-input formControlName="acc_mobile" [(ngModel)]="acc_mobile" placeholder="Contact Number"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.required">
+          Mobile number is required.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.pattern">
+          Mobile number should not contain any letters.
+        </span>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.minlength">
+          Mobile number should be 11 numbers long.
+        </span>
+        <ion-input formControlName="acc_email" [(ngModel)]="acc_email" placeholder="Email Address"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_email.errors?.required">
+          Email is required.
+        </span>
+      </form>
+    </div>
+
+    <ion-button class="registerBtn" [disabled]="registrationForm.invalid" shape="round" expand="block">Finish</ion-button>
+
+  </div>
+
+</ion-content>

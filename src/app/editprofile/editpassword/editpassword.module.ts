@@ -4,18 +4,18 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { EditprofilePageRoutingModule } from './editprofile-routing.module';
+import { EditpasswordPageRoutingModule } from './editpassword-routing.module';
 
-import { EditprofilePage } from './editprofile.page';
+import { EditpasswordPage } from './editpassword.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule,
     ReactiveFormsModule,
-    EditprofilePageRoutingModule
+    IonicModule,
+    EditpasswordPageRoutingModule
   ],
-  declarations: [EditprofilePage]
+  declarations: [EditpasswordPage]
 })
-export class EditprofilePageModule {}
+export class EditpasswordPageModule {}

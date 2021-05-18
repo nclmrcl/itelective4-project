@@ -1,0 +1,63 @@
+<ion-content mode="md">
+
+  <div class="sidenavBtn">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/editprofile"></ion-back-button>
+      <p style="font-size: 20px; color: white;">Back to edit profile</p>
+    </ion-buttons>
+  </div>
+
+  <div class="editNameContainer">
+
+    <div class="header">
+      <h1>Change Address</h1>
+      <div class="zontaline">
+
+      </div>
+    </div>
+
+    <div class="imgDiv">
+      <img class="addressimg" src="../../../assets/images/changeaddress.png">
+    </div>
+
+    <div class="registerContent">
+      <form [formGroup]="registrationForm" novalidate>
+        <ion-input formControlName="acc_no" [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_no.errors?.required">
+          House number is required.
+        </span>
+        <ion-input formControlName="acc_street" [(ngModel)]="acc_street" placeholder="Street"></ion-input>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_street.errors?.required">
+          Street is required.
+        </span>
+        <ion-select formControlName="acc_barangay" [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
+        <ion-select-option value="Asinan">Asinan</ion-select-option>
+        <ion-select-option value="Banicain">Banicain</ion-select-option>
+        <ion-select-option value="Barretto">Barretto</ion-select-option>
+        <ion-select-option value="East Bajac-Bajac">East Bajac-Bajac</ion-select-option>
+        <ion-select-option value=">East Tapinac">East Tapinac</ion-select-option>
+        <ion-select-option value="Gordon Heights">Gordon Heights</ion-select-option>
+        <ion-select-option value="Kalaklan">Kalaklan</ion-select-option>
+        <ion-select-option value="Mabayuan">Mabayuan</ion-select-option>
+        <ion-select-option value="New CabalanN">New Cabalan</ion-select-option>
+        <ion-select-option value="New Ilalim">New Ilalim</ion-select-option>
+        <ion-select-option value="New Kababae">New Kababae</ion-select-option>
+        <ion-select-option value="Old Cabalan">Old Cabalan</ion-select-option>
+        <ion-select-option value="Pag-asa">Pag-asa</ion-select-option>
+        <ion-select-option value="Santa Rita">Santa Rita</ion-select-option>
+        <ion-select-option value="West Bajac-Bajac">West Bajac-Bajac</ion-select-option>
+        <ion-select-option value="West Tapinac">West Tapinac</ion-select-option>
+        </ion-select>
+        <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_barangay.errors?.required">
+          Barangay is required.
+        </span>
+        <ion-input [(ngModel)]="acc_city" [ngModelOptions]="{standalone: true}" disabled></ion-input>
+        <ion-input [(ngModel)]="acc_province" [ngModelOptions]="{standalone: true}" disabled></ion-input>
+      </form>
+    </div>
+
+    <ion-button class="registerBtn" [disabled]="registrationForm.invalid" shape="round" expand="block">Finish</ion-button>
+
+  </div>
+
+</ion-content>
