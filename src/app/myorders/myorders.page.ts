@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { NavController } from '@ionic/angular';
+import{FullorderdetailsPage} from '../fullorderdetails/fullorderdetails.page'
+import { ModalController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-myorders',
@@ -11,7 +14,7 @@ export class MyordersPage {
 
   type:string;
 
-  constructor(private ds: DataService, private router: Router) { }
+  constructor(private ds: DataService, private router: Router, public navCtrl: NavController, private _modal: ModalController,) { }
 
   ionViewDidEnter() {
     //Set first tab as default selected segment
@@ -38,4 +41,22 @@ export class MyordersPage {
     });
 
   }
+
+
+async viewFullDetails(event, data){
+    console.log(data)
+    // this.navCtrl.push(FullorderdetailsPageModule,{
+    //   item:data
+    //   });
+    const modal = await this._modal.create({
+      component: FullorderdetailsPage,
+      componentProps: { orders: data }
+      });
+    
+    await modal.present();
+  }
 }
+
+
+
+

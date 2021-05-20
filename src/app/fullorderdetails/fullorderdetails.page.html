@@ -1,7 +1,7 @@
 <ion-content mode="md">
 
   <div class="sidenavBtn">
-    <ion-buttons slot="start">
+    <ion-buttons slot="start" (click)="back()">
       <ion-back-button defaultHref="/myorders"></ion-back-button>
       <p style="font-size: 20px; color: white;">Order Details</p> 
     </ion-buttons>
@@ -17,7 +17,7 @@
       <img src="../../assets/images/location.png">
       <div class="detailText">
         <p class="header">Delivery Address</p>
-        <p>1601 Waterdam Road Sta. Rita Olongapo City Zambales</p>
+        <p>{{ dt[0].acc_no}} {{ dt[0].acc_street }} {{ dt[0].acc_barangay }}, {{ dt[0].acc_city }} {{ dt[0].acc_province }}</p>
       </div>
     </div>
 

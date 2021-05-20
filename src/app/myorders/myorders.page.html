@@ -34,8 +34,8 @@
 
           <div class="pendingSegment" *ngSwitchCase="'pendingOrders'">
 
-            <div class="outline-border" *ngFor="let data of pending">
-              <div class="myorder">
+            <div class="outline-border" *ngFor="let data of pending" (click)="viewFullDetails($event, data)">
+              <div  class="myorder">
                 <div class="orderstatusimg">
                   <img src="../../assets/images/pendingorders.png">
                 </div>
@@ -46,8 +46,10 @@
                     <span *ngIf="data.order_status == 1"  class="status" style="background-color: #f89406;">Pending</span>
                     <span *ngIf="data.order_status == 2"  class="status" style="background-color: #D9B611;">To be delivered</span>
                   </p>
+
                 </div>
               </div>
+
             </div>
 
             <!-- <ion-list *ngFor="let data of dt">
