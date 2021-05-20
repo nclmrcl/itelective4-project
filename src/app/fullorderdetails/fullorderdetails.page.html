@@ -17,7 +17,7 @@
       <img src="../../assets/images/location.png">
       <div class="detailText">
         <p class="header">Delivery Address</p>
-        <p>{{ dt[0].acc_no}} {{ dt[0].acc_street }} {{ dt[0].acc_barangay }}, {{ dt[0].acc_city }} {{ dt[0].acc_province }}</p>
+        <p>{{ dt[0].acc_no }} {{ dt[0].acc_street }} {{ dt[0].acc_barangay }}, {{ dt[0].acc_city }} {{ dt[0].acc_province }}</p>
       </div>
     </div>
 
@@ -25,17 +25,11 @@
       <img src="../../assets/images/orderitems.png">
       <div class="detailText">
         <p class="header">Order Items</p>
-        <div class="orderItems">
-          <p>Item here x 1</p>
-          <p>₱ 0.00</p>
-        </div>
-        <div class="orderItems">
-          <p>Item here x 1</p>
-          <p>₱ 0.00</p>
-        </div>
-        <div class="orderItems">
-          <p>Item here x 1</p>
-          <p>₱ 0.00</p>
+        <div *ngFor="let item of order_item">
+          <div class="orderItems">
+            <p>{{ item.product_name }} x {{ item.item_quantity }}</p>
+            <p>₱ 0.00</p>
+          </div>
         </div>
       </div>
     </div>

@@ -57,6 +57,14 @@
 					}
 				break;
 
+				case 'order_item':
+					if(count($req)>1){
+						echo json_encode($gm->exec_query('tbl_'.$req[0], $req[1]),JSON_PRETTY_PRINT);
+					} else {
+						echo json_encode($gm->exec_query('tbl_'.$req[0], null),JSON_PRETTY_PRINT);
+					}
+				break;
+
 				case 'addToCart':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
 					echo json_encode($gm->insert("tbl_cart", $d));

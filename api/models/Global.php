@@ -34,10 +34,17 @@
 
 			if($table == "tbl_order") {
 				if($filter_data != null) {
-					$this->sql .= " WHERE acc_id=$filter_data";
+					$this->sql .= " LEFT JOIN tbl_accounts ON tbl_accounts.acc_id = tbl_order.acc_id
+					WHERE tbl_accounts.acc_id=$filter_data";
 				}
 			}
 			
+			if($table == "tbl_order_item") {
+				if($filter_data != null) {
+					$this->sql .= " LEFT JOIN tbl_products ON tbl_products.product_id = tbl_order_item.product_id
+					WHERE tbl_order_item.order_id=$filter_data";
+				}
+			}
 			$data = array(); $code = 0; $msg= ""; $remarks = "";
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchAll()) {

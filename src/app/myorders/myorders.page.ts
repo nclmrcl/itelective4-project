@@ -44,7 +44,7 @@ export class MyordersPage {
 
 
 async viewFullDetails(event, data){
-    console.log(data)
+    //console.log(data)
     // this.navCtrl.push(FullorderdetailsPageModule,{
     //   item:data
     //   });

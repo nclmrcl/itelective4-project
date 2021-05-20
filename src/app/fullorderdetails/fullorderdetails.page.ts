@@ -14,23 +14,32 @@ export class FullorderdetailsPage implements OnInit {
   constructor(private ds:DataService, private _modal: ModalController) { }
 
   ngOnInit() {
-    this.getUserProfile();
+    // this.getUserProfile();
     this.getOrder();
-    
+    this.getOrderItems();
   }
 
   dt: any[] = [];
 
-  getUserProfile() {
-    let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
-    this.ds.sendApiRequest("accounts/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
-      this.dt = data.payload;
-      console.log(this.dt)
-    });
-  }
+  // getUserProfile() {
+  //   let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
+  //   this.ds.sendApiRequest("accounts/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
+  //     this.dt = data.payload;
+  //     //console.log(this.dt)
+  //   });
+  // }
   
   getOrder(){
-    console.log(this.orders);
+    this.dt.push(this.orders);
+    console.log(this.dt[0]);
+  }
+
+  order_item: any[] = [];
+  getOrderItems() {
+    this.ds.sendApiRequest("order_item/" + this.dt[0].order_id, null).subscribe((data: { payload: any[]; }) => {
+      this.order_item = data.payload;
+      console.log(this.order_item)
+    });
   }
 
   back(){

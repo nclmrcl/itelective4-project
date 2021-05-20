@@ -69,11 +69,10 @@
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
 					$result=$this->pdo->query($this->sql)->fetchAll();
 
-					$data = array(); $code = 0; $msg = ""; $remarks = ""; $token = "";
+					$data = array(); $code = 0; $msg = ""; $remarks = "";
 					foreach ($result as $rec) { 
 						if($this->pwordCheck($dt->acc_password, $rec['acc_password'])){
 							$res = null; $code = 200; $msg = "Successfully retrieved the requested records"; $remarks = "success";
-							$token = $this->showToken($rec);
 							$data = array(
 								"id"=>$rec['acc_id'],
 								"fname"=>$rec['acc_fname'],
@@ -90,7 +89,7 @@
 			} catch (\PDOException $e) {
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
 			}
-			return $this->sendPayload(base64_encode(json_encode($data)), $remarks, $msg, $code, $token);
+			return $this->sendPayload(base64_encode(json_encode($data)), $remarks, $msg, $code);
 		}
 
 		function register($dt) {
@@ -142,7 +141,7 @@
 			} catch (\PDOException $e) {
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
 			}
-			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code, null);
+			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code);
 		}
 
 		public function checkUsername($dt) {
@@ -161,7 +160,7 @@
 			} catch (\PDOException $e) {
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
 			}
-			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code, null);
+			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code);
 		}
 
 		public function verifyEmail($dt) {
@@ -191,18 +190,17 @@
 			} catch (\PDOException $e) {
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
 			}
-			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code, null);
+			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code);
 		}
 
-		public function sendPayload($payload, $remarks, $message, $code, $token) {
+		public function sendPayload($payload, $remarks, $message, $code) {
 			$status = array("remarks"=>$remarks, "message"=>$message);
 			http_response_code($code);
 			return array(
 				"status"=>$status,
 				"payload"=>$payload,
 				'prepared_by'=>'Bernie L. Inociete Jr., Developer',
-				"timestamp"=>date_create(),
-				"token"=>$token
+				"timestamp"=>date_create()
 			);
 		} 
 
