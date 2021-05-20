@@ -27,8 +27,8 @@
         <p class="header">Order Items</p>
         <div *ngFor="let item of order_item">
           <div class="orderItems">
-            <p>{{ item.product_name }} x {{ item.item_quantity }}</p>
-            <p>₱ 0.00</p>
+            <p>{{ item.product_name }} </p>
+            <p>₱ {{ item.product_price }} x {{ item.item_quantity }}</p>
           </div>
         </div>
       </div>
@@ -48,11 +48,15 @@
         <p class="header">Payment Information</p>
         <div class="orderItems">
           <p>Delivery Fee</p>
-          <p>₱ 0.00</p>
+          <p>₱ {{ dt[0].order_shipping }}</p>
         </div>
         <div class="orderItems">
-          <p>Total Price</p>
-          <p>₱ 0.00</p>
+          <p>Subtotal</p>
+          <p>₱ {{ dt[0].order_total }}</p>
+        </div>
+        <div class="orderItems">
+          <p><strong>Total Price</strong></p>
+          <p><strong>₱ {{ dt[0].order_grandtotal }}</strong></p>
         </div>
       </div>
     </div>
@@ -62,16 +66,16 @@
       <p class="header">Order Information</p>
       <div class="orderDateTime">
         <p>Order ID</p>
-        <p>696969</p>
+        <p>{{ dt[0].order_id }}</p>
       </div>
       <div class="orderDateTime">
         <p>Order Date</p>
-        <p>6/15/15, 9:03 AM</p>
+        <p>{{ dt[0].createdAt | date:"MMMM d, y h:mm a" }}</p>
       </div>
-      <div class="orderDateTime">
+      <!-- <div class="orderDateTime">
         <p style="text-align: left;">Completed</p>
         <p>6/15/15, 9:03 AM</p>
-      </div>
+      </div> -->
     </div>
 
   </div>
