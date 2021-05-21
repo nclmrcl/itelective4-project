@@ -38,7 +38,7 @@ export class FullorderdetailsPage implements OnInit {
   getOrderItems() {
     this.ds.sendApiRequest("order_item/" + this.dt[0].order_id, null).subscribe((data: { payload: any[]; }) => {
       this.order_item = data.payload;
-      console.log(this.order_item)
+      console.log('Order Item:', this.order_item)
     });
   }
 

@@ -19,16 +19,20 @@
             <ion-label class="poppins">Profile</ion-label>
           </ion-item>
           <ion-item [routerLink]="['/myorders']">
-            <ion-icon name="checkmark-circle" slot="start"></ion-icon>
+            <ion-icon name="bag-check" slot="start"></ion-icon>
             <ion-label class="poppins">My Orders</ion-label>
           </ion-item>
-          <ion-item>
-            <ion-icon name="settings" slot="start"></ion-icon>
-            <ion-label class="poppins">Settings</ion-label>
+          <ion-item [routerLink]="['/privacypolicy']">
+            <ion-icon name="shield-checkmark" slot="start"></ion-icon>
+            <ion-label class="poppins">Privacy Policy</ion-label>
+          </ion-item>
+          <ion-item [routerLink]="['/termsconds']">
+            <ion-icon name="information-circle" slot="start"></ion-icon>
+            <ion-label class="poppins">Terms & Conditions</ion-label>
           </ion-item>
           <ion-item (click)="logout()">
-            <ion-icon name="log-out" slot="start"></ion-icon>
-            <ion-label class="poppins">Log out</ion-label>
+            <ion-icon name="power" slot="start"></ion-icon>
+            <ion-label class="poppins">Logout</ion-label>
           </ion-item>
         </ion-list>
       </ion-menu-toggle>

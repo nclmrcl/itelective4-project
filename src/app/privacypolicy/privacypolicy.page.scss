@@ -1,0 +1,25 @@
+ion-content {
+    --ion-background-color:#228b22;
+    font-family: 'Poppins', sans-serif;
+}
+
+ion-back-button {
+    --color: white;
+}
+
+.sidenavBtn, .privpolicycontent {
+    padding: 15px;
+}
+
+.privacy-div {
+    padding: 15px;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    background-color: white;
+    min-height:100vh;
+    margin-top: -10px;
+}
+
+.privpolicycontent {
+    text-align: justify;
+}

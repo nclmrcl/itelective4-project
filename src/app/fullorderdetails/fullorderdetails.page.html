@@ -10,7 +10,10 @@
   <div class="whiteMainDiv">
 
     <div class="orderImgDiv">
-      <img class="orderDetailsImg" src="../../assets/images/delivered.png">
+      <img *ngIf="dt[0].order_status == 3" class="orderDetailsImg" src="../../assets/images/delivered.png">
+      <img *ngIf="dt[0].order_status == 1" src="../../assets/images/pendingapproval.png">
+      <img *ngIf="dt[0].order_status == 2" src="../../assets/images/pending.png">
+      <img *ngIf="dt[0].order_status == 0" src="../../assets/images/cancelled.png">
     </div>
 
     <div class="orderDetail">
@@ -72,12 +75,9 @@
         <p>Order Date</p>
         <p>{{ dt[0].createdAt | date:"MMMM d, y h:mm a" }}</p>
       </div>
-      <!-- <div class="orderDateTime">
-        <p style="text-align: left;">Completed</p>
-        <p>6/15/15, 9:03 AM</p>
-      </div> -->
     </div>
 
+    <ion-button class="cancelBtn" [hidden]="dt[0].order_status == 2 || dt[0].order_status == 3 || dt[0].order_status == 0" shape="round" expand="block">Cancel Order</ion-button>
   </div>
 
 </ion-content>

@@ -51,6 +51,14 @@ const routes: Routes = [
     path: 'fullorderdetails',
     loadChildren: () => import('./fullorderdetails/fullorderdetails.module').then( m => m.FullorderdetailsPageModule)
   },
+  {
+    path: 'privacypolicy',
+    loadChildren: () => import('./privacypolicy/privacypolicy.module').then( m => m.PrivacypolicyPageModule)
+  },
+  {
+    path: 'termsconds',
+    loadChildren: () => import('./termsconds/termsconds.module').then( m => m.TermscondsPageModule)
+  },
 
 ];
 
