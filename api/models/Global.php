@@ -11,7 +11,7 @@
 
 			$this->sql = "SELECT * FROM $table";
 
-			if($table == "tbl_accounts") {
+			if($table == "accounts") {
 				$this->sql .= " WHERE acc_status=1";
 
 				if($filter_data != null) {
@@ -19,30 +19,30 @@
 				}
 			}
 
-			if($table == "tbl_products") {
+			if($table == "products") {
 				if($filter_data != null) {
 					$this->sql .= " WHERE product_category='$filter_data'";
 				}
 			}
 
-			if($table == "tbl_cart") {
+			if($table == "cart") {
 				if($filter_data != null) {
-					$this->sql .= " LEFT JOIN tbl_products ON tbl_cart.product_id = tbl_products.product_id 
-						WHERE tbl_cart.acc_id=$filter_data AND tbl_cart.cart_status = 1";
+					$this->sql .= " LEFT JOIN products ON cart.product_id = products.product_id 
+						WHERE cart.acc_id=$filter_data AND cart.cart_status = 1";
 				}
 			}
 
-			if($table == "tbl_order") {
+			if($table == "orders") {
 				if($filter_data != null) {
-					$this->sql .= " LEFT JOIN tbl_accounts ON tbl_accounts.acc_id = tbl_order.acc_id
-					WHERE tbl_accounts.acc_id=$filter_data";
+					$this->sql .= " LEFT JOIN accounts ON accounts.acc_id = orders.acc_id
+					WHERE accounts.acc_id=$filter_data";
 				}
 			}
 			
-			if($table == "tbl_order_item") {
+			if($table == "order_items") {
 				if($filter_data != null) {
-					$this->sql .= " LEFT JOIN tbl_products ON tbl_products.product_id = tbl_order_item.product_id
-					WHERE tbl_order_item.order_id=$filter_data";
+					$this->sql .= " LEFT JOIN products ON products.product_id = order_items.product_id
+					WHERE order_items.order_id=$filter_data";
 				}
 			}
 			$data = array(); $code = 0; $msg= ""; $remarks = "";

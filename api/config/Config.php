@@ -14,7 +14,7 @@
 	require_once("./models/Post.php");
 	require_once("./models/OTP.php");
 
-	define("DBASE", "db_gocery");
+	define("DBASE", "laravel_gocery");
 	define("USER", "root");
 	define("PW", "");
 	define("SERVER", "localhost");

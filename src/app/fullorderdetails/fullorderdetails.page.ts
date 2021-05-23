@@ -36,7 +36,7 @@ export class FullorderdetailsPage implements OnInit {
 
   order_item: any[] = [];
   getOrderItems() {
-    this.ds.sendApiRequest("order_item/" + this.dt[0].order_id, null).subscribe((data: { payload: any[]; }) => {
+    this.ds.sendApiRequest("order_items/" + this.dt[0].order_id, null).subscribe((data: { payload: any[]; }) => {
       this.order_item = data.payload;
       console.log('Order Item:', this.order_item)
     });

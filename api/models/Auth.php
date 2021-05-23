@@ -63,7 +63,7 @@
 		}
 
 		function login($dt){
-			$this->sql="SELECT * FROM tbl_accounts WHERE acc_username='$dt->acc_username' LIMIT 1";
+			$this->sql="SELECT * FROM accounts WHERE acc_username='$dt->acc_username' LIMIT 1";
 
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
@@ -106,7 +106,7 @@
 			$data = array(); $code = 0; $msg = ""; $remarks = ""; $token = "";
 
 			try {
-				$sqlstr = "INSERT INTO tbl_accounts (acc_lname, acc_fname, acc_mname, acc_birthdate, acc_no, acc_street,
+				$sqlstr = "INSERT INTO accounts (acc_lname, acc_fname, acc_mname, acc_birthdate, acc_no, acc_street,
 					acc_barangay, acc_city, acc_province, acc_gender, acc_email, acc_mobile, acc_username, acc_password, acc_otp, acc_role) 
 					VALUES ('$dt->acc_lname', '$dt->acc_fname', '$dt->acc_mname', '$dt->acc_birthdate', '$dt->acc_no', 
 					'$dt->acc_street', '$dt->acc_barangay', '$dt->acc_city', '$dt->acc_province', $dt->acc_gender, 
@@ -122,12 +122,12 @@
 				$errmsg = $e->getMessage();
 				$code = 403;
 			}
-			return $this->sendPayload($data, $remarks, $msg, $code, $token);
+			return $this->sendPayload($data, $remarks, $msg, $code);
 		}
 
 		public function checkEmail($dt) {
 
-			$this->sql="SELECT * FROM tbl_accounts WHERE acc_email='$dt->acc_email' LIMIT 1";
+			$this->sql="SELECT * FROM accounts WHERE acc_email='$dt->acc_email' LIMIT 1";
 
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
@@ -146,7 +146,7 @@
 
 		public function checkUsername($dt) {
 
-			$this->sql="SELECT * FROM tbl_accounts WHERE acc_username='$dt->acc_username' LIMIT 1";
+			$this->sql="SELECT * FROM accounts WHERE acc_username='$dt->acc_username' LIMIT 1";
 
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
@@ -165,7 +165,7 @@
 
 		public function verifyEmail($dt) {
 
-			$this->sql="SELECT * FROM tbl_accounts WHERE acc_email='$dt->acc_email' LIMIT 1";
+			$this->sql="SELECT * FROM accounts WHERE acc_email='$dt->acc_email' LIMIT 1";
 
 			try {
 				if ($res = $this->pdo->query($this->sql)->fetchColumn()>0) {
@@ -191,6 +191,25 @@
 				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
 			}
 			return $this->sendPayload(base64_encode(json_encode($res)), $remarks, $msg, $code);
+		}
+
+		public function updatePassword($dt, $filter_data) {
+			$encryptedPassword = $this->encryptPassword($dt->acc_password);
+
+			try {
+				$sqlstr = "UPDATE accounts SET acc_password = '$encryptedPassword' WHERE $filter_data";
+					
+				if($this->pdo->query($sqlstr)) {
+					$data = null; $code = 200; $msg = "Successfully Changed Password"; $remarks = "success";
+				} else { 
+					$data = null; $code = 400; $msg = "Bad Request"; $remarks = "failed";
+				}
+				
+			} catch (\PDOException $e) {
+				$errmsg = $e->getMessage();
+				$code = 403;
+			}
+			return $this->sendPayload($data, $remarks, $msg, $code);
 		}
 
 		public function sendPayload($payload, $remarks, $message, $code) {

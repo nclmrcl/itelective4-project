@@ -28,7 +28,7 @@
 
 		public function getOTP($dt) {
 
-			$this->sql = "SELECT acc_otp FROM tbl_accounts WHERE acc_email='$dt->acc_email'";
+			$this->sql = "SELECT acc_otp FROM accounts WHERE acc_email='$dt->acc_email'";
 
 			$data = array(); $code = 0; $msg= ""; $remarks = "";
 			try {
@@ -43,7 +43,7 @@
 		}
 
 		public function placeOrder($data) {
-			$this->sql = "INSERT INTO tbl_order (acc_id, order_total, order_shipping, order_grandtotal)
+			$this->sql = "INSERT INTO orders (acc_id, order_total, order_shipping, order_grandtotal)
 				VALUES ($data->acc_id, $data->order_total, $data->order_shipping, $data->order_grandtotal)";
 
 			try {
@@ -62,7 +62,7 @@
 						$values[] = "($product_id[$i], $order_id[$i], $item_quantity[$i])";
 					}
 
-					$this->sql = "INSERT INTO tbl_order_item (product_id, order_id, item_quantity) VALUES " . implode(', ', $values);
+					$this->sql = "INSERT INTO order_items (product_id, order_id, item_quantity) VALUES " . implode(', ', $values);
 					
 					if($this->pdo->query($this->sql)) {
 						return array("code"=>200, "remarks"=>"success");

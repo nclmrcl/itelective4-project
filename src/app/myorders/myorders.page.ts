@@ -29,7 +29,7 @@ export class MyordersPage {
   myOrders() {
     let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
 
-    this.ds.sendApiRequest("order/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
+    this.ds.sendApiRequest("orders/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
       this.dt = data.payload;
       console.log(this.dt)
       

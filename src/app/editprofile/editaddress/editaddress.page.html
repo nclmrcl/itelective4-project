@@ -51,12 +51,12 @@
         <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_barangay.errors?.required">
           Barangay is required.
         </span>
-        <ion-input [(ngModel)]="acc_city" [ngModelOptions]="{standalone: true}" disabled></ion-input>
-        <ion-input [(ngModel)]="acc_province" [ngModelOptions]="{standalone: true}" disabled></ion-input>
+        <ion-input formControlName="acc_city" [(ngModel)]="acc_city" disabled></ion-input>
+        <ion-input formControlName="acc_province" [(ngModel)]="acc_province" disabled></ion-input>
       </form>
     </div>
 
-    <ion-button class="registerBtn" [disabled]="registrationForm.invalid" shape="round" expand="block">Finish</ion-button>
+    <ion-button class="registerBtn" (click)="submitForm()" [disabled]="registrationForm.invalid" shape="round" expand="block">Finish</ion-button>
 
   </div>
 

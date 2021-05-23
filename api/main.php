@@ -19,75 +19,75 @@
 			switch($req[0]) {
 				case 'accounts':
 					if(count($req)>1){
-						echo json_encode($gm->exec_query('tbl_'.$req[0], $req[1]),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], $req[1]),JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($gm->exec_query('tbl_'.$req[0], null),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], null),JSON_PRETTY_PRINT);
 					}
 				break;
 
 				case 'products':
 					if(count($req)>1){
-						echo json_encode($gm->exec_query('tbl_'.$req[0], $req[1]),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], $req[1]),JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($gm->exec_query('tbl_'.$req[0], null),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], null),JSON_PRETTY_PRINT);
 					}
 				break;
 
 				case 'productDesc':
 					if(count($req)>1){
-						echo json_encode($post->productDescrition('tbl_products', $req[1]),JSON_PRETTY_PRINT);
+						echo json_encode($post->productDescrition('products', $req[1]),JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($post->productDescrition('tbl_products', null),JSON_PRETTY_PRINT);
+						echo json_encode($post->productDescrition('products', null),JSON_PRETTY_PRINT);
 					}
 				break;
 
 				case 'cart':
 					if(count($req)>1){
-						echo json_encode($gm->exec_query('tbl_'.$req[0], $req[1]),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], $req[1]),JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($gm->exec_query('tbl_'.$req[0], null),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], null),JSON_PRETTY_PRINT);
 					}
 				break;
 
-				case 'order':
+				case 'orders':
 					if(count($req)>1){
-						echo json_encode($gm->exec_query('tbl_'.$req[0], $req[1]),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], $req[1]),JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($gm->exec_query('tbl_'.$req[0], null),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], null),JSON_PRETTY_PRINT);
 					}
 				break;
 
-				case 'order_item':
+				case 'order_items':
 					if(count($req)>1){
-						echo json_encode($gm->exec_query('tbl_'.$req[0], $req[1]),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], $req[1]),JSON_PRETTY_PRINT);
 					} else {
-						echo json_encode($gm->exec_query('tbl_'.$req[0], null),JSON_PRETTY_PRINT);
+						echo json_encode($gm->exec_query($req[0], null),JSON_PRETTY_PRINT);
 					}
 				break;
 
 				case 'addToCart':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
-					echo json_encode($gm->insert("tbl_cart", $d));
+					echo json_encode($gm->insert("cart", $d));
 				break;
 
 				case 'addQuantity':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
-					echo json_encode($gm->update("tbl_cart", $d, "cart_id = $req[1]"));
+					echo json_encode($gm->update("cart", $d, "cart_id = $req[1]"));
 				break;
 
 				case 'subtractQuantity':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
-					echo json_encode($gm->update("tbl_cart", $d, "cart_id = $req[1]"));
+					echo json_encode($gm->update("cart", $d, "cart_id = $req[1]"));
 				break;
 
 				case 'archiveCart':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
-					echo json_encode($gm->update("tbl_cart", $d, "cart_id = $req[1]"));
+					echo json_encode($gm->update("cart", $d, "cart_id = $req[1]"));
 				break;
 
 				case 'clearCart':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
-					echo json_encode($gm->update("tbl_cart", $d, "acc_id = $req[1]"));
+					echo json_encode($gm->update("cart", $d, "acc_id = $req[1]"));
 				break;
 
 				case 'placeOrder':
@@ -128,6 +128,16 @@
 				case 'getOTP':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
 					echo json_encode($post->getOTP($d));
+				break;
+
+				case 'updateProfile':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($gm->update("accounts", $d, "acc_id = $req[1]"));
+				break;
+
+				case 'updatePassword':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($auth->updatePassword($d, "acc_id = $req[1]"));
 				break;
 
 				default:
