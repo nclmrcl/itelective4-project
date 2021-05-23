@@ -27,9 +27,65 @@
         </div>
         
       <!-- <ion-searchbar style="margin-top:-20px;" mode="ios"></ion-searchbar> -->
+      
+      <!-- <div class="category-outline">
+        <img src="../../assets/images/meat.png" style="width: 100px; height: 100px;">
+        <p>Meat</p>
+      </div> -->
 
       <div class="groceryItems">
-        <ion-card button (click)="category('Meat')">
+
+        <div class="meat outline" button (click)="category('Meat')">
+          <img src="../../assets/images/meat.png" style="width: 100px; height: 100px;">
+          <p>Meat</p>
+        </div>
+
+        <div class="veggie outline" (click)="category('Vegetables')">
+          <img src="../../assets/images/cabbage.png" style="width: 100px; height: 100px;">
+          <p>Vegetables</p>
+        </div>
+
+        <div class="seafood outline" (click)="category('Seafood')">
+          <img src="../../assets/images/shrimp.png" style="width: 100px; height: 100px;">
+          <p>Seafood</p>
+        </div>
+
+        <div class="personalcare outline" (click)="category('Personal Care')">
+          <img src="../../assets/images/soap.png" style="width: 100px; height: 100px;">
+          <p>Hygiene</p>
+        </div>
+
+        <div class="drinks outline" (click)="category('Beverages')">
+          <img src="../../assets/images/drinks.png" style="width: 100px; height: 100px;">
+          <p>Beverages</p>
+        </div>
+
+        <div class="canned outline" (click)="category('Canned Goods')">
+          <img src="../../assets/images/canned-food.png" style="width: 100px; height: 100px;">
+          <p>Canned</p>
+        </div>
+
+        <div class="dairy outline" (click)="category('Dairy')">
+          <img src="../../assets/images/dairy.png" style="width: 100px; height: 100px;">
+          <p>Dairy</p>
+        </div>
+
+        <div class="cleaners outline" (click)="category('Cleaners')">
+          <img src="../../assets/images/detergent.png" style="width: 100px; height: 100px;">
+          <p>Cleaners</p>
+        </div>
+
+        <div class="fruits outline" (click)="category('Fruits')">
+          <img src="../../assets/images/bananas.png" style="width: 100px; height: 100px;">
+          <p>Fruits</p>
+        </div>
+
+        <div class="bread outline" (click)="category('Bread')">
+          <img src="../../assets/images/bread.png" style="width: 100px; height: 100px;">
+          <p>Bread</p>
+        </div>
+
+        <!-- <ion-card button (click)="category('Meat')">
           <ion-card-content>
             <img src="../../assets/images/meat.png" style="width: 100px; height: 100px;">
             <p class="category-label">Meat</p>
@@ -97,7 +153,7 @@
             <img src="../../assets/images/bread.png" style="width: 100px; height: 100px;">
             <p class="category-label">Bread</p>
           </ion-card-content>
-        </ion-card>
+        </ion-card> -->
     </div>
   </div>
 

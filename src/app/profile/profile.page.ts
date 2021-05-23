@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -6,11 +6,11 @@ import { DataService } from '../services/data.service';
   templateUrl: './profile.page.html',
   styleUrls: ['./profile.page.scss'],
 })
-export class ProfilePage implements OnInit {
+export class ProfilePage {
 
   constructor(private ds: DataService) { }
 
-  ngOnInit() {
+  ionViewWillEnter() {
     this.getUserProfile();
   }
 

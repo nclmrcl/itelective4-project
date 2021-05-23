@@ -6,12 +6,12 @@
       <img src="../assets/images/templogo.png">
     </div>
     
-    <ion-content  color="white" mode="md">  
+    <ion-content color="white" mode="md">  
       
       <ion-menu-toggle  auto-hide="true">
         <ion-list lines="none">
           <ion-item [routerLink]="['/products']">
-            <ion-icon name="fast-food" slot="start"></ion-icon>
+            <ion-icon name="cart" slot="start"></ion-icon>
             <ion-label class="poppins">Categories</ion-label>
           </ion-item>
           <ion-item [routerLink]="['/profile']">
@@ -32,10 +32,12 @@
           </ion-item>
           <ion-item (click)="logout()">
             <ion-icon name="power" slot="start"></ion-icon>
-            <ion-label class="poppins">Logout</ion-label>
+            <ion-label class="poppins">Sign out</ion-label>
           </ion-item>
         </ion-list>
       </ion-menu-toggle>
+
+      <p class="appinfo poppins">© Gocery 2021 | v1.0</p>
 
     </ion-content>   
   </ion-menu>  
