@@ -18,7 +18,7 @@
       <div class="registerContent">
         <p class="registerMidHeader poppins">To send updates to you via sms and email, please provide your phone number and email address.</p>
         <form [formGroup]="registrationForm" novalidate>
-          <ion-input formControlName="acc_mobile" [(ngModel)]="acc_mobile" placeholder="Contact Number"></ion-input>
+          <ion-input formControlName="acc_mobile" [(ngModel)]="acc_mobile" placeholder="Contact Number" maxLength="11"></ion-input>
           <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_mobile.errors?.required">
             Mobile number is required.
           </span>
@@ -32,11 +32,14 @@
           <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_email.errors?.required">
             Email is required.
           </span>
+          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_email.errors?.pattern">
+            Please enter a valid email.
+          </span>
         </form>
       </div>
 
       <div class="navBtnDiv">
-        <ion-button (click)="nextForm()" class="navBtn" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
+        <ion-button (click)="nextForm()" class="navBtn" shape="round">Next</ion-button>
       </div>
 
     </div>

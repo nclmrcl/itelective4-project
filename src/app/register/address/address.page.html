@@ -18,11 +18,11 @@
         <p class="registerMidHeader poppins">Please provide your home address.</p>
         <form [formGroup]="registrationForm" novalidate>
           <ion-input formControlName="acc_no" [(ngModel)]="acc_no" placeholder="House Number"></ion-input>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_no.errors?.required">
+          <span *ngIf="isSubmitted && errorControl.acc_no.errors?.required">
             House number is required.
           </span>
           <ion-input formControlName="acc_street" [(ngModel)]="acc_street" placeholder="Street"></ion-input>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_street.errors?.required">
+          <span *ngIf="isSubmitted && errorControl.acc_street.errors?.required">
             Street is required.
           </span>
           <ion-select formControlName="acc_barangay" [(ngModel)]="acc_barangay" placeholder="Barangay" ok-text="SELECT">
@@ -43,7 +43,7 @@
           <ion-select-option value="West Bajac-Bajac">West Bajac-Bajac</ion-select-option>
           <ion-select-option value="West Tapinac">West Tapinac</ion-select-option>
           </ion-select>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_barangay.errors?.required">
+          <span *ngIf="isSubmitted && errorControl.acc_barangay.errors?.required">
             Barangay is required.
           </span>
           <ion-input [(ngModel)]="acc_city" [ngModelOptions]="{standalone: true}" disabled></ion-input>
@@ -52,7 +52,7 @@
       </div>
 
       <div class="navBtnDiv">
-        <ion-button class="navBtn" (click)="nextForm()" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
+        <ion-button class="navBtn" (click)="nextForm()" shape="round">Next</ion-button>
       </div>
 
     </div>

@@ -20,7 +20,7 @@ export class ContactPage implements OnInit {
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
       acc_mobile: ['', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(11), Validators.minLength(11)]],
-      acc_email: ['', [Validators.required]]
+      acc_email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]]
     })
   }
 

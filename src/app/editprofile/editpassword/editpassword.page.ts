@@ -18,7 +18,8 @@ export class EditpasswordPage implements OnInit {
 
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
-      acc_password: ['', [Validators.required, Validators.minLength(8)]]
+      acc_password: ['', [Validators.required, Validators.minLength(8)]],
+      acc_confirmpassword: ['', [Validators.required, Validators.minLength(8)]]
     })
   }
 

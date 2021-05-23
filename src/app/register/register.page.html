@@ -19,23 +19,23 @@
         <p class="poppins">To get things started, let's start with your name.</p>
         <form [formGroup]="registrationForm" novalidate>
           <ion-input formControlName="acc_lname" [(ngModel)]="acc_lname" placeholder="Last Name"></ion-input>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_lname.errors?.required">
+          <span *ngIf="isSubmitted && errorControl.acc_lname.errors?.required">
             Last name is required.
           </span>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_lname.errors?.minlength">
+          <span *ngIf="isSubmitted && errorControl.acc_lname.errors?.minlength">
             Last name should be at least 2 characters long or more.
           </span>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_lname.errors?.pattern">
+          <span *ngIf="isSubmitted && errorControl.acc_lname.errors?.pattern">
             Last name should not contain any number.
           </span>
           <ion-input formControlName="acc_fname" [(ngModel)]="acc_fname" placeholder="First Name"></ion-input>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_fname.errors?.required">
+          <span *ngIf="isSubmitted && errorControl.acc_fname.errors?.required">
             First name is required.
           </span>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_fname.errors?.minlength">
+          <span *ngIf="isSubmitted && errorControl.acc_fname.errors?.minlength">
             First name should be at least 2 characters long or more.
           </span>
-          <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_fname.errors?.pattern">
+          <span *ngIf="isSubmitted && errorControl.acc_fname.errors?.pattern">
             First name should not contain any number.
           </span>
           <ion-input [(ngModel)]="acc_mname" [ngModelOptions]="{standalone: true}" placeholder="Middle Name"></ion-input>
@@ -43,7 +43,7 @@
       </div>
       
         <div class="navBtnDiv">
-          <ion-button (click)="nextForm()" class="navBtn" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
+          <ion-button (click)="nextForm()" class="navBtn" shape="round">Next</ion-button>
         </div>
     </div>
 

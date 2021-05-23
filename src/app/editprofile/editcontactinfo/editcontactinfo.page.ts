@@ -17,8 +17,7 @@ export class EditcontactinfoPage implements OnInit {
 
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
-      acc_mobile: ['', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(11), Validators.minLength(11)]],
-      acc_email: ['', [Validators.required]]
+      acc_mobile: ['', [Validators.required, Validators.pattern('^[0-9]+$'), Validators.maxLength(11), Validators.minLength(11)]]
     })
   }
 
@@ -26,7 +25,6 @@ export class EditcontactinfoPage implements OnInit {
     return this.registrationForm.controls;
   }
 
-  acc_email: any;
   acc_mobile: any;
   acc_contact: any = {};
 

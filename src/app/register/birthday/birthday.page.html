@@ -35,14 +35,14 @@
                     </ion-item>
                   </ion-radio-group>
                 </ion-list>
-                <span class="error ion-padding" *ngIf="isSubmitted && errorControl.acc_gender.errors?.required">
+                <span *ngIf="isSubmitted && errorControl.acc_gender.errors?.required">
                   Your gender is required.
                 </span>
         </form>
       </div>
 
       <div class="navBtnDiv">
-        <ion-button (click)="nextForm()" class="navBtn" [disabled]="registrationForm.invalid" shape="round">Next</ion-button>
+        <ion-button (click)="nextForm()" class="navBtn" shape="round">Next</ion-button>
       </div>
     </div>
 
