@@ -41,7 +41,7 @@
                 </div>
                 <div class="orderstatuscontent">
                   <p class="header">Order ID {{ data.order_id }}</p>
-                  <p class="subheader">Date: {{ data.createdAt | date:'short' }}</p>
+                  <p class="subheader">Date: {{ data.created_at | date:'short' }}</p>
                   <p class="secheader">Status: 
                     <span *ngIf="data.order_status == 1"  class="status" style="background-color: #f89406;">Pending</span>
                     <span *ngIf="data.order_status == 2"  class="status" style="background-color: #D9B611;">To be delivered</span>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="orderstatuscontent">
                   <p class="header">Order ID {{ data.order_id }}</p>
-                  <p class="subheader">Date: {{ data.createdAt | date:'short' }}</p>
+                  <p class="subheader">Date: {{ data.created_at | date:'short' }}</p>
                   <p class="secheader">Status: 
                     <span *ngIf="data.order_status == 3"  class="status" style="background-color: forestgreen">Delivered</span>
                     <span *ngIf="data.order_status == 0"  class="status" style="background-color: crimson">Cancelled</span>
