@@ -17,7 +17,7 @@
 
     <ion-searchbar style="margin-top: 5px;" mode="ios" [(ngModel)]="term"></ion-searchbar>
 
-    <div class="categoryItems">
+    <!-- <div class="categoryItems">
       
       <div class="categoryItem" *ngFor = "let item of dt | filter:term">
 
@@ -45,6 +45,21 @@
 
       </div>
 
+    </div> -->
+
+    <div class="category-products">
+      <div class="outline-border" *ngFor = "let item of dt | filter:term">
+        <div class="catproduct-img">
+          <img src="https://via.placeholder.com/150">
+        </div>
+        <div class="catproduct-details">
+          <p>{{ item.product_name }}</p>
+          <div class="priceviewbtn">
+            <p>₱ {{ item.product_price }}</p>
+            <ion-fab-button class="viewbtn" size="small" (click)="viewProduct(item.product_id)"><ion-icon style="color: white;" name="eye"></ion-icon></ion-fab-button>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>

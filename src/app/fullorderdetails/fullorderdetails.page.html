@@ -25,11 +25,13 @@
     </div>
 
     <div class="orderDateTimeDiv">
-      <img src="../../assets/images/orderitems.png">
-      <p class="header">Order Items</p>
+      <div class="img-header">
+        <img src="../../assets/images/orderitems.png">
+        <p class="header">Order Items</p>
+      </div>
       <div class="orderDateTime" *ngFor="let item of order_item">
         <p>{{ item.product_name }} </p>
-        <p>₱ {{ item.product_price }} x {{ item.item_quantity }}</p>
+        <p style="text-align: right;"><b>₱ {{ item.product_price }} x {{ item.item_quantity }}</b></p>
       </div>
     </div>
 
@@ -77,15 +79,17 @@
     </div>
 
     <div class="orderDateTimeDiv">
-      <img src="../../assets/images/calendar.png">
-      <p class="header">Order Information</p>
+      <div class="img-header">
+        <img src="../../assets/images/calendar.png">
+        <p class="header">Order Information</p>
+      </div>
       <div class="orderDateTime">
         <p>Order ID</p>
-        <p>{{ dt[0].order_id }}</p>
+        <p style="text-align: right;">{{ dt[0].order_id }}</p>
       </div>
       <div class="orderDateTime">
         <p>Order Date</p>
-        <p>{{ dt[0].created_at | date:"MMMM d, y h:mm a" }}</p>
+        <p style="text-align: right;">{{ dt[0].created_at | date:"MMMM d, y h:mm a" }}</p>
       </div>
     </div>
 

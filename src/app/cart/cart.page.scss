@@ -27,8 +27,9 @@ p {
 
 .cartItem {
     display: flex;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
     align-items: center;
+    gap: 1em;
 }
 
 .cartItems {
@@ -42,7 +43,7 @@ p {
 
 .quantityDecInc {
     display: flex;
-    justify-content: space-evenly;
+    //justify-content: space-evenly;
     align-items: center;
 }
 
@@ -68,8 +69,9 @@ ion-content {
     --background: #228b22;
     font-family: 'Poppins', sans-serif;
     height: 50px;
-    width:95%;
+    width:91%;
     font-size: 20px;
+    margin-top: 15px;
 }
 
 .deleteCartItem {
@@ -84,12 +86,27 @@ ion-back-button {
     --color: white;
 }
 
-.cartItemDesc {
-    margin-left: 10px;
-}
+// .cartItemDesc {
+//     margin-left: 10px;
+// }
 
 .centerEmptyCart {
     p {
         padding: 0 15px;
     }
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+}
+
+.outlineborderdiv {
+    padding: 0 15px;
+}
+
+.outline-border {
+    padding: 0 15px;
+    border: 1px solid forestgreen;
+    border-radius: 10px;
 }

@@ -1,5 +1,6 @@
 ion-content {
     --ion-background-color:#228b22;
+    font-family: 'Poppins', sans-serif;
 }
 
 .categoryProducts {
@@ -75,3 +76,35 @@ ion-fab-button {
 }
 
 
+.outline-border {
+    border: 1px solid forestgreen;
+    display: flex;
+    margin-bottom: 15px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    img {
+        height: 100%;
+    }
+}
+
+.category-products {
+    padding: 15px;
+}
+
+.catproduct-img, .catproduct-details{
+    flex: 1;
+}
+
+.catproduct-details {
+    padding: 0 10px;
+}
+
+.priceviewbtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.viewbtn {
+    color: white;
+    --background: forestgreen;
+}

@@ -85,12 +85,12 @@ ion-label {
 
 .orderItemsDiv {
     display: flex;
-    justify-content: space-between;
     margin: -5px 0px;
 
     p {
         margin: 0;
         padding-bottom: 15px;
+        flex: 1;
     }
 }
 

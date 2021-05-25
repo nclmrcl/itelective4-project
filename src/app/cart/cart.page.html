@@ -31,7 +31,8 @@
       <ion-card *ngFor = "let cartItem of dt">
         <ion-card-content>
           <div class="cartItem">
-            <img src="https://via.placeholder.com/100">
+            <img class="product-image" src="{{ cartItem.product_image }}">
+            <!-- <img *ngIf="cartItem.product_image === null" class="product-image" src="../../assets/images/defaultproductphoto.png"> -->
             <div class="cartItemDesc">
               <p class="itemName">{{ cartItem.product_name}}</p>
               <p>₱ {{ cartItem.product_price}}</p>
@@ -45,6 +46,24 @@
           </div>
         </ion-card-content>
       </ion-card>
+
+      <!-- <div class="outlineborderdiv">
+        <div class="outline-border" *ngFor = "let cartItem of dt">
+          <div class="cartItem">
+            <img class="product-image" src="{{ cartItem.product_image }}">
+            <div class="cartItemDesc">
+              <p class="itemName">{{ cartItem.product_name}}</p>
+              <p>₱ {{ cartItem.product_price}}</p>
+              <div class="quantityDecInc">
+                <ion-fab-button (click)="subtractQuantity(cartItem.cart_id, cartItem.cart_quantity)" size="small"><ion-icon name="remove-sharp"></ion-icon></ion-fab-button>
+                <p> {{ cartItem.cart_quantity }}</p>
+                <ion-fab-button (click)="addQuantity(cartItem.cart_id, cartItem.cart_quantity)"size="small"><ion-icon name="add-sharp"></ion-icon></ion-fab-button>
+                <ion-fab-button (click)="deleteProduct(cartItem.cart_id)" size="small" class="deleteCartItem"><ion-icon name="trash"></ion-icon></ion-fab-button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
 
       <div class="checkoutButton">
         <ion-button class="checkoutBtn" shape="round" (click)="checkOut()">Checkout</ion-button>
