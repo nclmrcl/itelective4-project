@@ -89,7 +89,7 @@
       </div>
     </div>
 
-    <ion-button class="cancelBtn" [hidden]="dt[0].order_status == 2 || dt[0].order_status == 3 || dt[0].order_status == 0" shape="round" expand="block">Cancel Order</ion-button>
+    <ion-button class="cancelBtn" (click)="cancelOrder()" [hidden]="dt[0].order_status == 2 || dt[0].order_status == 3 || dt[0].order_status == 0" shape="round" expand="block">Cancel Order</ion-button>
   </div>
 
 </ion-content>

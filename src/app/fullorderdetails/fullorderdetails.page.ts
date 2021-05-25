@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-fullorderdetails',
@@ -11,23 +12,14 @@ export class FullorderdetailsPage implements OnInit {
 
   @Input() orders = [];
 
-  constructor(private ds:DataService, private _modal: ModalController) { }
+  constructor(private ds:DataService, private _modal: ModalController, private router: Router) { }
 
   ngOnInit() {
-    // this.getUserProfile();
     this.getOrder();
     this.getOrderItems();
   }
 
   dt: any[] = [];
-
-  // getUserProfile() {
-  //   let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
-  //   this.ds.sendApiRequest("accounts/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
-  //     this.dt = data.payload;
-  //     //console.log(this.dt)
-  //   });
-  // }
   
   getOrder(){
     this.dt.push(this.orders);
@@ -42,6 +34,14 @@ export class FullorderdetailsPage implements OnInit {
     });
   }
 
+  orderStatus: any = {};
+  cancelOrder() {
+    this.orderStatus.order_status = 0;
+    this.ds.sendApiRequest("cancelOrder/" + this.dt[0].order_id, this.orderStatus).subscribe((data: { payload: any[]; }) => {
+      this.order_item = data.payload;
+      this.router.navigate(['/myorders']);
+    });
+  }
   back(){
     this._modal.dismiss();
   }

@@ -95,6 +95,11 @@
 					echo json_encode($post->placeOrder($d));
 				break;
 
+				case 'cancelOrder':
+					$d = json_decode(base64_decode(file_get_contents("php://input")));
+					echo json_encode($gm->update("orders", $d, "order_id = $req[1]"));
+				break;
+
 				case 'checkEmail':
 					$d = json_decode(base64_decode(file_get_contents("php://input")));
 					echo json_encode($auth->checkEmail($d));
