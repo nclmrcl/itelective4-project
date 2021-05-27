@@ -1,4 +1,4 @@
-<ion-content mode="md">
+<ion-content mode="md" [scrollEvents]="true">
 
   <div class="sidenavBtn">
     <ion-buttons slot="start">
@@ -11,6 +11,12 @@
     </ion-buttons>
 
   </div>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="ScrollToTop()">
+      <ion-icon name="arrow-up" class="back-to-top-icon"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
  
 
   <div class="categoryProducts">
@@ -50,7 +56,8 @@
     <div class="category-products">
       <div class="outline-border" *ngFor = "let item of dt | filter:term">
         <div class="catproduct-img">
-          <img src="https://via.placeholder.com/150">
+          <img *ngIf = "item.product_image == null" src="../../assets/images/defaultproductphoto.png">
+          <img *ngIf = "item.product_image != null" src="{{ item.product_image }}">
         </div>
         <div class="catproduct-details">
           <p>{{ item.product_name }}</p>

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { IonContent } from '@ionic/angular';
+import { ViewChild } from '@angular/core'
 
 @Component({
   selector: 'app-catproducts',
@@ -8,6 +10,8 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./catproducts.page.scss'],
 })
 export class CatproductsPage implements OnInit {
+
+  @ViewChild(IonContent, { static: false }) content: IonContent;
 
   cardContent: any = [
     {
@@ -32,6 +36,10 @@ export class CatproductsPage implements OnInit {
 
   ngOnInit() {
     this.categoryProducts();
+  }
+
+  ScrollToTop() {
+    this.content.scrollToTop(1200);
   }
 
   catName: any = this.ds.SharedData;

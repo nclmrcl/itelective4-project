@@ -74,7 +74,8 @@
             <div class="outline-border"  (click)="viewFullDetails($event, data)" *ngFor="let data of completed">
               <div class="myorder">
                 <div class="orderstatusimg">
-                  <img src="../../assets/images/orderdelivered.png">
+                  <img *ngIf="data.order_status == 3" src="../../assets/images/orderdelivered.png">
+                  <img *ngIf="data.order_status == 0" src="../../assets/images/cancelledorder.png">
                 </div>
                 <div class="orderstatuscontent">
                   <p class="header">Order ID {{ data.order_id }}</p>

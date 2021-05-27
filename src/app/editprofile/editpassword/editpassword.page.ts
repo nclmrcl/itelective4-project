@@ -28,14 +28,28 @@ export class EditpasswordPage implements OnInit {
   }
 
   acc_password: any;
+  acc_confirmpassword: any;
   acc_credentails: any = {};
+
+  // comparePassword() {
+  //   if (this.acc_password != this.acc_confirmpassword) {
+  //     console.log('Passwords do not match.')
+  //   }
+  //   else {
+  //     console.log('Passwords match.')
+  //   }
+  // }
 
   submitForm() {
     this.isSubmitted = true;
     if (!this.registrationForm.valid) {
       console.log('Please provide all the required values!')
       return false;
-    } else {
+    }
+    if (this.acc_password != this.acc_confirmpassword) {
+      console.log('Passwords do not match.')
+    }
+    else {
       console.log(this.registrationForm.value)
       console.log(this.registrationForm.value)
       let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));

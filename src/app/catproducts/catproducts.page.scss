@@ -1,6 +1,7 @@
 ion-content {
     --ion-background-color:#228b22;
     font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 .categoryProducts {
@@ -95,6 +96,17 @@ ion-fab-button {
     flex: 1;
 }
 
+.catproduct-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+
+    img {
+        height: 150px;
+    }
+}
+
 .catproduct-details {
     padding: 0 10px;
 }
@@ -107,4 +119,8 @@ ion-fab-button {
 .viewbtn {
     color: white;
     --background: forestgreen;
+}
+
+.back-to-top-icon {
+    color: white !important;
 }

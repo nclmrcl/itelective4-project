@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs';
 import { DataService } from '../services/data.service';
 import { UserService } from '../services/user.service';
 import { ToastController } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +13,9 @@ import { ToastController } from '@ionic/angular';
   styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
+
+  @ViewChild(IonContent, { static: false }) content: IonContent;
+
 
   constructor(private ds: DataService, private router: Router, private user: UserService,  private toastCtrl: ToastController, route:ActivatedRoute) {route.params.subscribe(val => {
     this.getCart();
@@ -21,6 +26,9 @@ export class CartPage implements OnInit {
     
   }
 
+  ScrollToTop() {
+    this.content.scrollToTop(1200);
+  }
 
   private subs: Subscription;
   message: any;

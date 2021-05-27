@@ -1,5 +1,4 @@
-
-<ion-content mode="md">
+<ion-content mode="md" [scrollEvents]="true">
 
   <div class="cartContent">
 
@@ -9,6 +8,12 @@
         <p style="font-size: 20px; color: white;">My Cart</p> 
       </ion-buttons>
     </div>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed" [hidden]="cart_qty.length === 0">
+      <ion-fab-button color="primary" (click)="ScrollToTop()">
+        <ion-icon name="arrow-up" class="back-to-top-icon"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
 
     <div class="cartItems" *ngIf = "cart_qty.length === 0">
 
@@ -28,11 +33,11 @@
         <img src="../../assets/images/shoppingcartalt.png" style="width: 75%; height: 75%;">
       </div>
 
-      <ion-card *ngFor = "let cartItem of dt">
+      <!-- <ion-card *ngFor = "let cartItem of dt">
         <ion-card-content>
           <div class="cartItem">
-            <img class="product-image" src="{{ cartItem.product_image }}">
-            <!-- <img *ngIf="cartItem.product_image === null" class="product-image" src="../../assets/images/defaultproductphoto.png"> -->
+            <img *ngIf="cartItem.product_image != null" class="product-image" src="{{ cartItem.product_image }}">
+            <img *ngIf="cartItem.product_image === null" class="product-image" src="../../assets/images/defaultproductphoto.png">
             <div class="cartItemDesc">
               <p class="itemName">{{ cartItem.product_name}}</p>
               <p>₱ {{ cartItem.product_price}}</p>
@@ -45,9 +50,9 @@
             </div>
           </div>
         </ion-card-content>
-      </ion-card>
+      </ion-card> -->
 
-      <!-- <div class="outlineborderdiv">
+      <div class="outlineborderdiv">
         <div class="outline-border" *ngFor = "let cartItem of dt">
           <div class="cartItem">
             <img class="product-image" src="{{ cartItem.product_image }}">
@@ -63,7 +68,7 @@
             </div>
           </div>
         </div>
-      </div> -->
+      </div>
 
       <div class="checkoutButton">
         <ion-button class="checkoutBtn" shape="round" (click)="checkOut()">Checkout</ion-button>

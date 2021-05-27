@@ -30,6 +30,7 @@ p {
     // justify-content: space-evenly;
     align-items: center;
     gap: 1em;
+    flex: 1;
 }
 
 .cartItems {
@@ -86,9 +87,6 @@ ion-back-button {
     --color: white;
 }
 
-// .cartItemDesc {
-//     margin-left: 10px;
-// }
 
 .centerEmptyCart {
     p {
@@ -109,4 +107,9 @@ ion-back-button {
     padding: 0 15px;
     border: 1px solid forestgreen;
     border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.cartItemDesc {
+    flex: 1;
 }
