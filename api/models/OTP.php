@@ -41,26 +41,30 @@ function sendOTP($dt) {
             <html>
                 <head></head>
                     <body>
-                        <div style='margin: 0 auto; width: 50%;'>
-                        <div style='width: fit-content;
-                            padding: 25px;
-                            border: 1px solid dimgray;
-                            border-radius: 20px;
-                            text-align: center;'>
-                                <img src='https://i.ibb.co/jk6RMrs/templogo.png'>
-                                <h2 style='margin-top: -20px;'>
-                                    You're on the last step to starting your convenience with Go-cery,
-                                    Please use the one time pin code below to complete your registration
-                                    with us. Thank you and happy shopping!
-                                </h2>
-                                <p style='background-color: forestgreen;
-                                    color: white;
-                                    border-radius: 10px;
-                                    padding: 15px;
-                                    font-size: 20px'>
-                                        $dt->acc_otp
-                                </p>
-                         </div>
+                        <div style='display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;'>
+                                    <div style='margin: 0 auto; width: 75%;'>
+                                    <div style='width: fit-content;
+                                        padding: 25px;
+                                        border: 1px solid dimgray;
+                                        border-radius: 20px;
+                                        text-align: center;'>
+                                            <img src='https://i.ibb.co/jk6RMrs/templogo.png'>
+                                            <h2 style='margin-top: -20px;'>
+                                                You're on the last step to starting your convenience with Go-cery,
+                                                Please use the one time pin code below to complete your registration
+                                                with us. Thank you and happy shopping!
+                                            </h2>
+                                            <p style='background-color: forestgreen;
+                                                color: white;
+                                                border-radius: 10px;
+                                                padding: 15px;
+                                                font-size: 20px'>
+                                                    $dt->acc_otp
+                                            </p>
+                                     </div>
+                                    </div>
                         </div>
                     </body>
             </html>
