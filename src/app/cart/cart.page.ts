@@ -45,11 +45,12 @@ export class CartPage implements OnInit {
       console.log(this.cart_qty)
       if(this.dt != ''){
       this.cart_qty = this.dt[0].cart_quantity;
-      }else{
-        this.presentToast("Your cart doesn't have any product/s yet");
       }
+      // else{
+      //   this.presentToast("Your cart doesn't have any product/s yet");
+      // }
     }, er => {
-        this.presentToast("Your cart doesn't have products yet");
+        // this.presentToast("Your cart doesn't have products yet");
       });
   }
 
@@ -88,9 +89,10 @@ export class CartPage implements OnInit {
     if(this.dt != ''){
       console.log(this.dt)
         this.router.navigate(['/checkout']);
-    }else{
-      this.presentToast("Your cart doesn't have any product/s yet");
     }
+    // else{
+    //   this.presentToast("Your cart doesn't have any product/s yet");
+    // }
   }
 
   async presentToast(messageError) {

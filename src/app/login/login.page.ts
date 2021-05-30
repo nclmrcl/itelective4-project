@@ -71,7 +71,7 @@ export class LoginPage implements OnInit {
         color: 'dark',
         message: messageSuccess,
         position: 'bottom',
-        cssClass: 'my-custom-class',
+        cssClass: 'toast',
       });
     toast.present();
   }

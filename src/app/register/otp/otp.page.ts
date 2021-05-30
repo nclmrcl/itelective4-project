@@ -43,7 +43,7 @@ export class OtpPage implements OnInit {
   nextForm() {
     if(this.dt[0].acc_otp == this.acc_otp) {
       this.router.navigate(['/']);
-      this.presentToast('Successfully Registered','');
+      this.presentGreenToast('Successfully Registered','');
     } else {
       this.presentToast('OTP Code is incorrect','');
     }
@@ -58,6 +58,17 @@ export class OtpPage implements OnInit {
     const toast = await this.toastCtrl.create({
         duration: 1200,
         color: 'danger',
+        message: messageError,
+        position: 'bottom',
+        cssClass: 'my-custom-class'
+      });
+    toast.present();
+  }
+
+  async presentGreenToast(messageError, headerError) {
+    const toast = await this.toastCtrl.create({
+        duration: 1200,
+        color: 'primary',
         message: messageError,
         position: 'bottom',
         cssClass: 'my-custom-class'

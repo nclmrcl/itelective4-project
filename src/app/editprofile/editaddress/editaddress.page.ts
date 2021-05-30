@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { DataService } from 'src/app/services/data.service';
+import { ToastController} from '@ionic/angular';
 
 @Component({
   selector: 'app-editaddress',
@@ -13,7 +14,7 @@ export class EditaddressPage implements OnInit {
   registrationForm: FormGroup;
   isSubmitted = false;
 
-  constructor(public formBuilder: FormBuilder, private ds: DataService, private router: Router) { }
+  constructor(public formBuilder: FormBuilder, private ds: DataService, private router: Router, private toastCtrl: ToastController) { }
 
   ngOnInit() {
     this.registrationForm = this.formBuilder.group({
@@ -45,10 +46,33 @@ export class EditaddressPage implements OnInit {
       let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
       this.ds.sendApiRequest("updateProfile/" + pload.id, this.registrationForm.value).subscribe((data: { payload: any[]; }) => {
         this.router.navigate(['/profile']);
+        this.successToast("Address Updated Successfully.");
       }, (err: any) => {
-  
+        this.errorToast("Address was not updated.");
       });
     }
+  }
+
+  async errorToast(messageError) {
+    const toast = await this.toastCtrl.create({
+        duration: 1000,
+        color: 'danger',
+        message: messageError,
+        position: 'bottom',
+        cssClass: 'my-custom-class'
+      });
+    toast.present();
+  }
+
+  async successToast(messageError) {
+    const toast = await this.toastCtrl.create({
+        duration: 1000,
+        color: 'primary',
+        message: messageError,
+        position: 'bottom',
+        cssClass: 'my-custom-class'
+      });
+    toast.present();
   }
 
 }
