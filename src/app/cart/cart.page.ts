@@ -37,6 +37,10 @@ export class CartPage implements OnInit {
   dt:any = [];
   cart_info: any = {};
 
+  sendMessage(): void {
+    this.ds.sendUpdate('Message from Sender Component to Receiver Component!');
+  }
+
   getCart() {
     let pload = JSON.parse(atob(window.sessionStorage.getItem(btoa('payload'))));
     this.ds.sendApiRequest("cart/" + pload.id, null).subscribe((data: { payload: any[]; }) => {
@@ -58,17 +62,18 @@ export class CartPage implements OnInit {
     this.cart_info.cart_quantity = qty + 1;
     this.ds.sendApiRequest("addQuantity/" + id, this.cart_info).subscribe((data: { payload: any[]; }) => {
       this.dt = data.payload;
+      this.sendMessage();
       this.getCart();
       console.log(this.dt)
     });
   }
 
   subtractQuantity(id, qty) {
-    if(qty >= 1) {
+    if(qty > 1) {
       this.cart_info.cart_quantity = qty - 1;
       this.ds.sendApiRequest("subtractQuantity/" + id, this.cart_info).subscribe((data: { payload: any[]; }) => {
         this.dt = data.payload;
-       
+        this.sendMessage();
         this.getCart();
         console.log(this.dt)
       });
@@ -81,6 +86,7 @@ export class CartPage implements OnInit {
     this.ds.sendApiRequest("archiveCart/" + id, this.toDeleteCart).subscribe((data: { payload: any[]; }) => {
       this.dt = data.payload;
       console.log(this.dt)
+      this.sendMessage();
       this.getCart();
     });
   }
