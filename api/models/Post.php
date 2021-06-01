@@ -26,6 +26,26 @@
 			return $this->sendPayload($data, $remarks, $msg, $code);
 		}
 
+		public function order_details($filter_data) {
+
+			$this->sql = "SELECT * FROM orders";
+
+			if($filter_data != null) {
+				$this->sql .= " LEFT JOIN accounts ON accounts.acc_id = orders.acc_id WHERE order_id=$filter_data";
+			}
+
+			$data = array(); $code = 0; $msg= ""; $remarks = "";
+			try {
+				if ($res = $this->pdo->query($this->sql)->fetchAll()) {
+					foreach ($res as $rec) { array_push($data, $rec);}
+					$res = null; $code = 200; $msg = "Successfully retrieved the requested records"; $remarks = "success";
+				}
+			} catch (\PDOException $e) {
+				$msg = $e->getMessage(); $code = 401; $remarks = "failed";
+			}
+			return $this->sendPayload($data, $remarks, $msg, $code);
+		}
+
 		public function getOTP($dt) {
 
 			$this->sql = "SELECT acc_otp FROM accounts WHERE acc_email='$dt->acc_email'";

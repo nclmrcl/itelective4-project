@@ -20,7 +20,9 @@
       <img src="../../assets/images/location.png">
       <div class="detailText">
         <p class="header">Delivery Address</p>
-        <p>{{ dt[0].acc_no }} {{ dt[0].acc_street }} {{ dt[0].acc_barangay }}, {{ dt[0].acc_city }} {{ dt[0].acc_province }}</p>
+        <div *ngFor="let details of order_details">
+          <p>{{ details.acc_no }} {{ details.acc_street }} {{ details.acc_barangay }}, {{ details.acc_city }} {{ details.acc_province }}</p>
+        </div>
       </div>
     </div>
 

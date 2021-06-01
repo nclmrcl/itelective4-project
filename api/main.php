@@ -57,6 +57,14 @@
 					}
 				break;
 
+				case 'order_details':
+					if(count($req)>1){
+						echo json_encode($post->order_details($req[1]),JSON_PRETTY_PRINT);
+					} else {
+						echo json_encode($post->order_details(null),JSON_PRETTY_PRINT);
+					}
+				break;
+
 				case 'order_items':
 					if(count($req)>1){
 						echo json_encode($gm->exec_query($req[0], $req[1]),JSON_PRETTY_PRINT);

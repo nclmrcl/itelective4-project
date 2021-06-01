@@ -34,8 +34,7 @@
 
 			if($table == "orders") {
 				if($filter_data != null) {
-					$this->sql .= " LEFT JOIN accounts ON accounts.acc_id = orders.acc_id
-					WHERE accounts.acc_id=$filter_data";
+					$this->sql .= " WHERE acc_id=$filter_data";
 				}
 			}
 			
