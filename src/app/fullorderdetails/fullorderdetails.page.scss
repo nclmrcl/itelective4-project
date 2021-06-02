@@ -63,7 +63,7 @@ ion-back-button {
     border: 1.5px solid #228b22;
     border-radius: 20px;
     width: 95%;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 0 10px;
 }
 
@@ -71,7 +71,6 @@ ion-back-button {
     display: flex;
     margin-top: -20px;
     p {
-        height: min-content;
         flex: 1;
     }
 }

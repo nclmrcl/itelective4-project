@@ -96,9 +96,9 @@ export class CartPage implements OnInit {
       console.log(this.dt)
         this.router.navigate(['/checkout']);
     }
-    // else{
-    //   this.presentToast("Your cart doesn't have any product/s yet");
-    // }
+    else{
+      this.getCart();
+    }
   }
 
   async presentToast(messageError) {

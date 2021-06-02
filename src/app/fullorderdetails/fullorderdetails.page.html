@@ -90,6 +90,10 @@
         <p>Order Date</p>
         <p style="text-align: right;">{{ dt[0].created_at | date:"MMMM d, y h:mm a" }}</p>
       </div>
+      <div class="orderDateTime" *ngIf = "dt[0].order_status == 3">
+        <p>Delivery Date</p>
+        <p style="text-align: right;">{{ dt[0].updated_at | date:"MMMM d, y h:mm a" }}</p>
+      </div>
     </div>
 
     <ion-button class="cancelBtn" (click)="cancelOrder()" [hidden]="dt[0].order_status == 2 || dt[0].order_status == 3 || dt[0].order_status == 0" shape="round" expand="block">Cancel Order</ion-button>

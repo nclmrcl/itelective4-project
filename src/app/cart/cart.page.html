@@ -9,12 +9,6 @@
       </ion-buttons>
     </div>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed" [hidden]="cart_qty.length === 0">
-      <ion-fab-button color="primary" (click)="ScrollToTop()">
-        <ion-icon name="arrow-up" class="back-to-top-icon"></ion-icon>
-      </ion-fab-button>
-    </ion-fab>
-
     <div class="cartItems" *ngIf = "cart_qty.length === 0">
 
       <div class="emptyCartImg">
@@ -73,6 +67,12 @@
       <div class="checkoutButton">
         <ion-button class="checkoutBtn" shape="round" (click)="checkOut()">Checkout</ion-button>
       </div>
+
+      <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed" [hidden]="cart_qty.length === 0">
+        <ion-fab-button color="primary" (click)="ScrollToTop()">
+          <ion-icon name="arrow-up" class="back-to-top-icon"></ion-icon>
+        </ion-fab-button>
+      </ion-fab> -->
 
     </div>
 

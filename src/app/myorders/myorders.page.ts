@@ -16,7 +16,7 @@ export class MyordersPage {
 
   constructor(private ds: DataService, private router: Router, public navCtrl: NavController, private _modal: ModalController,) { }
 
-  ionViewDidEnter() {
+  ionViewWillEnter() {
     //Set first tab as default selected segment
     this.type = "pendingOrders";
     this.myOrders();
